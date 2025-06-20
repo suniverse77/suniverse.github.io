@@ -116,12 +116,12 @@ author:
   name             : "suniverse77"
   avatar           : "/assets/images/metamong.ico"
   bio              : "Hi."
-  location         : "Somewhere"
+  location         : "Korea"
   email            :
   links:
-    - label: "Email"
+    - label: "Github"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "https://github.com/suniverse77"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
