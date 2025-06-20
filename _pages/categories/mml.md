@@ -1,5 +1,5 @@
  ---
-  title: "MML"
+  title: "인공지능 수학"
   layout: archive
   permalink: categories/MML
   author_profile: true
