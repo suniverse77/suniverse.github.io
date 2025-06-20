@@ -10,8 +10,8 @@
           <span class="nav__sub-title">논문리뷰</span>
               <ul>
                   { for category in site.categories }
-                      { if category[0] == "Diffusion" }
-                          <li><a href="/categories/Diffusion" class="">디퓨전 ()</a></li>
+                      { if category[0] == "Review-Diffusion" }
+                          <li><a href="/categories/Review-Diffusion" class="">디퓨전 ()</a></li>
                       { endif }
                   { endfor }
               </ul>
