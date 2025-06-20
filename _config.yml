@@ -20,7 +20,7 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "Site Title"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "suniverse77"
 description              : "An amazing website."
 url                      : "https://suniverse77.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -113,9 +113,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "suniverse77"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "Hi."
   location         : "Somewhere"
   email            :
   links:
