@@ -26,7 +26,7 @@ url                      : "https://suniverse77.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "suniverse/suniverse77.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : "/assets/images/metamong.ico"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : # true, false (default)
 words_per_minute         : 200
@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "suniverse77"
-  avatar           : "/assets/images/metamong.ico"
+  avatar           : 
   bio              : "Hi."
   location         : "South Korea"
   email            : 
