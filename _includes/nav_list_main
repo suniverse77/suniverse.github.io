@@ -25,8 +25,8 @@
           <span class="nav__sub-title">인공지능 수학</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Linear Algebra" %}
-                          <li><a href="/categories/Linear Algebra" class="">선형대수 ()</a></li>
+                      {% if category[0] == "LinearAlgebra" %}
+                          <li><a href="/categories/LinearAlgebra" class="">Linear Algebra ()</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
