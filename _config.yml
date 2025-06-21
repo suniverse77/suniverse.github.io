@@ -326,5 +326,3 @@ defaults:
       related: true
       show_date: true
       sidebar_main: true
-      toc: true
-      toc_sticky: true
