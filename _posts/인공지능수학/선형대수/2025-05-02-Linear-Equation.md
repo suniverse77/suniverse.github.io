@@ -40,7 +40,7 @@ toc_sticky: true
 
 모든 pivot이 1이고, 해당 열에서 pivot이 0이 아닌 유일한 요소인 형태
 
-![Figure 3](/assets/images/인공지능수학/1-2. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+![Figure 3](/assets/images/인공지능수학/1-2. Figure3.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 
 - REF에서 각 행의 leading entry에 해당하는 성분을 pivot이라고 부른다.
 - REF에서 pivot에 대응되는 변수들을 pivot 또는 basic variable이라고 하고, 그 외의 변수들을 free variable이라고 부른다.
