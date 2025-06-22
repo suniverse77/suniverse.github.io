@@ -27,17 +27,10 @@ $$
 1. 벡터 $\mathbf{x_1},\cdots,\mathbf{x_k}$ 중 적어도 하나가 $\mathbf{0}$이라면, linearly dependent함
 2. 행렬에서 non-pivot column은 왼쪽에 존재하는 column들의 선형 결합으로 표현될 수 있음
     
-    ex) $\begin{bmatrix}
-    1&3&0\\
-    0&0&2
-    \end{bmatrix}$ → $\begin{bmatrix}
-    3\\
-    0
-    \end{bmatrix}
-    =3\begin{bmatrix}
-    1\\
-    0
-    \end{bmatrix}$
+> ex)
+> $$
+> \begin{bmatrix}1&3&0\\0&0&2\end{bmatrix}$ → $\begin{bmatrix}3\\0\end{bmatrix}=3\begin{bmatrix}1\\0\end{bmatrix}
+> $$
 
 ### Linear Independence 판단하는 방법
 
