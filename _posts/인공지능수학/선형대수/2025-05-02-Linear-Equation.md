@@ -73,7 +73,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      
 >      $x_2+2x_3+12x_4=8~\to~x_2=8$
 >      $x_1+8x_3-4x_4=42~\to~x_1=42$
->   5. particular solution을 구함
+>   5. Particular solution을 구함
 >
 >      $x_p=[42~8~0~0]^\top$
 > 
@@ -83,6 +83,10 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 >   2. non-pivot column에 관련된 variable들을 free variable들로 표현
 >
->      $x_3=c,~x_4=d~\to~x_2=-2c-12d,~x_1=-8c+4d$
->   4. s
-> 최종
+>      $x_2=-2x_3-12x_4,~x_1=-8x_3+4x_4$
+>   3. Homogeneous solution
+>
+>      $x_h=c[42\\8~0~0]^\top$
+>      
+> Find General solution
+> $x=x_p+x_h=[42~8~0~0]^\top$
