@@ -64,21 +64,25 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 > Solve Non-Homogeneous Equation
 >   1. Non-Homogeneous Equation을 Augmented Matrix로 변환
 >      
->      ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
+>      ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 >   2. 가우스 소거법을 사용해 REF로 변환
 >   3. Free variable들을 원하는 값으로 설정
 >      
 >      $x_3=0,~x_4=0$
->   4. Pivot variable들을
+>   4. Pivot variable들을 구함
 >      
 >      $x_2+2x_3+12x_4=8~\to~x_2=8$
 >      $x_1+8x_3-4x_4=42~\to~x_1=42$
->   5. particular solution
+>   5. particular solution을 구함
 >
 >      $x_p=[42~8~0~0]^\top$
 > 
 > Solve Homogeneous Equation
 >   1. Homogeneous Equation을 Augmented Matrix로 변환
+>
+>      ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 >   2. non-pivot column에 관련된 variable들을 free variable들로 표현
->   3. s
+>
+>      $x_3=c,~x_4=d~\to~x_2=-2c-12d,~x_1=-8c+4d$
+>   4. s
 > 최종
