@@ -57,7 +57,7 @@ $$
 >    \begin{bmatrix}1&1&-1\\0&1&0\\0&0&1\\0&0&0\end{bmatrix}
 >    $$
 >
-> 3. d
+> 3. Linearly Independent 판단단
 >
 >    - 모든 column이 pivot column이므로, 세 벡터는 linearly independent하다.
 >    - Homogeneous Equation의 해가 trivial solution이므로, 세 벡터는 linearly independent하다.
@@ -66,3 +66,5 @@ $$
 >      \lambda_1\begin{bmatrix}1\\0\\0\\0\end{bmatrix}+\lambda_2\begin{bmatrix}1\\1\\0\\0\end{bmatrix}
 >      +\lambda_3\begin{bmatrix}-1\\0\\1\\0\end{bmatrix}=\begin{bmatrix}0\\0\\0\\0\end{bmatrix}
 >      $$
+>      
+>      위 방정식을 만족시키는 해는 trivial solution밖에 없다. → $\boldsymbol\lambda=\begin{bmatrix}0&0&0\end{bmatrix}^\top$
