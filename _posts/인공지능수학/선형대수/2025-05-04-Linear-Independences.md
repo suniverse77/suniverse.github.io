@@ -51,43 +51,10 @@ $$
 >    $$
 >    \begin{bmatrix}1&1&-1\\2&1&-2\\-3&0&1\\4&2&1\end{bmatrix}
 >    $$
-> 3. Gauss Elimination 수행
-        $\begin{bmatrix}1&1&-1\\2&1&-2\\-3&0&1\\4&2&1    \end{bmatrix}
-    \begin{bmatrix}\lambda_1\\\lambda_2\\\lambda_3    \end{bmatrix}
-    =\begin{bmatrix}0\\0\\0\\0\end{bmatrix}$
-    2. 
-    $\lambda_1\bold{x}_1+\lambda_2\bold{x}_2+\lambda_3\bold{x}_3=\bold{0}$ → $X\bold\lambda=\bold0$
-    
-    $\begin{bmatrix}
-    1&1&-1\\
-    2&1&-2\\
-    -3&0&1\\
-    4&2&1
-    \end{bmatrix}
-    \begin{bmatrix}
-    \lambda_1\\\lambda_2\\\lambda_3
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-    0\\0\\0\\0
-    \end{bmatrix}$
-    
-2. Homogeneous Equation이므로 Gauss Elmination을 수행해도 우항은 변하지 않음
-    
-    따라서 1번을 건너뛰고 바로 아래와 같이 표현해도 됨
-    
-    $\begin{bmatrix}
-    1&1&-1\\
-    2&1&-2\\
-    -3&0&1\\
-    4&2&1
-    \end{bmatrix}$
-    
-3. Gauss Elmination 수행
-    
-    $\begin{bmatrix}
-    1&1&-1\\
-    0&1&0\\
-    0&0&1\\
-    0&0&0
-    \end{bmatrix}$
+> 2. Gauss Elimination 수행
+>
+>    $$
+>    \begin{bmatrix}1&1&-1\\0&1&0\\0&0&1\\0&0&0\end{bmatrix}
+>    $$
+>
+> 3. d
