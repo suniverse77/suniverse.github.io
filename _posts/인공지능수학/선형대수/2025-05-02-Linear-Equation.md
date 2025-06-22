@@ -60,3 +60,15 @@ $Ax=0$에서 행렬 $A$가 invertible하다면, 해는 zero vector (trivial solu
 Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아닌 해를 non-trivial solution이라고 부른다.
 
 > ex) ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
+>
+> Solve Non-Homogeneous Equation
+>   1. Non-Homogeneous Equation을 Augmented Matrix로 변환
+>   2. 가우스 소거법을 사용해 REF로 변환
+>   3. Free variable들을 원ㅎ
+>   4. Pivot variable들을
+>   5. 
+> Solve Homogeneous Equation
+>   1. Homogeneous Equation을 Augmented Matrix로 변환
+>   2. non-pivot column에 관련된 variable들을 free variable들로 표현
+>   3. s
+> 최종
