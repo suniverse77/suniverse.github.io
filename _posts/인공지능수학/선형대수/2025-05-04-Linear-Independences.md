@@ -67,7 +67,7 @@ $$
 >      +\lambda_3\begin{bmatrix}-1\\0\\1\\0\end{bmatrix}=\begin{bmatrix}0\\0\\0\\0\end{bmatrix}
 >      $$
 >      
->      위 방정식을 만족시키는 해는 trivial solution밖에 없다. →
+>      위 방정식을 만족시키는 해는 trivial solution밖에 없다. → $\boldsymbol{\lambda}=$
 >      $$
->      \boldsymbol\lambda=\begin{bmatrix}0&0&0\end{bmatrix}^\top
+>      \begin{bmatrix}0&0&0\end{bmatrix}^\top
 >      $$
