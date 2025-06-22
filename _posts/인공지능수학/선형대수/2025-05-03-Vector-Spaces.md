@@ -51,14 +51,13 @@ $\mathbb{R}^3$ 공간에서 Vector Subspace는 원점을 포함하는 직선 또
 
 > ex1)
 > $$
-> \text{span}(
-> \begin{bmatrix}1\\0\end{bmatrix},
-> \begin{bmatrix}0\\1\end{bmatrix})=\mathbb{R}^2
+> \text{span}(\begin{bmatrix}1\\0\end{bmatrix},\begin{bmatrix}0\\1\end{bmatrix})=\mathbb{R}^2
 > $$
 >
-> ex2) $$\text{span}(\begin{bmatrix}2\\1\end{bmatrix},
-\begin{bmatrix}1\\3\end{bmatrix})=\begin{bmatrix}
-2a+b\\a+3b\end{bmatrix}$$
+> ex2)
+> $$
+> \text{span}(\begin{bmatrix}2\\1\end{bmatrix},\begin{bmatrix}1\\3\end{bmatrix})=\begin{bmatrix}2a+b\\a+3b\end{bmatrix}
+> $$
 
 ---
 
