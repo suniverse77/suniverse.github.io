@@ -41,7 +41,7 @@ toc_sticky: true
 > \begin{bmatrix}\begin{array}{cccc|c}1&1&1&6\\2&3&1&14\\1&-1&2&2\end{array}\end{bmatrix}
 > $$
 >
-> 1. $\rho_2=rho_2-2\rho1$
+> 1. $\rho_2=\rho_2-2\rho_1$ , $\rho_3=\rho_3+2\rho_1$
 >
 >    $$
 >    \begin{bmatrix}\begin{array}{cccc|c}1&1&1&6\\0&1&-1&2\\0&-2&1&-4\end{array}\end{bmatrix}
