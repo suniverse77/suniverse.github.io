@@ -1,59 +1,48 @@
-{% assign total_posts = site.posts | size %}
+{% assign nav_items = 
+   "논문리뷰:Diffusion;인공지능 수학:선형대수,확률,최적화,머신러닝 수학;" 
+   | split: ";" 
+%}
 
 <nav class="nav__list">
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">메뉴 열기</label>
-
   <ul class="nav__items" id="category_tag_menu">
+
     <!-- 전체 글 수 -->
-    <li>
-      📂 전체 글 수 {{ total_posts }}개
-    </li>
+    <li>📂 전체 글 수 {{ site.posts | size }}개</li>
 
-    <!-- 논문리뷰 -->
-    <li>
-      <span class="nav__sub-title">논문리뷰</span>
-      <ul>
-        {% assign diff_posts = site.tags['Diffusion'] %}
-        <li>
-          <a href="/categories/논문리뷰/Diffusion/" class="">
-            Diffusion ({{ diff_posts | size }})
-          </a>
-        </li>
-      </ul>
-    </li>
+    <!-- 동적으로 생성되는 카테고리 -->
+    {% for item in nav_items %}
+      {% assign parts     = item | split: ":" %}
+      {% assign cat_title = parts[0] %}
+      {% assign subcats   = parts[1] | split: "," %}
 
-    <!-- 인공지능 수학 -->
-    <li>
-      <span class="nav__sub-title">인공지능 수학</span>
-      <ul>
-        {% assign la_posts  = site.tags['선형대수'] %}
-        {% assign pr_posts  = site.tags['확률'] %}
-        {% assign opt_posts = site.tags['최적화'] %}
-        {% assign ml_posts  = site.tags['머신러닝 수학'] %}
+      {%- comment -%} 하위 태그 총합 계산 {%- endcomment -%}
+      {% assign total = 0 %}
+      {% for sub in subcats %}
+        {% assign total = total | plus: site.tags[sub].size %}
+      {% endfor %}
 
-        <li>
-          <a href="/categories/인공지능-수학/선형대수/" class="">
-            선형대수 ({{ la_posts  | size }})
-          </a>
-        </li>
-        <li>
-          <a href="/categories/인공지능-수학/확률/" class="">
-            확률 ({{ pr_posts  | size }})
-          </a>
-        </li>
-        <li>
-          <a href="/categories/인공지능-수학/최적화/" class="">
-            최적화 ({{ opt_posts | size }})
-          </a>
-        </li>
-        <li>
-          <a href="/categories/인공지능-수학/머신러닝-수학/" class="">
-            머신러닝 수학 ({{ ml_posts  | size }})
-          </a>
-        </li>
-      </ul>
-    </li>
+      <li>
+        <!-- 상위 카테고리 링크 & 개수 -->
+        <a href="/categories/{{ cat_title | slugify }}/">
+          <span class="nav__sub-title">
+            {{ cat_title }} ({{ total }})
+          </span>
+        </a>
+        <!-- 하위 카테고리 -->
+        <ul>
+          {% for sub in subcats %}
+            {% assign cnt = site.tags[sub].size %}
+            <li>
+              <a href="/categories/{{ cat_title | slugify }}/{{ sub | slugify }}/">
+                {{ sub }} ({{ cnt }})
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
 
   </ul>
 </nav>
