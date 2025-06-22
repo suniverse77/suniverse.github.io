@@ -17,7 +17,7 @@ toc_sticky: true
 1. $V=(\mathcal V,+)$은 Abelian group (group에 대한 설명은 맨 아래에)
 2. Distributivity가 성립
 
-	a. 벡터 분배법칙: $\forall\lambda\in\mathbb{R},~\bold x,\bold  y\in\mathcal{V}:\lambda \cdot(\bold x+\bold y)=\lambda \cdot\bold x+\lambda\cdot \bold y$
+	a. 벡터 분배법칙: $\forall\lambda\in\mathbb{R},~\bold x,\bold  y\in\mathcal{V}:\lambda \cdot(\bold x+\bold y)=\lambda \cdot\mathbf{x}+\lambda\cdot \bold y$
     b. 스칼라 분배법칙: $\forall\lambda,\psi\in\mathbb{R},~\bold x\in\mathcal{V}:(\lambda+\psi)\cdot\bold x=\lambda\cdot \bold x+\psi\cdot \bold y$
     
 3. Associativity가 성립
