@@ -14,13 +14,13 @@ toc_sticky: true
 
 ### 정의
 
-벡터 집합 내의 벡터들 $\set{\bold x_1,\dots,\bold x_n}$이 서로들의 선형 결합으로 표현될 수 없을 때, 그 벡터들은 선형 종속이라고 표현한다.
+벡터 집합 내의 벡터들 $\set{\mathbf{x_1},\dots,\mathbf{x_n}}$이 서로들의 선형 결합으로 표현될 수 없을 때, 그 벡터들은 선형 종속이라고 표현한다.
 
-$$\bold{0}=\lambda_1\bold x_1+\cdots+\lambda_n\bold x_n=\sum_{i=1}^n\lambda_i\bold{x}_i
+$$\mathbf{0}=\lambda_1\mathbf{x_1}+\cdots+\lambda_n\mathbf{x_n}=\sum_{i=1}^n\lambda_i\mathbf{x}_i
 $$
 
-- 위의 수식이 오직 trivial solution만 가지는 경우 $(\boldsymbol\lambda=\bold0)$ → $\bold{x}_i$ are linearly independent
-- 위의 수식이 non tirivial solution을 가지는 경우 → $\bold{x}_i$ are not linearly independent
+- 위의 수식이 오직 trivial solution만 가지는 경우 $(\boldsymbol\lambda=\bold0)$ → $\mathbf{x}_i$ are linearly independent
+- 위의 수식이 non tirivial solution을 가지는 경우 → $\mathbf{x}_i$ are not linearly independent
 
 ### Properties of Linear Independence
 
