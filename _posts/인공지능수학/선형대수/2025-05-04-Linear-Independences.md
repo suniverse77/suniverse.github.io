@@ -43,11 +43,11 @@ $$
 
 벡터들이 선형 독립인지 판단하는 방법에는 크게 2가지가 있다.
 
-1. 행렬을 REF로 변환했을 때, 모든 column이 pivot column이어야 함
+**1. 행렬을 REF로 변환했을 때, 모든 column이 pivot column이어야 한다.**
     
     pivot column끼리 linearly independent함
     
-2. Homogeneous Equation $\sum\lambda_i\bold x_i=\bold0$이 있을 때,
+**2. Homogeneous Equation $\sum\lambda_i\bold x_i=\bold0$이 있을 때, 해 $\bold\lambda$가 오직 trivial solution만 존재해야 한다.**
     
     해 $\bold\lambda$가 오직 trivial solution만 존재 ↔ 변수 $\lambda_i$에 free variable이 존재 X
     
