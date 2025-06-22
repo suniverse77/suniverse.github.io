@@ -47,9 +47,9 @@ $$
     
     pivot column끼리 linearly independent함
     
-**2. Homogeneous Equation $\sum\lambda_i\bold x_i=\bold0$이 있을 때, 해 $\bold\lambda$가 오직 trivial solution만 존재해야 한다.**
+**2. Homogeneous Equation $\sum\lambda_i\mathbf{x_i}=\mathbf{0}$이 있을 때, 해 $\boldsymbol\lambda$가 오직 trivial solution만 존재해야 한다.**
     
-    해 $\bold\lambda$가 오직 trivial solution만 존재 ↔ 변수 $\lambda_i$에 free variable이 존재 X
+    해 $\boldsymbol\lambda$가 오직 trivial solution만 존재 ↔ 변수 $\lambda_i$에 free variable이 존재 X
     
 > ex) $\bold{x}_1=\begin{bmatrix}1\\2\\-3\\4\end{bmatrix}$, $\bold{x}_2=\begin{bmatrix}1\\1\\0\\2\end{bmatrix}$,$\bold{x}_3=\begin{bmatrix}-1\\-2\\1\\1\end{bmatrix}\\$
 	1. Linear Equation을 행렬로 표현
