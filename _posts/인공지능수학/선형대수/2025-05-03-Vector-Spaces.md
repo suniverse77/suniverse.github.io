@@ -49,11 +49,16 @@ $\mathbb{R}^3$ 공간에서 Vector Subspace는 원점을 포함하는 직선 또
 
 벡터 집합 $S$에 있는 벡터들의 가능한 모든 linear combination으로 만들어지는 집합을 $\text{span}(S)$라고 한다.
 
-> ex1) $\text{span}(\begin{bmatrix}1\\0\end{bmatrix},
-\begin{bmatrix}0\\1\end{bmatrix})=\mathbb{R}^2\\$
-	ex2) $\text{span}(\begin{bmatrix}2\\1\end{bmatrix},
+> ex1)
+> $$
+> \text{span}(
+> \begin{bmatrix}1\\0\end{bmatrix},
+> \begin{bmatrix}0\\1\end{bmatrix})=\mathbb{R}^2
+> $$
+>
+> ex2) $$\text{span}(\begin{bmatrix}2\\1\end{bmatrix},
 \begin{bmatrix}1\\3\end{bmatrix})=\begin{bmatrix}
-2a+b\\a+3b\end{bmatrix}$
+2a+b\\a+3b\end{bmatrix}$$
 
 ---
 
