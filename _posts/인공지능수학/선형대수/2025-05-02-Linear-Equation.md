@@ -4,7 +4,7 @@ title: "[선형대수] Linear Equation"
 last_modified_at: 2025-05-02
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
-excerpt: "행렬 기초 & 곱셈"
+excerpt: "선형 방정식 & 가우스 소거법"
 use_math: true
 toc: true
 toc_sticky: true
