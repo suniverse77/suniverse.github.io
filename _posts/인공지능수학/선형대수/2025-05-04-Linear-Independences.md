@@ -39,7 +39,7 @@ $$
     0
     \end{bmatrix}$
 
-### 판단하는 방법
+### Linear Independence 판단하는 방법
 
 벡터들이 선형 독립인지 판단하는 방법에는 크게 2가지가 있다.
 
@@ -92,38 +92,3 @@ $$
     0&0&1\\
     0&0&0
     \end{bmatrix}$
-    
-## Linear Independence 판단 (column vector 기준)
-
-### 1. 모든 column이 pivot column임
-
-### 2. 변수 $\lambda_i$ 중에 free variable이 없음
-    - solution이 trivial solution임
-        
-        $\lambda_1
-        \begin{bmatrix}
-        1\\0\\0\\0
-        \end{bmatrix}
-        +
-        \lambda_2
-        \begin{bmatrix}
-        1\\1\\0\\0
-        \end{bmatrix}
-        +
-        \lambda_3
-        \begin{bmatrix}
-        -1\\0\\1\\0
-        \end{bmatrix}
-        =
-        \begin{bmatrix}
-        0\\0\\0\\0
-        \end{bmatrix}$
-        
-        variable : $\lambda_3=0~,~\lambda_2=0~,~\lambda_1=0$ → no free variable
-        
-        solution : $\bold{\lambda}=
-        \begin{bmatrix}
-        0\\0\\0
-        \end{bmatrix}$→ trivial solution
-        
-</aside>
