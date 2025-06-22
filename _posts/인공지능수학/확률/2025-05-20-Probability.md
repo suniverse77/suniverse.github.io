@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[확률] Probability & Random Variables"
-last_modified_at: 2025-05-01
+last_modified_at: 2025-05-20
 categories: ["인공지능 수학"]
 tags: ["확률"]
 excerpt: "행렬 기초 & 곱셈"
