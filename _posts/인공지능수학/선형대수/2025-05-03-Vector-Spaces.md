@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[선형 대수] Vector Spaces"
+title: "[선형대수] Vector Spaces"
 last_modified_at: 2025-05-03
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
