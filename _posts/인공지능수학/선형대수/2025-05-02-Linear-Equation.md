@@ -36,6 +36,8 @@ toc_sticky: true
 
 연립방정식을 Reduced REF로 변형하는 알고리즘
 
+> ex) 
+
 ### Reduced REF (Row Echelon Form)
 
 모든 pivot이 1이고, 해당 열에서 pivot이 0이 아닌 유일한 요소인 형태
@@ -77,7 +79,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      $x_1+8x_3-4x_4=42~\to~x_1=42$
 >   5. Particular solution을 구함
 >
->      ![Figure 5](/assets/images/인공지능수학/1-2. Figure5.png){: style="display:block; margin:0 auto; width: 20%; height: 20%;"}
+>      ![Figure 5](/assets/images/인공지능수학/1-2. Figure5.png){: style="display:block; margin:0 auto; width: 15%; height: 15%;"}
 > 
 > Solve Homogeneous Equation
 >   1. Homogeneous Equation을 Augmented Matrix로 변환
@@ -96,4 +98,4 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      
 > Find General solution
 > 
->   ![Figure 7](/assets/images/인공지능수학/1-2. Figure7.png){: style="display:block; margin:0 auto; width: 55%; height: 55%;"}
+>   ![Figure 7](/assets/images/인공지능수학/1-2. Figure7.png){: style="display:block; margin:0 auto; width: 60%; height: 60%;"}
