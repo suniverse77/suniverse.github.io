@@ -10,8 +10,6 @@ toc: true
 toc_sticky: true
 ---
 
-## Linear Independence
-
 ### 정의
 
 벡터 집합 내의 벡터들 $\set{\mathbf{x_1},\dots,\mathbf{x_n}}$이 서로들의 선형 결합으로 표현될 수 없을 때, 그 벡터들은 선형 종속이라고 표현한다.
@@ -93,9 +91,11 @@ $$
     0&0&0
     \end{bmatrix}$
     
-4. Linear Independence 판단 (column vector 기준)
-    - 모든 column이 pivot column임
-    - 변수 $\lambda_i$ 중에 free variable이 없음
+## Linear Independence 판단 (column vector 기준)
+
+### 1. 모든 column이 pivot column임
+
+### 2. 변수 $\lambda_i$ 중에 free variable이 없음
     - solution이 trivial solution임
         
         $\lambda_1
