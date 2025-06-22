@@ -77,9 +77,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      $x_1+8x_3-4x_4=42~\to~x_1=42$
 >   5. Particular solution을 구함
 >
->      $$
->      x_p=\begin{bmatrix}42\\8\\0\\0\end{bmatrix}
->      $$
+>      ![Figure 5](/assets/images/인공지능수학/1-2. Figure5.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 > 
 > Solve Homogeneous Equation
 >   1. Homogeneous Equation을 Augmented Matrix로 변환
@@ -92,12 +90,8 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      $x_2=-2x_3-12x_4,~x_1=-8x_3+4x_4$
 >   4. Homogeneous solution
 >
->      $$
->      x_h=x_3\begin{bmatrix}-8\\-2\\1\\0\end{bmatrix}+x_4\begin{bmatrix}4\\-12\\0\\1\end{bmatrix}
->      $$
+>      ![Figure 6](/assets/images/인공지능수학/1-2. Figure6.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 >      
 > Find General solution
 > 
->   $$
->   x=x_p+x_h=\begin{bmatrix}42\\8\\0\\0\end{bmatrix}+x_3\begin{bmatrix}-8\\-2\\1\\0\end{bmatrix}+x_4\begin{bmatrix}4\\-12\\0\\1\end{bmatrix}
->   $$
+>   ![Figure 7](/assets/images/인공지능수학/1-2. Figure7.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
