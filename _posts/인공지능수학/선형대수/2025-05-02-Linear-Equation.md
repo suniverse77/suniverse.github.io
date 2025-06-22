@@ -36,9 +36,21 @@ toc_sticky: true
 
 연립방정식을 Reduced REF로 변형하는 알고리즘
 
-> ex) $$
->     \begin{bmatrix}\begin{array}{cccc|c}1&0&8&-4&0\\0&1&2&12&0\end{array}\end{bmatrix}
->     $$
+> ex)
+> $$
+> \begin{bmatrix}\begin{array}{cccc|c}1&1&1&6\\2&3&1&14\\1&-1&2&2\end{array}\end{bmatrix}
+> $$
+>
+> 1. $\rho_2=rho_2-2\rho1$
+>
+>    $$
+>    \begin{bmatrix}\begin{array}{cccc|c}1&1&1&6\\0&1&-1&2\\0&-2&1&-4\end{array}\end{bmatrix}
+>    $$
+> 2. ㄴ
+>
+>    $$
+>    \begin{bmatrix}\begin{array}{cccc|c}1&1&1&6\\0&1&-1&2\\0&0&-1&0\end{array}\end{bmatrix}
+>    $$  
 
 ### Reduced REF (Row Echelon Form)
 
