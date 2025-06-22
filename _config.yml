@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "default" # "default, air", "aqua", "contrast", "dark
 # Site Settings
 locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "나만의 공부 일지"
+title                    : "AI 공부 일지"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "suniverse77"
