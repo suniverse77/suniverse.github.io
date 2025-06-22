@@ -86,7 +86,9 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      $x_2=-2x_3-12x_4,~x_1=-8x_3+4x_4$
 >   3. Homogeneous solution
 >
->      $x_h=x_3\begin{bmatrix}-8\\-2\\1\\0\end{bmatrix}[42\\8~0~0]^\top+x_4$
+>      $$
+>      x_h=x_3\begin{bmatrix}-8\\-2\\1\\0\end{bmatrix}[42\\8~0~0]^\top+x_4
+>      $$
 >      
 > Find General solution
 > 
