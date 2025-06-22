@@ -64,7 +64,9 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 > Solve Non-Homogeneous Equation
 >   1. Non-Homogeneous Equation을 Augmented Matrix로 변환
 >      
->      ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
+>      $$
+>      \begin{bmatrix}\begin{array}{cccc|c}1&0&8&-4&42\\0&1&2&12&8\end{array}\end{bmatrix}
+>      $$
 >   2. 가우스 소거법을 사용해 REF로 변환
 >   3. Free variable들을 원하는 값으로 설정
 >      
@@ -91,7 +93,6 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >   4. Homogeneous solution
 >
 >      $$
->      \small
 >      x_h=x_3\begin{bmatrix}-8\\-2\\1\\0\end{bmatrix}+x_4\begin{bmatrix}4\\-12\\0\\1\end{bmatrix}
 >      $$
 >      
