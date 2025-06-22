@@ -52,5 +52,16 @@ toc_sticky: true
 - Homogeneous solution은 Particular Solution에 더해도 변하지 않는다.
 
 
+---
 
+## Solve Linear Equation
 
+연립방정식의 General solution은 Particular solution과 Homogeneous solution의 합으로 표현될 수 있다.
+
+- Homogeneous solution은 Particular Solution에 더해도 변하지 않는다.
+- $Ax=A(x_p+x_h)=Ax_p+Ax_h=b+0=b$
+    
+$Ax=0$에서 행렬 $A$가 invertible하다면, 해는 zero vector (trivial solution)밖에 없다.
+- $Ax=0$ → $A^{-1}Ax=A^{-1}0$ → $x=0$
+    
+Linear System에서 $\bold0$인 해를 trivial solution, $\bold0$이 아닌 해를 non-trivial solution이라고 부른다.
