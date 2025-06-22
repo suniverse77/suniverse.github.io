@@ -40,7 +40,7 @@ toc_sticky: true
 
 모든 pivot이 1이고, 해당 열에서 pivot이 0이 아닌 유일한 요소인 형태
 
-![Figure 3](/assets/images/인공지능수학/1-2. Figure3.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
+![Figure 3](/assets/images/인공지능수학/1-2. Figure3.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
 
 - REF에서 각 행의 leading entry에 해당하는 성분을 pivot이라고 부른다.
 - REF에서 pivot에 대응되는 변수들을 pivot 또는 basic variable이라고 하고, 그 외의 변수들을 free variable이라고 부른다.
@@ -58,3 +58,5 @@ $Ax=0$에서 행렬 $A$가 invertible하다면, 해는 zero vector (trivial solu
 - $Ax=0$ → $A^{-1}Ax=A^{-1}0$ → $x=0$
     
 Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아닌 해를 non-trivial solution이라고 부른다.
+
+> ex) ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
