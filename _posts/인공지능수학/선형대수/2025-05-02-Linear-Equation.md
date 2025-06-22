@@ -14,7 +14,7 @@ toc_sticky: true
 
 여러 개의 연립 방정식을 하나의 행렬로 나타낸 것을 Augmented Matrix라고 부른다.
 
-![Figure 1](/assets/images/인공지능수학/1.2. Equation.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+![Figure 1](/assets/images/인공지능수학/1-2. Equation.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 
 ### 1. Unique solution
 
