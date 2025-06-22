@@ -1,6 +1,8 @@
 {% assign nav_items = 
-   "논문리뷰:Diffusion;인공지능 수학:선형대수,확률,최적화,머신러닝 수학;" 
-   | split: ";" 
+  "
+  논문리뷰:Diffusion;
+  인공지능 수학:선형대수,확률,최적화,머신러닝 수학;
+  " | split: ";" 
 %}
 
 <nav class="nav__list">
