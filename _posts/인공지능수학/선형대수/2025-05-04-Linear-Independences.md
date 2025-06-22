@@ -71,5 +71,5 @@ $$
 >
 >      $\boldsymbol{\lambda}=$
 >      $$
->      \boldsymbol{\lambda}=\begin{bmatrix}0&0&0\end{bmatrix}^\top
+>      \mathbf{\lambda}\bold\lambda=\begin{bmatrix}0&0&0\end{bmatrix}^\top
 >      $$
