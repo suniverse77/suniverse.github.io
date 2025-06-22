@@ -63,11 +63,12 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >
 > Solve Non-Homogeneous Equation
 >   1. Non-Homogeneous Equation을 Augmented Matrix로 변환
+>      
 >      ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
->   2. 가우스 소거법을 사용해 REF로 변환
->   3. Free variable들을 원하는 값으로 설정
+>   3. 가우스 소거법을 사용해 REF로 변환
+>   4. Free variable들을 원하는 값으로 설정
 >      $x_3=0,~x_4=0$
->   4. Pivot variable들을
+>   5. Pivot variable들을
 >      $x_2+$
 >      $x_1+$
 >   6. particular solution
