@@ -36,7 +36,9 @@ toc_sticky: true
 
 연립방정식을 Reduced REF로 변형하는 알고리즘
 
-> ex) 
+> ex) $$
+>     \begin{bmatrix}\begin{array}{cccc|c}1&0&8&-4&0\\0&1&2&12&0\end{array}\end{bmatrix}
+>     $$
 
 ### Reduced REF (Row Echelon Form)
 
@@ -79,7 +81,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      $x_1+8x_3-4x_4=42~\to~x_1=42$
 >   5. Particular solution을 구함
 >
->      ![Figure 5](/assets/images/인공지능수학/1-2. Figure5.png){: style="display:block; margin:0 auto; width: 15%; height: 15%;"}
+>      ![Figure 5](/assets/images/인공지능수학/1-2. Figure5.png){: style="display:block; margin:0 auto; width: 18%; height: 18%;"}
 > 
 > Solve Homogeneous Equation
 >   1. Homogeneous Equation을 Augmented Matrix로 변환
