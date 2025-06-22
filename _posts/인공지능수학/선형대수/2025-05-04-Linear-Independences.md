@@ -19,12 +19,12 @@ toc_sticky: true
 $$\mathbf{0}=\lambda_1\mathbf{x_1}+\cdots+\lambda_n\mathbf{x_n}=\sum_{i=1}^n\lambda_i\mathbf{x}_i
 $$
 
-- 위의 수식이 오직 trivial solution만 가지는 경우 $(\boldsymbol\lambda=\bold0)$ → $\mathbf{x}_i$ are linearly independent
+- 위의 수식이 오직 trivial solution만 가지는 경우 $(\boldsymbol\lambda=\mathbf{0})$ → $\mathbf{x}_i$ are linearly independent
 - 위의 수식이 non tirivial solution을 가지는 경우 → $\mathbf{x}_i$ are not linearly independent
 
 ### Properties of Linear Independence
 
-1. 벡터 $\bold x_1,\cdots,\bold x_k$ 중 적어도 하나가 $\bold0$이라면, linearly dependent함
+1. 벡터 $\mathbf{x_1},\cdots,\mathbf{x_k}$ 중 적어도 하나가 $\mathbf{0}$이라면, linearly dependent함
 2. 행렬에서 non-pivot column은 왼쪽에 존재하는 column들의 선형 결합으로 표현될 수 있음
     
     ex) $\begin{bmatrix}
