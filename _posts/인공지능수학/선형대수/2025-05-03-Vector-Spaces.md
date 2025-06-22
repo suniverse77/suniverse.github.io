@@ -17,12 +17,12 @@ toc_sticky: true
 1. $V=(\mathcal V,+)$은 Abelian group (group에 대한 설명은 맨 아래에)
 2. Distributivity가 성립
 
-	a. 벡터 분배법칙: $\forall\lambda\in\mathbb{R},~\bold x,\bold  y\in\mathcal{V}:\lambda \cdot(\bold x+\bold y)=\lambda \cdot\mathbf{x}+\lambda\cdot \bold y$
-    b. 스칼라 분배법칙: $\forall\lambda,\psi\in\mathbb{R},~\bold x\in\mathcal{V}:(\lambda+\psi)\cdot\bold x=\lambda\cdot \bold x+\psi\cdot \bold y$
+	a. 벡터 분배법칙: $\forall\lambda\in\mathbb{R},~\mathbf{x},\mathbf{y}\in\mathcal{V}:\lambda \cdot(\mathbf{x}+\mathbf{y})=\lambda \cdot\mathbf{x}+\lambda\cdot \mathbf{y}$
+    b. 스칼라 분배법칙: $\forall\lambda,\psi\in\mathbb{R},~\mathbf{x}\in\mathcal{V}:(\lambda+\psi)\cdot\mathbf{x}=\lambda\cdot \mathbf{x}+\psi\cdot \mathbf{y}$
     
 3. Associativity가 성립
 
-	$\forall\lambda,\psi\in\mathbb{R},~\bold x\in\mathcal{V}:\lambda\cdot(\psi\cdot\bold x)=(\lambda\psi)\cdot \bold x$
+	$\forall\lambda,\psi\in\mathbb{R},~\bold x\in\mathcal{V}:\lambda\cdot(\psi\cdot\mathbf{x})=(\lambda\psi)\cdot\mathbf{x}$
    
 
 즉, Vector Space란 여러 개의 벡터들이 모여 형성하는 공간이며, 같은 공간 내의 벡터들끼리는 선형 연산이 가능해야한다.
