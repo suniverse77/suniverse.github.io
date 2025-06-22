@@ -63,10 +63,11 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >
 > Solve Non-Homogeneous Equation
 >   1. Non-Homogeneous Equation을 Augmented Matrix로 변환
->   2. 가우스 소거법을 사용해 REF로 변환
->   3. Free variable들을 원ㅎ
->   4. Pivot variable들을
->   5. 
+>      
+>   3. 가우스 소거법을 사용해 REF로 변환
+>   4. Free variable들을 원ㅎ
+>   5. Pivot variable들을
+>   6. ㅏㅏ
 > Solve Homogeneous Equation
 >   1. Homogeneous Equation을 Augmented Matrix로 변환
 >   2. non-pivot column에 관련된 variable들을 free variable들로 표현
