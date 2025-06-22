@@ -45,13 +45,6 @@ toc_sticky: true
 - REF에서 각 행의 leading entry에 해당하는 성분을 pivot이라고 부른다.
 - REF에서 pivot에 대응되는 변수들을 pivot 또는 basic variable이라고 하고, 그 외의 변수들을 free variable이라고 부른다.
 
-## Solve General Solution
-
-연립방정식의 General solution은 Particular solution과 Homogeneous solution의 합으로 표현될 수 있다.
-
-- Homogeneous solution은 Particular Solution에 더해도 변하지 않는다.
-
-
 ---
 
 ## Solve Linear Equation
@@ -64,4 +57,4 @@ toc_sticky: true
 $Ax=0$에서 행렬 $A$가 invertible하다면, 해는 zero vector (trivial solution)밖에 없다.
 - $Ax=0$ → $A^{-1}Ax=A^{-1}0$ → $x=0$
     
-Linear System에서 $\bold 0$인 해를 trivial solution, $\bold 0$이 아닌 해를 non-trivial solution이라고 부른다.
+Linear System에서 $\bold {0}$인 해를 trivial solution, $\mathbf{0}$이 아닌 해를 non-trivial solution이라고 부른다.
