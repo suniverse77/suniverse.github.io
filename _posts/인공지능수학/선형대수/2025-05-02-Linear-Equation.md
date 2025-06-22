@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[선형 대수] Linear Equation"
+title: "[선형대수] Linear Equation"
 last_modified_at: 2025-05-02
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
@@ -87,11 +87,13 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >   3. Homogeneous solution
 >
 >      $$
+>      \small
 >      x_h=x_3\begin{bmatrix}-8\\-2\\1\\0\end{bmatrix}+x_4\begin{bmatrix}4\\-12\\0\\1\end{bmatrix}
 >      $$
 >      
 > Find General solution
 > 
 >   $$
->   x=x_p+x_h=\begin{bmatrix}42\\8\\0\\0\end{bmatrix}x_3\begin{bmatrix}-8\\-2\\1\\0\end{bmatrix}+x_4\begin{bmatrix}4\\-12\\0\\1\end{bmatrix}
+>   \small
+>   x=x_p+x_h=\begin{bmatrix}42\\8\\0\\0\end{bmatrix}+x_3\begin{bmatrix}-8\\-2\\1\\0\end{bmatrix}+x_4\begin{bmatrix}4\\-12\\0\\1\end{bmatrix}
 >   $$
