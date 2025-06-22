@@ -17,11 +17,11 @@ minimal_mistakes_skin    : "default" # "default, air", "aqua", "contrast", "dark
 # Site Settings
 locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : ""
+title                    : "나만의 공부 일지"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "suniverse77"
-description              : "An amazing website."
+description              : "Study"
 url                      : "https://suniverse77.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "suniverse/suniverse77.github.io"
@@ -113,9 +113,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Suno"
+  name             : "Suno Lee"
   avatar           : 
-  bio              : "공부 일"
+  bio              : "나만의 공부 일지"
   location         : "South Korea"
   email            : 
   links:
