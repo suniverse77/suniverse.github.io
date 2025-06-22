@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[선형 대수] Linear Equation"
-last_modified_at: 2025-06-19
+last_modified_at: 2025-05-02
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
 excerpt: "행렬 기초 & 곱셈"
