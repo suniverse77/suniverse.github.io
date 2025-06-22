@@ -51,7 +51,7 @@ $$
     
 즉, 변수 $\lambda_i$에 free variable이 존재하면 안된다.
     
-> ex) $\bold{x}_1=\begin{bmatrix}1\\2\\-3\\4\end{bmatrix}$, $\bold{x}_2=\begin{bmatrix}1\\1\\0\\2\end{bmatrix}$,$\bold{x}_3=\begin{bmatrix}-1\\-2\\1\\1\end{bmatrix}\\$
+> ex) ![Figure 1](/assets/images/인공지능수학/1-4. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 	1. Linear Equation을 행렬로 표현
         $\begin{bmatrix}1&1&-1\\2&1&-2\\-3&0&1\\4&2&1    \end{bmatrix}
     \begin{bmatrix}\lambda_1\\\lambda_2\\\lambda_3    \end{bmatrix}
