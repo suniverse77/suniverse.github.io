@@ -62,25 +62,14 @@ $U\subseteq V$ 라면 $\text{dim}(U)\leq \text{dim}(V)$ , $U=V$라면 $\text{dim
 
 행렬 $A$에서 선형 독립인 row 또는 column의 개수를 rank라고 부르며, 해당 벡터들이 만드는 공간의 최대 차원을 나타낸다.
 
-<aside>
-📝
-
-$A=\begin{bmatrix}
-1&2\\3&4\\5&6
-\end{bmatrix}$
-
-- 각 column vector는 3차원 벡터임
-- 두 column vector는 linearly independent함 → $\text{rank}(A)=2$
-    
-    따라서 두 column vector가 span하는 공간 $V$의 차원은 2차원임
-    
-    $\text{span}(\begin{bmatrix}
-    1\\3\\5
-    \end{bmatrix},\begin{bmatrix}
-    2\\4\\6
-    \end{bmatrix})=V$ → $\text{dim}(V)=2$
-    
-</aside>
+> ex)
+> $$
+> A=\begin{bmatrix}1&2\\3&4\\5&6\end{bmatrix}
+> $$
+>
+> Gauss Elimination을 하면
+> $\text{rank}(A)=2$
+> 3개의 column vector들이 span하는 공간 $V$의 차원은 2차원 평면임
 
 **Properties of Rank**
 
