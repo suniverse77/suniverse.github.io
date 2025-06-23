@@ -76,7 +76,7 @@ $U\subseteq V$ 라면 $\text{dim}(U)\leq \text{dim}(V)$ , $U=V$라면 $\text{dim
 1. $\text{rank}(A)=\text{rank}(A^T)$
 2. $A\in\mathbb{R}^{m\times n}$에 대해 $\text{rank}(A)=\min(m,n)$의 경우, full rank라고 함
 3. Square matrix $A\in\mathbb{R}^{n\times n}$에 대해 $\text{rank}(A)=n$일 경우에만, regular(invertible)함
-4. $\text{rank}(A)=\text{rank}(A\mid \bold b)$인 경우에만, $A\bold x=\bold b$를 풀 수 있음
+4. $\text{rank}(A)=\text{rank}(A\mid \mathbf{b})$인 경우에만, $A\mathbf{x}=\mathbf{b}$를 풀 수 있음
 
 ---
 
