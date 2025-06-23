@@ -12,17 +12,15 @@ toc_sticky: true
 
 ## Basis
 
-- 벡터 공간 $V$를 span하는 가장 작은 집합 $B$를 $V$의 basis라고 부름
-- 특정 공간에서 좌표축 역할을 해주는 벡터들의 집합
-- basis는 다음과 같이 표현 가능
+벡터 공간 $V$를 span하는 가장 작은 집합 $B$를 $V$의 basis라고 부름
+특정 공간에서 좌표축 역할을 해주는 벡터들의 집합
+ basis는 다음과 같이 표현 가능
+- $B$ is a minimal generating set of $V$ → 더이상 뺄 수 있는 벡터가 없음
+- $B$ is a maximally linearly independent set of $V$ → 벡터를 하나라도 추가하면 선형 독립이 깨짐
     
-    $B$ is a minimal generating set of $V$ → 더이상 뺄 수 있는 벡터가 없음
-    
-    $B$ is a maximally linearly independent set of $V$ → 벡터를 하나라도 추가하면 선형 독립이 깨짐
-    
-- basis는 다음의 조건이 있음
-    - Basis에 속하는 Vector들은 Linearly Independent해야 함
-    - Basis에 속하는 Vector들을 span 했을 때, 공간 전체를 다 표현할 수 있어야 함
+basis는 다음의 조건이 있음
+- Basis에 속하는 Vector들은 Linearly Independent해야 함
+- Basis에 속하는 Vector들을 span 했을 때, 공간 전체를 다 표현할 수 있어야 함
         
         $\text{span}
         (
@@ -39,15 +37,21 @@ toc_sticky: true
 
 ## Dimension
 
-- 벡터 공간 $V$의 basis vector의 개수를 $V$의 dimension이라고 부름
-- **벡터의 차원과 벡터 공간의 차원은 다름**
-- $U\subseteq V$ 라면 $\text{dim}(U)\leq \text{dim}(V)$ , $U=V$라면 $\text{dim}(U)=\text{dim}(V)$
+벡터 공간 $V$의 basis vector의 개수를 $V$의 dimension이라고 부른다.
+**벡터의 차원과 벡터 공간의 차원은 다름**
+
+ex) 
+$$
+\mathbf{v}=\begin{bmatrix}2\\4\\6\end{bmatrix}~\to~\text{dim}(\mathbf{v})=3
+$$
+
+$U\subseteq V$ 라면 $\text{dim}(U)\leq \text{dim}(V)$ , $U=V$라면 $\text{dim}(U)=\text{dim}(V)$
 
 ---
 
 ## Rank
 
-- 행렬 $A$에서 선형 독립인 row 또는 column의 개수
+행렬 $A$에서 선형 독립인 row 또는 column의 개수
 - 벡터들이 만드는 **공간**의 최대 차원을 나타냄
 
 <aside>
