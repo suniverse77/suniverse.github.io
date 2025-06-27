@@ -16,23 +16,23 @@ toc_sticky: true
 
 
 basis는 다음과 같이 표현 가능하다.
-- $B$ is a minimal generating set of $V$ → 더이상 뺄 수 있는 벡터가 없음
-- $B$ is a maximally linearly independent set of $V$ → 벡터를 하나라도 추가하면 선형 독립이 깨짐
+- $B$ is a minimal generating set of $V$ (더이상 뺄 수 있는 벡터가 없음)
+- $B$ is a maximally linearly independent set of $V$ (벡터를 하나라도 추가하면 선형 독립이 깨짐)
     
 basis는 아래의 조건을 만족해야 한다.
-- Basis에 속하는 Vector들은 Linearly Independent해야 함
-- Basis에 속하는 Vector들을 span 했을 때, 공간 전체를 다 표현할 수 있어야 함
+- Basis에 속하는 벡터들은 linearly independent해야 한다.
+- Basis에 속하는 벡터들을 span 했을 때, 공간 전체를 다 표현할 수 있어야 한다.
         
-        $\text{span}
-        (
-        \begin{bmatrix}
-        1\\0
-        \end{bmatrix},
-        \begin{bmatrix}
-        0\\1
-        \end{bmatrix}
-        )
-        =\mathbb{R}^2$
+$\text{span}
+(
+\begin{bmatrix}
+1\\0
+\end{bmatrix},
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+)
+=\mathbb{R}^2$
 
 ---
 
@@ -42,21 +42,18 @@ basis는 아래의 조건을 만족해야 한다.
 
 **벡터의 차원과 벡터 공간의 차원은 다름**
 
-ex1) 3차원 벡터
+> ex1) 3차원 벡터
+> $$
+> \mathbf{v}=\begin{bmatrix}2\\4\\6\end{bmatrix}~\to~\text{dim}(\mathbf{v})=3
+> $$
+>
+> ex2) 3차원 벡터들이 만드는 2차원 공간
+> $$
+> V=\text{span}(\begin{bmatrix}1\\3\\5\end{bmatrix}~,~\begin{bmatrix}2\\4\\6\end{bmatrix})~\to~\text{dim}(V)=2
+> $$
 
-$$
-\mathbf{v}=\begin{bmatrix}2\\4\\6\end{bmatrix}~\to~\text{dim}(\mathbf{v})=3
-$$
-
-ex2) 3차원 벡터들이 만드는 2차원 공간
-
-$$
-V=\text{span}(\begin{bmatrix}1\\3\\5\end{bmatrix}~,~\begin{bmatrix}2\\4\\6\end{bmatrix})~\to~\text{dim}(V)=2
-$$
-
-$U\subseteq V$ 라면 $\text{dim}(U)\leq \text{dim}(V)$ , $U=V$라면 $\text{dim}(U)=\text{dim}(V)$
-
----
+Subspace의 차원은 원래 vector space의 차원보다 작거나 같아야 한다.
+$U\subseteq V$ 라면 $\text{dim}(U)\leq \text{dim}(V)$
 
 ## Rank
 
