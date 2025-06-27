@@ -27,8 +27,6 @@ toc_sticky: true
 
 즉, Vector Space란 여러 개의 벡터들이 모여 형성하는 공간이며, 같은 공간 내의 벡터들끼리는 선형 연산이 가능해야한다.
 
----
-
 ## Vector Subspace
 
 벡터공간 $V$의 부분집합 $U$가 아래의 조건을 만족하면, $U$를 $V$의 subspace라고 한다.
@@ -42,8 +40,6 @@ toc_sticky: true
 $\mathbb{R}^2$ 공간에서 Vector Subspace는 원점을 포함하는 직선임
     
 $\mathbb{R}^3$ 공간에서 Vector Subspace는 원점을 포함하는 직선 또는 평면임
-
----
 
 ## Span
 
@@ -59,8 +55,6 @@ $\mathbb{R}^3$ 공간에서 Vector Subspace는 원점을 포함하는 직선 또
 > \text{span}(\begin{bmatrix}2\\1\end{bmatrix},\begin{bmatrix}1\\3\end{bmatrix})=\begin{bmatrix}2a+b\\a+3b\end{bmatrix}
 > $$
 
----
-
 ## Null Space
 
 Homogeneous Equation의 solution을 모두 모아놓은 집합을 Null Space라고 부른다.
@@ -69,8 +63,6 @@ $N(A)=\{\mathbf{x}\mid A\mathbf{x}=\mathbf{0}\}$
     
 - 어떠한 Null Space든지 $\mathbf{0}$을 포함한다.
 - Null space의 차원을 nullity라고 하며, free variable의 개수와 동일하다.
-
----
 
 ## Group
 
