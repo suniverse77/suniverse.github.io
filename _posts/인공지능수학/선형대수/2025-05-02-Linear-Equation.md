@@ -30,8 +30,6 @@ toc_sticky: true
 - Underdeterminant System(미지수가 더 많은 상황)에서 발생한다.
 - 연립방정식이 free varaible을 포함할 때 발생한다.
 
----
-
 ## Gauss Elimination
 
 연립방정식을 Reduced REF로 변형하는 알고리즘
@@ -61,8 +59,6 @@ toc_sticky: true
 
 - REF에서 각 행의 leading entry에 해당하는 성분을 pivot이라고 부른다.
 - REF에서 pivot에 대응되는 변수들을 pivot 또는 basic variable이라고 하고, 그 외의 변수들을 free variable이라고 부른다.
-
----
 
 ## Solve Linear Equation
 
