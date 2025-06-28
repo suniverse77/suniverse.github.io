@@ -48,7 +48,8 @@ Basis $B={\mathbf{b}_1,\dots,\mathbf{b}_n}$를 orthonormal basis로 변환하는
 
 ![Figure 4](/assets/images/인공지능수학/2-3. Figure4.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 
-> ex)
+> ex) ![Figure 5](/assets/images/인공지능수학/2-3. Figure5.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 >
+> ---
 > 1. 
 > 2. $\mathbf{b}_1$에서 $\mathbf{u}_1$ 성분을 제거
