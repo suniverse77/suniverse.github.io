@@ -73,4 +73,4 @@ $$
 
 ## Rank-Nullity Theorem
 
-
+선형 사상 $\Phi : V → W$ 에 대해, **$\text{dim}(V)=\text{rank}(A)+\text{nullity}(A)$**가 성립한다.
