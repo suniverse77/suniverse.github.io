@@ -22,9 +22,9 @@ $$
 
 > 유도
 >
-> $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0$
->
 > $\langle\mathbf{x}-\lambda\mathbf{b}$는 직선 벡터 공간의 basis와 직교해야한다.
+> 
+> $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0$
 
 ## Projection onto General Subspaces
 
@@ -36,4 +36,6 @@ $$
 
 벡터 $\mathbf{x}$의 벡터 공간 $U$ 위로의 정사영은 위와 같이 정의된다.
 
-> 
+> 유도
+>
+> $$
