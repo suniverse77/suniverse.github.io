@@ -19,27 +19,28 @@ toc_sticky: true
 
 사상은 함수라고도 하며, $V$를 정의역, $W$를 치역이라고 생각하면 된다.
 
-### Special Mapping
+![Figure 1](/assets/images/인공지능수학/1-6. Figure1.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 
-![Figure 1](/assets/images/인공지능수학/1-6. Figure1.png){: style="display:block; margin:0 auto; width: 100%; height: 100%;"}
+### 1. Injective (단사)
 
-1. Injective (단사)
+- 정의역과 공역의 치역이 일대일로 mapping
+- 입력과 대응되지 않는 출력도 존재
+- 입력값이 다르면 출력값도 다름
+### 2. Surjective (전사)
 
-   - 정의역과 공역의 치역이 일대일로 mapping
-   - 입력과 대응되지 않는 출력도 존재
-   - 입력값이 다르면 출력값도 다름
-2. Surjective (전사)
+- 공역과 치역이 동일
+- 모든 출력이 적어도 하나의 입력과 대응됨
+### 3. Bijective (전단사)
 
-   
-5. Bijective (전단사)
-
-   
+- injective하면서 surjective함
+- 서로 완전히 일대일 대응됨
+- inverse mapping $\Phi^{-1}=\Psi:W\to V$가 존재함
 
 ## 
 
 ## Image & Kernel
 
-![Figure 2](/assets/images/인공지능수학/1-6. Figure2.png){: style="display:block; margin:0 auto; width: 80%; height: 80%;"}
+![Figure 2](/assets/images/인공지능수학/1-6. Figure2.png){: style="display:block; margin:0 auto; width: 70%; height: 70%;"}
 
 ### Image
 
