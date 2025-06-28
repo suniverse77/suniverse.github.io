@@ -35,15 +35,18 @@ Basis $B={\mathbf{b}_1,\dots,\mathbf{b}_n}$를 orthonormal basis로 변환하는
 
 ### 1. $[BB^\top\vert B]$에 대해 Gauss Elimination 수행
 
-> ex) ![Figure 1](/assets/images/인공지능수학/2-3. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+> ex) ![Figure 1](/assets/images/인공지능수학/2-3. Figure1.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
 >
-> ![Figure 2](/assets/images/인공지능수학/2-3. Figure2.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+> ---
+> ![Figure 2](/assets/images/인공지능수학/2-3. Figure2.png){: style="display:block; margin:0 auto; width: 80%; height: 80%;"}
 >
+> 가우스 소거법을 적용해서 아래와 같은 orthonormal basis를 얻을 수 있다.
+> 
 > ![Figure 3](/assets/images/인공지능수학/2-3. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 
 ### 2. Gram-Schmidt method 적용
 
-![Figure 4](/assets/images/인공지능수학/2-3. Figure4.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+![Figure 4](/assets/images/인공지능수학/2-3. Figure4.png){: style="display:block; margin:0 auto; width: 80%; height: 80%;"}
 
 > ex)
 >
