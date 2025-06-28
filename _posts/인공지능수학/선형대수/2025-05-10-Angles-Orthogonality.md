@@ -26,6 +26,9 @@ Inner product space에서 두 벡터의 각도는 위와 같이 정의된다.
 
 Square matrix $A$의 column vector들이 orthonormal하면, $A$를 **orthogonal matrix**라고 한다.
 
+- $A$, $B$가 orthogonal matrix라면, $AB$도 orthogonal matrix다.
+- $A$가 orthogonal matrix라면, $\text{det}(A)=\pm1$이다.
+
 ## Orthonormal Basis
 
 orthonormal basis로 변환하는 방법에는 크게 2가지가 있다.
