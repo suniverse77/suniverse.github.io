@@ -62,7 +62,7 @@ $$
 >
 > Gauss Elimination을 하면 $\text{rank}(A)=2$
 > 
-> 즉, 3개의 column vector들이 span하는 공간 $V$의 차원은 2차원 평면임
+> 즉, 3개의 column vector들이 span하는 공간 $V$의 차원은 2차원 평면이다.
 
 ### Properties of Rank
 
