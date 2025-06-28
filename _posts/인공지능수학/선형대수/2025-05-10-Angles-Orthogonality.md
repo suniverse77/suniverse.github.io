@@ -33,6 +33,6 @@ Square matrix $A$의 column vector들이 orthonormal하면, $A$를 **orthogonal 
 
 orthonormal basis로 변환하는 방법에는 크게 2가지가 있다.
 
-### 1. $[BB^\top|B]$에 대해 Gauss Elimination 수행
+### 1. $[BB^\top\vert B]$에 대해 Gauss Elimination 수행
 
 ### 2. Gram method 적용
