@@ -40,7 +40,7 @@ $$
 
 - injective하면서 surjective함
 - 서로 완전히 일대일 대응됨
-- inverse mapping $\Phi^{-1}=\Psi:W\to V$가 존재함
+- inverse mapping $\Phi^{-1}=\Psi:W\to V$가 존재
 
 ## 
 
