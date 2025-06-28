@@ -10,3 +10,22 @@ toc: true
 toc_sticky: true
 ---
 
+## Projection onto Lines
+
+![Figure 1](/assets/images/인공지능수학/2-4. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+
+$$
+\pi_U(\mathbf{x})=\frac{\mathbf{b}\mathbf{b}^\top}{\lVert\mathbf{b}\rVert}\mathbf{x}
+$$
+
+벡터 $\mathbf{x}$의 직선인 벡터 공간 $U$ 위로의 정사영은 위와 같이 정의된다.
+
+## Projection onto General Subspaces
+
+![Figure 2](/assets/images/인공지능수학/2-4. Figure2.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+
+$$
+\pi_U(\mathbf{x})=\frac{\mathbf{b}\mathbf{b}^\top}{\lVert\mathbf{b}\rVert}\mathbf{x}
+$$
+
+벡터 $\mathbf{x}$의 벡터 공간 $U$ 위로의 정사영은 위와 같이 정의된다.
