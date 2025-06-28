@@ -4,7 +4,7 @@ title: "[선형대수] Angles & Orthogonality"
 last_modified_at: 2025-05-06
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
-excerpt: "행렬 기초 & 곱셈"
+excerpt: "벡터와 행렬의 직교성"
 use_math: true
 toc: true
 toc_sticky: true
