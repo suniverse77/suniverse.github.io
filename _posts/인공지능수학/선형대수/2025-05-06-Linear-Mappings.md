@@ -54,13 +54,13 @@ $$
 
 ### Image
 
-![Figure 3](/assets/images/인공지능수학/1-6. Figure3.png){: style="display:block; margin:0 auto; width: 70%; height: 70%;"}
+![Figure 3](/assets/images/인공지능수학/1-6. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 
 선형 사상 $\Phi : V → W$ 에 대해, $\Phi$에 의해 $\bold0_W$로 보내지는 $V$의 벡터들의 집합을 kernel이라고 한다.
 
 ### Kernel
 
-![Figure 4](/assets/images/인공지능수학/1-6. Figure4.png){: style="display:block; margin:0 auto; width: 70%; height: 70%;"}
+![Figure 4](/assets/images/인공지능수학/1-6. Figure4.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 
 선형 사상 $\Phi : V → W$ 에 대해, $V$가 mapping되는 $W$의 벡터들의 집합을 image라고 한다.
 
