@@ -41,6 +41,8 @@ ex) 좌표 공간에서의 subspace는 원점을 포함해야 한다.
 >
 > ex2) $\mathbb{R}^3$ 공간에서 vector subspace는 원점을 포함하는 직선 또는 평면
 
+> ex) $\mathbb{R}^2$ vector space
+>
 > ![Figure 1](/assets/images/인공지능수학/1-3. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 >
 > 첫 번째 그림은 스칼라배에 대해 닫혀있지 않으므로, $\mathbb{R}^2$의 subspace가 아니다.
@@ -50,6 +52,9 @@ ex) 좌표 공간에서의 subspace는 원점을 포함해야 한다.
 > 세 번째 그림은 $\mathbb{R}^2$의 subspace가 아니다.
 >
 > 네 번째 그림은 subspace의 조건을 다 만족하므로, $\mathbb{R}^2$의 subspace이다.
+
+> ![Figure 2](/assets/images/인공지능수학/1-3. Figure2.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+> ![Figure 3](/assets/images/인공지능수학/1-3. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 
 ## Span
 
