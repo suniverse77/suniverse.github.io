@@ -16,12 +16,10 @@ toc_sticky: true
 
 ### Inner Product의 종류
 
-Inner Product는 여러 가지로 정의되
+Inner Product는 다양한 형태로 정의된다.
 
-- $\langle\mathbf{x},\mathbf y\rangle:=\mathbf x^\top \mathbf y$ → **Dot Product**
+- $\langle\mathbf{x},\mathbf y\rangle:=\mathbf x^\top \mathbf y$ → 이런 형태로 정의되는 내적을 **Dot Product**라고 부른다.
 - $\langle\mathbf x,\mathbf y\rangle:=x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2$
 - $\langle f,g\rangle:=\int_a^b f(x)g(x)\,dx$ → 함수의 내적
-    
-    $f$and $g$ are continuous function over $[a,b]$
 
 ## Outer Product
