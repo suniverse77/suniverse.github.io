@@ -26,6 +26,7 @@ toc_sticky: true
 $$
 \Phi (\mathbf{x})=\Phi (\mathbf{y})\implies\mathbf{x}=\mathbf{y}
 $$
+
 - 정의역과 공역의 치역이 일대일로 mapping
 - 입력과 대응되지 않는 출력도 존재
 - 입력값이 다르면 출력값도 다름
@@ -35,6 +36,7 @@ $$
 $$
 \Phi (V)=W
 $$
+
 - 공역과 치역이 동일
 - 모든 출력이 적어도 하나의 입력과 대응됨
   
