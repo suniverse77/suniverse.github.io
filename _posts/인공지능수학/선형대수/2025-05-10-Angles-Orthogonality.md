@@ -22,7 +22,7 @@ Inner product space에서 두 벡터의 각도는 위와 같이 정의된다.
 
 두 벡터 $\mathbf{x}$, $\mathbf{y}$의 내적이 0이라면, 두 벡터는 **orthogonal**하다고 한다.
 
-각 벡터의 크기가 1이라면, **orthonormal**하다고 한다.
+직교하고 있는 두 벡터의 크기가 1이라면, **orthonormal**하다고 한다.
 
 Square matrix $A$의 column vector들이 orthonormal하면, $A$를 **orthogonal matrix**라고 한다.
 
@@ -31,8 +31,21 @@ Square matrix $A$의 column vector들이 orthonormal하면, $A$를 **orthogonal 
 
 ## Orthonormal Basis
 
-orthonormal basis로 변환하는 방법에는 크게 2가지가 있다.
+Basis $B={\mathbf{b}_1,\dots,\mathbf{b}_n}$를 orthonormal basis로 변환하는 방법에는 크게 2가지가 있다.
 
 ### 1. $[BB^\top\vert B]$에 대해 Gauss Elimination 수행
 
-### 2. Gram method 적용
+> ex) ![Figure 1](/assets/images/인공지능수학/2-3. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+>
+> ![Figure 2](/assets/images/인공지능수학/2-3. Figure2.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+>
+> ![Figure 3](/assets/images/인공지능수학/2-3. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+
+### 2. Gram-Schmidt method 적용
+
+![Figure 4](/assets/images/인공지능수학/2-3. Figure4.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+
+> ex)
+>
+> 1. 
+> 2. $\mathbf{b}_1$에서 $\mathbf{u}_1$ 성분을 제거
