@@ -18,7 +18,7 @@ $$
 
 벡터 공간 내의 임의의 두 벡터를 스칼라로 매핑시키는 함수를 inner product라고 한다.
 
-Inner product가 정의된 vector space를 **inner product space**라고 한다. → $(V,\langle\cdot,\cdot\rangle)$
+Inner product가 정의된 vector space $(V,\langle\cdot,\cdot\rangle)$를 **inner product space**라고 한다.
 
 ### Inner Product의 조건
 
