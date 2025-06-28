@@ -52,24 +52,24 @@ $$
 
 ### Image
 
-![Figure 3](/assets/images/인공지능수학/1-6. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+![Figure 3](/assets/images/인공지능수학/1-6. Figure3.png){: style="display:block; margin:0 auto; width: 60%; height: 60%;"}
 
 선형 사상 $\Phi : V → W$ 에 대해, $V$가 mapping되는 $W$의 벡터들의 집합을 image라고 한다.
 
 ### Kernel
 
-![Figure 4](/assets/images/인공지능수학/1-6. Figure4.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+![Figure 4](/assets/images/인공지능수학/1-6. Figure4.png){: style="display:block; margin:0 auto; width: 60%; height: 60%;"}
 
 선형 사상 $\Phi : V → W$ 에 대해, $\Phi$에 의해 $\mathbf{0}_W$로 보내지는 $V$의 벡터들의 집합을 kernel이라고 한다.
 
 ### Transformation Matrix
 
-$A\in \Bbb R^{m\times n}$와 $\Phi:\Bbb R^n→\Bbb R^m$이 존재할 때, 아래의 4가지가 성립한다.
+행렬 $A\in \Bbb R^{m\times n}$에 대응하는 선형 사상 $\Phi:\Bbb R^n→\Bbb R^m$이 존재할 때, 아래의 4가지 성질이 성립한다.
 
 - Image는 변환 행렬 $A$의 column space이다.
-- 변환 행렬 $A$의 rank는 image의 차원과 동일하다. $\text{rank}(A)=\text{dim}(\text{Im}(\Phi))$
 - $\text{ker}(\Phi)$는 Homogeneous Equation $A\mathbf{x}=\mathbf{0}$의 일반해이다. 즉, kernel은 null space라고도 한다.
-- Kernel은 변환 행렬 $A$의 column space의 부분 공간이다.
+- 변환 행렬 $A$의 rank는 image의 차원과 동일하다. → $\text{rank}(A)=\text{dim}(\text{Im}(\Phi))$
+- 변환 행렬 $A$의 nullity는 kernel의 차원과 동일하다. → $\text{nullity}(A)=\text{dim}(\text{ker}(\Phi))$
 
 ## Rank-Nullity Theorem
 
