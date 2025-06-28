@@ -12,20 +12,21 @@ toc_sticky: true
 
 ## Vector Space
 
-공집합이 아닌 집합 $V=(\mathcal V,+,\cdot)$에 대해 아래의 조건을 만족하는 집합 $V$를 Vector Space라고 하며, $V$에 속하는 원소를 Vector라고 정의한다.
+공집합이 아닌 집합 $V=(\mathcal V,+,\cdot)$에 대해 아래의 조건을 만족하는 집합 $V$를 vector space라고 하며, $V$에 속하는 원소를 벡라고 정의한다.
 
 1. $V=(\mathcal V,+)$은 Abelian group (group에 대한 설명은 맨 아래에)
 2. Distributivity가 성립
 
-	a. 벡터 분배법칙: $\forall\lambda\in\mathbb{R},~\mathbf{x},\mathbf{y}\in\mathcal{V}:\lambda \cdot(\mathbf{x}+\mathbf{y})=\lambda \cdot\mathbf{x}+\lambda\cdot \mathbf{y}$
-    b. 스칼라 분배법칙: $\forall\lambda,\psi\in\mathbb{R},~\mathbf{x}\in\mathcal{V}:(\lambda+\psi)\cdot\mathbf{x}=\lambda\cdot \mathbf{x}+\psi\cdot \mathbf{y}$
+	a. 벡터 분배법칙: $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies\lambda \cdot(\mathbf{x}+\mathbf{y})=\lambda \cdot\mathbf{x}+\lambda\cdot \mathbf{y}$
+
+    b. 스칼라 분배법칙: $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies(\lambda+\psi)\cdot\mathbf{x}=\lambda\cdot \mathbf{x}+\psi\cdot \mathbf{y}$
     
 3. Associativity가 성립
 
-	$\forall\lambda,\psi\in\mathbb{R},~\mathbf{x}\in\mathcal{V}:\lambda\cdot(\psi\cdot\mathbf{x})=(\lambda\psi)\cdot\mathbf{x}$
+	$\forall\lambda,\psi\in\mathbb{R},~\mathbf{x}\in\mathcal{V}\implies\lambda\cdot(\psi\cdot\mathbf{x})=(\lambda\psi)\cdot\mathbf{x}$
    
 
-즉, Vector Space란 여러 개의 벡터들이 모여 형성하는 공간이며, 같은 공간 내의 벡터들끼리는 선형 연산이 가능해야한다.
+즉, vector space란 여러 개의 벡터들이 모여 형성하는 공간으로, 같은 공간 내의 벡터들끼리의 선형 연산이 가능해야한다.
 
 ## Vector Subspace
 
@@ -34,12 +35,21 @@ toc_sticky: true
 1. $V$에 존재하는 $\mathbf{0}$ (zero vector)를 포함해야 한다.
 2. $U$는 덧셈과 스칼라배에 대해 닫혀있어야 한다.
 
-> ex) 2차원 좌표공간에서의 vector subspace
-	좌표 공간에서 Subspace는 원점을 포함해야 함
+ex) 좌표 공간에서의 subspace는 원점을 포함해야 한다.
 
-$\mathbb{R}^2$ 공간에서 Vector Subspace는 원점을 포함하는 직선임
-    
-$\mathbb{R}^3$ 공간에서 Vector Subspace는 원점을 포함하는 직선 또는 평면임
+> ex1) $\mathbb{R}^2$ 공간에서 vector subspace는 원점을 포함하는 직선
+>
+> ex2) $\mathbb{R}^3$ 공간에서 vector subspace는 원점을 포함하는 직선 또는 평면
+
+> ![Figure 1](/assets/images/인공지능수학/1-3. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+>
+> 첫 번째 그림은 스칼라배에 대해 닫혀있지 않으므로, $\mathbb{R}^2$의 subspace가 아니다.
+>
+> 두 번째 그림은 원점을 포함하지 않으므로, $\mathbb{R}^2$의 subspace가 아니다.
+>
+> 세 번째 그림은 $\mathbb{R}^2$의 subspace가 아니다.
+>
+> 네 번째 그림은 subspace의 조건을 다 만족하므로, $\mathbb{R}^2$의 subspace이다.
 
 ## Span
 
