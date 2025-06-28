@@ -75,7 +75,7 @@ toc_sticky: true
 
 Homogeneous Equation의 solution을 모두 모아놓은 집합을 Null Space라고 부른다.
     
-![Figure 4](/assets/images/인공지능수학/1-3. Figure4.png){: style="display:block; margin:0 auto; width: 20%; height: 20%;"}
+![Figure 4](/assets/images/인공지능수학/1-3. Figure4.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
     
 - 어떠한 null space든지 항상 $\mathbf{0}$를 포함하므로, vector space이다.
 - Null space의 차원을 **nullity**라고 하며, free variable의 개수와 동일하다.
