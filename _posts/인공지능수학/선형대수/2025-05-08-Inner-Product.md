@@ -18,8 +18,8 @@ toc_sticky: true
 
 Inner Product는 여러 가지로 정의되
 
-- $\langle\bold x,\bold y\rangle:=\bold x^\top \bold y$ → **Dot Product**
-- $\langle\bold x,\bold y\rangle:=x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2$
+- $\langle\mathbf{x},\mathbf y\rangle:=\mathbf x^\top \mathbf y$ → **Dot Product**
+- $\langle\mathbf x,\mathbf y\rangle:=x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2$
 - $\langle f,g\rangle:=\int_a^b f(x)g(x)\,dx$ → 함수의 내적
     
     $f$and $g$ are continuous function over $[a,b]$
