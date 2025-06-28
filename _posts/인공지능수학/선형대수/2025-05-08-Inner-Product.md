@@ -14,6 +14,22 @@ toc_sticky: true
 
 ### Inner Product의 조건
 
+1. 분배 법칙이 성립
+
+   $\langle\mathbf u+\mathbf w,\mathbf v\rangle=\langle\mathbf u,\mathbf v\rangle+\langle\mathbf w,\mathbf v\rangle$
+
+   $\langle\lambda\mathbf v,\mathbf w\rangle=\lambda\langle\mathbf v,\mathbf w\rangle$
+   
+3. 교환 법칙이 성립
+
+   $\langle\mathbf v,\mathbf w\rangle=\langle\mathbf w,\mathbf v\rangle$
+   
+4. 자기 자신과의 내적은 항상 0 이상
+
+   $\langle\mathbf v,\mathbf v\rangle\geq0$
+
+   $\langle\mathbf v,\mathbf v\rangle=0\iff\mathbf v=\mathbf0$
+
 ### Inner Product의 종류
 
 Inner Product는 다양한 형태로 정의된다.
