@@ -22,7 +22,7 @@ $$
 
 > ![Figure 1](/assets/images/인공지능수학/2-2. Figure1.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 >
-> 좌측이 Manhattan Norm $\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{x_i}$
+> 좌측이 Manhattan Norm $\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{\vert x_i\vert}$
 >
 > 우측이 Euclidean Norm $\lVert\mathbf{x}\rVert_2:=\sqrt{\sum_{i=1}^{n}{x_i^2}}$
 
