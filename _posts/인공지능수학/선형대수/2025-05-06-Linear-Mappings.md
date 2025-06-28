@@ -46,8 +46,6 @@ $$
 - 서로 완전히 일대일 대응됨
 - inverse mapping $\Phi^{-1}=\Psi:W\to V$가 존재
 
-## 
-
 ## Image & Kernel
 
 ![Figure 2](/assets/images/인공지능수학/1-6. Figure2.png){: style="display:block; margin:0 auto; width: 70%; height: 70%;"}
@@ -56,13 +54,20 @@ $$
 
 ![Figure 3](/assets/images/인공지능수학/1-6. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 
-선형 사상 $\Phi : V → W$ 에 대해, $\Phi$에 의해 $\bold0_W$로 보내지는 $V$의 벡터들의 집합을 kernel이라고 한다.
+선형 사상 $\Phi : V → W$ 에 대해, $V$가 mapping되는 $W$의 벡터들의 집합을 image라고 한다.
 
 ### Kernel
 
 ![Figure 4](/assets/images/인공지능수학/1-6. Figure4.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 
-선형 사상 $\Phi : V → W$ 에 대해, $V$가 mapping되는 $W$의 벡터들의 집합을 image라고 한다.
+선형 사상 $\Phi : V → W$ 에 대해, $\Phi$에 의해 $\bold0_W$로 보내지는 $V$의 벡터들의 집합을 kernel이라고 한다.
+
+### Transformation Matrix
+
+s
+
+- Image는 변환 행렬 $A$의 column space이다.
+- 선형 변환에 의해 $\mathbf{0}$으로 mapping되는 집합이기 때문에 null space라고도 한다.
 
 ## Rank-Nullity Theorem
 
