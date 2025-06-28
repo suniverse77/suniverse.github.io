@@ -29,7 +29,7 @@ $$
 Inner Product가 정의되어 있다면, norm은 다음과 같이 정의된다.
 
 $$
-\lVert\mathbf{x}\rVert=\sqrt{\mathbf{x}\mathbf{x}}
+\lVert\mathbf{x}\rVert=\sqrt{\langle\mathbf{x},\mathbf{x}\rangle}
 $$
 
 ## Distance
