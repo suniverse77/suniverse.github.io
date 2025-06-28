@@ -21,7 +21,7 @@ toc_sticky: true
 
 ### Special Mapping
 
-![Figure 1](/assets/images/인공지능수학/1-6. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+![Figure 1](/assets/images/인공지능수학/1-6. Figure1.png){: style="display:block; margin:0 auto; width: 80%; height: 80%;"}
 
 1. Injective (단사)
 2. Surjective (전사)
@@ -30,3 +30,11 @@ toc_sticky: true
 ## 
 
 ## Image & Kernel
+
+![Figure 2](/assets/images/인공지능수학/1-6. Figure2.png){: style="display:block; margin:0 auto; width: 80%; height: 80%;"}
+
+### Image
+
+### Kernel
+
+
