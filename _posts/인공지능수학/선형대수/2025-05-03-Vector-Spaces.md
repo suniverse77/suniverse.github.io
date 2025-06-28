@@ -55,7 +55,7 @@ toc_sticky: true
 > ![Figure 2](/assets/images/인공지능수학/1-3. Figure2.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 > 해당 직선에 있는 벡터들끼리 덧셈을 하거나 벡터에 스칼라배를 할 경우, 직선 밖으로 나가기 때문에 subspace가 아니다.
 > ![Figure 3](/assets/images/인공지능수학/1-3. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
-> 
+> 해당 직선에 있는 벡터들끼리 덧셈을 하거나 벡터에 스칼라배를 해도 직선 내에 존재하기 때문에 subspace이다.
 
 ## Span
 
@@ -75,10 +75,10 @@ toc_sticky: true
 
 Homogeneous Equation의 solution을 모두 모아놓은 집합을 Null Space라고 부른다.
     
-$N(A)=\{\mathbf{x}\mid A\mathbf{x}=\mathbf{0}\}$
+![Figure 4](/assets/images/인공지능수학/1-3. Figure4.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
     
 - 어떠한 Null Space든지 $\mathbf{0}$을 포함한다.
-- Null space의 차원을 nullity라고 하며, free variable의 개수와 동일하다.
+- Null space의 차원을 **nullity**라고 하며, free variable의 개수와 동일하다.
 
 ## Group
 
