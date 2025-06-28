@@ -105,7 +105,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 >      $x_2=-2x_3-12x_4,~x_1=-8x_3+4x_4$
 >   4. Homogeneous solution
 >
->      ![Figure 6](/assets/images/인공지능수학/1-2. Figure6.png){: style="display:block; margin:0 auto 0 5%; width: 40%; height: 40%;"}
+>      ![Figure 6](/assets/images/인공지능수학/1-2. Figure6.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 >      
 > Find General solution
 > 
