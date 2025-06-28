@@ -22,11 +22,15 @@ $$
 
 > ![Figure 1](/assets/images/인공지능수학/2-2. Figure1.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 >
-> 좌측이 Manhattan Norm: $\displaystyle\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{|x_i|}$
+> 좌측이 Manhattan Norm: $\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{|x_i|}$
 >
-> 우측이 Euclidean Norm: $\displaystyle\lVert\mathbf{x}\rVert_2:=\sqrt{\sum_{i=1}^{n}{x_i^2}}$
+> 우측이 Euclidean Norm: $\lVert\mathbf{x}\rVert_2:=\sqrt{\sum_{i=1}^{n}{x_i^2}}$
 
-Inner Product가 정의되어 있다면,
+Inner Product가 정의되어 있다면, norm은 다음과 같이 정의된다.
+
+$$
+\lVert\mathbf{x}\rVert=\sqrt{\mathbf{x}\mathbf{x}}
+$$
 
 ## Distance
 
