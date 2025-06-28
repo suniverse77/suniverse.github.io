@@ -40,6 +40,7 @@ toc_sticky: true
 > \begin{bmatrix}\begin{array}{ccc|c}1&1&1&6\\2&3&1&14\\1&-1&2&2\end{array}\end{bmatrix}
 > $$
 >
+> ---
 > 1. $\rho_2=\rho_2-2\rho_1$ , $\rho_3=\rho_3-\rho_1$
 >
 >    $$
@@ -74,6 +75,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 
 > ex) ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 >
+> ---
 > Solve Non-Homogeneous Equation
 >   1. Non-Homogeneous Equation을 Augmented Matrix로 변환
 >      
