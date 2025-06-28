@@ -25,3 +25,11 @@ Inner product space에서 두 벡터의 각도는 위와 같이 정의된다.
 각 벡터의 크기가 1이라면, **orthonormal**하다고 한다.
 
 Square matrix $A$의 column vector들이 orthonormal하면, $A$를 **orthogonal matrix**라고 한다.
+
+## Orthonormal Basis
+
+orthonormal basis로 변환하는 방법에는 크게 2가지가 있다.
+
+### 1. $B$에 대해 Gauss Elimination 수행
+
+### 2. Gram method 적용
