@@ -52,7 +52,9 @@ Inner product는 다양한 형태로 정의된다.
 
 행렬 $A$가 symmetric, positive definite matrix라면, 내적을 $\langle\mathbf{x},\mathbf y\rangle:=\mathbf{x}^\top A\mathbf{x}$처럼 정의할 수 있다.
 
-> ex)
+> ex) ![Figure 2](/assets/images/인공지능수학/2-2. Figure2.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+>
+> $\mathbf{x}\not=\mathbf{0}$일 때 항상 양수이므로, $A$는 symmetric, positive definite matrix이다.
 
 ## Outer Product
 
