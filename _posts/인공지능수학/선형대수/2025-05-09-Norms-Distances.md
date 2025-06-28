@@ -58,4 +58,16 @@ Inner product space에서 두 벡터 사이의 distance는 위와 같이 정의�
 
 ### Distance의 조건
 
-1. 
+1. Symmetric
+
+   $d(\mathbf{x},\mathbf{y})=d(\mathbf{y},\mathbf{x})$
+
+2. Triangle inequality
+
+   $d(\mathbf{x},\mathbf{z})\leq d(\mathbf{x},\mathbf{y})+d(\mathbf{y},\mathbf{z})$
+
+3. Positive definite
+
+   $d(\mathbf{x},\mathbf{y})\geq0$
+
+   $d(\mathbf{x},\mathbf{y})=0\iff \mathbf{x}=\mathbf{y}$
