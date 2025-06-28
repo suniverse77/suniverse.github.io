@@ -51,10 +51,12 @@ $$
 ## Distance
 
 $$
-d(\mathbf{x},\mathbf{y}):=\lVert\mathbf{x}-\mathbf{y}\rVert=\sqrt{\langle\mathbf{x},\mathbf{x}\rangle}
+d(\mathbf{x},\mathbf{y}):=\lVert\mathbf{x}-\mathbf{y}\rVert=\sqrt{\langle\mathbf{x}-\mathbf{y},\mathbf{x}-\mathbf{y}\rangle}
 $$
 
 Inner product space에서 두 벡터 사이의 distance는 위와 같이 정의된다.
+
+Inner product로 dot product를 사용할 때 정의된 distance $d(\mathbf{x},\mathbf{y}):=\sqrt{(\mathbf{x}-\mathbf{y})^\top(\mathbf{x}-\mathbf{y})}$를 Euclidian distance라고 부른다.
 
 ### Distance의 조건
 
