@@ -52,11 +52,8 @@ Basis $B={\mathbf{b}_1,\dots,\mathbf{b}_n}$를 orthonormal basis로 변환하는
 >
 > ---
 > 1. $\mathbf{b}_2$를 $\mathbf{b}_1$ 방향과 $\mathbf{b}_1$에 수직한 벡터의 합으로 분리
->
->   ![Figure 6](/assets/images/인공지능수학/2-3. Figure6.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
-> 2. $\mathbf{b}_1$에 수직한 벡터를 구함
->
->   ![Figure 7](/assets/images/인공지능수학/2-3. Figure7.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
-> 3. 크기를 1로 조절해 orthonormal basis로 변환
->
->   ![Figure 8](/assets/images/인공지능수학/2-3. Figure8.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
+>    ![Figure 6](/assets/images/인공지능수학/2-3. Figure6.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
+> 3. $\mathbf{b}_1$에 수직한 벡터를 구함
+>    ![Figure 7](/assets/images/인공지능수학/2-3. Figure7.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
+> 5. 크기를 1로 조절해 orthonormal basis로 변환
+>    ![Figure 8](/assets/images/인공지능수학/2-3. Figure8.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
