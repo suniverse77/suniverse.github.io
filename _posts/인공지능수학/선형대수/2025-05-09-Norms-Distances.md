@@ -13,7 +13,7 @@ toc_sticky: true
 ## Norm
 
 $$
-\lVert\cdot\rVert:V→\Bbb R,~\mathbf{x}\mapsto \lVert \mathbf{x}\rVert
+\lVert\cdot\rVert:V→\Bbb R
 $$
 
 벡터의 길이를 norm이라고 하며, 벡터를 스칼라로 mapping하는 일종의 함수로 볼 수 있다.
@@ -22,7 +22,7 @@ $$
 
 > ![Figure 1](/assets/images/인공지능수학/2-2. Figure1.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 >
-> 좌측이 Manhattan Norm: $\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{|x_i|}$
+> 좌측이 Manhattan Norm: $\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{x_i}$
 >
 > 우측이 Euclidean Norm: $\lVert\mathbf{x}\rVert_2:=\sqrt{\sum_{i=1}^{n}{x_i^2}}$
 
@@ -34,3 +34,8 @@ $$
 
 ## Distance
 
+$$
+d(\mathbf{x},\mathbf{y}):=\lVert\mathbf{x}-\mathbf{y}\rVert=\sqrt{\langle\mathbf{x},\mathbf{x}\rangle}
+$$
+
+Inner product space에서 두 벡터 사이의 distance는 위와 같이 정의된다. 
