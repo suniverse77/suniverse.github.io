@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[선형대수] Inner Product"
-last_modified_at: 2025-05-06
+last_modified_at: 2025-05-08
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
 excerpt: "벡터의 내적과 외적"
