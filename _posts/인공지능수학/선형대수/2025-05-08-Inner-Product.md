@@ -47,7 +47,7 @@ Inner Product는 다양한 형태로 정의된다.
 ## Outer Product
 
 $$
-\mathbf{x}\times\mathbf{y}:=\mathbf{x}\mathbf{y}^\top
+\mathbf{x}\otimes\mathbf{y}:=\mathbf{x}\mathbf{y}^\top
 $$
 
 두 벡터의 곱으로 행렬을 생성하는 연산을 outper product라고 한다.
@@ -55,7 +55,7 @@ $$
 ## Cross Product
 
 $$
-\mathbf{x}\otimes\mathbf{y}:=\begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\x_1&x_2&x_3\\y_1&y_2&y_3\end{vmatrix}=(x_2y_3-x_3y_2)\mathbf{i}-(x_1y_3-x_3y_1)\mathbf{j}+(x_1y_2-x_2y_1)\mathbf{k}
+\mathbf{x}\times\mathbf{y}:=\begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\x_1&x_2&x_3\\y_1&y_2&y_3\end{vmatrix}=(x_2y_3-x_3y_2)\mathbf{i}-(x_1y_3-x_3y_1)\mathbf{j}+(x_1y_2-x_2y_1)\mathbf{k}
 $$
 
 두 3차원 벡터에 수직인 벡터를 생성하는 연산을 cross product라고 한다.
