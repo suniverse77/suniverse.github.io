@@ -46,6 +46,14 @@ Inner product는 다양한 형태로 정의된다.
 - $\langle\mathbf x,\mathbf y\rangle:=x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2$
 - $\langle f,g\rangle:=\int_a^b f(x)g(x)\,dx$ → 함수의 내적
 
+### Symmetric, Positive Definite
+
+대칭 행렬 $A$에 대해 $\mathbf{x}^\top A\mathbf{x}$가 $\mathbf{0}$이 아닌 모든 $\mathbf{x}$에 대해 양수일 때, $A$를 symmetric, positive definite matrix라고 부른다.
+
+행렬 $A$가 symmetric, positive definite matrix라면, 내적을 $\langle\mathbf{x},\mathbf y\rangle:=\mathbf{x}^\top A\mathbf{x}$처럼 정의할 수 있다.
+
+> ex)
+
 ## Outer Product
 
 $$
