@@ -23,16 +23,9 @@ basis는 아래의 조건을 만족해야 한다.
 - Basis에 속하는 벡터들은 linearly independent해야 한다.
 - Basis에 속하는 벡터들을 span 했을 때, 공간 전체를 다 표현할 수 있어야 한다.
         
-$\text{span}
-(
-\begin{bmatrix}
-1\\0
-\end{bmatrix},
-\begin{bmatrix}
-0\\1
-\end{bmatrix}
-)
-=\mathbb{R}^2$
+$$
+\text{span}(\begin{bmatrix}1\\0\end{bmatrix},\begin{bmatrix}0\\1\end{bmatrix})=\mathbb{R}^2
+$$
 
 ---
 
