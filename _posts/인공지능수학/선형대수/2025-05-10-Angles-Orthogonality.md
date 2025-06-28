@@ -42,7 +42,7 @@ Basis $B={\mathbf{b}_1,\dots,\mathbf{b}_n}$를 orthonormal basis로 변환하는
 >
 > 가우스 소거법을 적용해서 아래와 같은 orthonormal basis를 얻을 수 있다.
 > 
-> ![Figure 3](/assets/images/인공지능수학/2-3. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+> ![Figure 3](/assets/images/인공지능수학/2-3. Figure3.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 
 ### 2. Gram-Schmidt method 적용
 
@@ -51,5 +51,14 @@ Basis $B={\mathbf{b}_1,\dots,\mathbf{b}_n}$를 orthonormal basis로 변환하는
 > ex) ![Figure 5](/assets/images/인공지능수학/2-3. Figure5.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 >
 > ---
-> 1. 
+> 1. $\mathbf{b}_2$를
+>
+> ![Figure 6](/assets/images/인공지능수학/2-3. Figure6.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
+> 
 > 2. $\mathbf{b}_1$에서 $\mathbf{u}_1$ 성분을 제거
+>
+> ![Figure 7](/assets/images/인공지능수학/2-3. Figure7.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
+> 
+> 3. orthonormal basis
+>
+> ![Figure 8](/assets/images/인공지능수학/2-3. Figure8.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
