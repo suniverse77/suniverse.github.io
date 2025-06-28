@@ -22,9 +22,9 @@ $$
 
 > ![Figure 1](/assets/images/인공지능수학/2-2. Figure1.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 >
-> 좌측이 Manhattan Norm: $\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{x_i}$
+> 좌측이 Manhattan Norm $\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{x_i}$
 >
-> 우측이 Euclidean Norm: $\lVert\mathbf{x}\rVert_2:=\sqrt{\sum_{i=1}^{n}{x_i^2}}$
+> 우측이 Euclidean Norm $\lVert\mathbf{x}\rVert_2:=\sqrt{\sum_{i=1}^{n}{x_i^2}}$
 
 Inner product space에서 norm은 다음과 같이 정의된다.
 
@@ -32,10 +32,30 @@ $$
 \lVert\mathbf{x}\rVert=\sqrt{\langle\mathbf{x},\mathbf{x}\rangle}
 $$
 
+### Norm의 조건
+
+1. Absolutely homogeneous
+
+   $\lVert\lambda\mathbf{x}\rVert=\lambda\lVert\mathbf{x}\rVert$
+
+2. Triangle inequality
+
+   $\lVert\mathbf{x}+\mathbf{y}\rVert\geq\lVert\mathbf{x}\rVert+\lVert\mathbf{y}\rVert$
+
+3. Positive definite
+
+   $\lVert\mathbf{x}\rVert\leq0$
+
+   $\lVert\mathbf{x}\rVert=0\iff\mathbf{x}=\mathbf{0}$
+
 ## Distance
 
 $$
 d(\mathbf{x},\mathbf{y}):=\lVert\mathbf{x}-\mathbf{y}\rVert=\sqrt{\langle\mathbf{x},\mathbf{x}\rangle}
 $$
 
-Inner product space에서 두 벡터 사이의 distance는 위와 같이 정의된다. 
+Inner product space에서 두 벡터 사이의 distance는 위와 같이 정의된다.
+
+### Distance의 조건
+
+1. 
