@@ -46,6 +46,7 @@ $$
     
 > ex) ![Figure 1](/assets/images/인공지능수학/1-4. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 >
+> ---
 > 1. 벡터들을 행렬로 표현
 >
 >    $$
