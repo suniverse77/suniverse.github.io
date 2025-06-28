@@ -48,7 +48,10 @@ $$
 > $$
 
 Subspace의 차원은 원래 vector space의 차원보다 작거나 같아야 한다.
-$U\subseteq V$ 라면 $\text{dim}(U)\leq \text{dim}(V)$
+
+$$
+U\subseteq V \implies \text{dim}(U)\leq \text{dim}(V)
+$$
 
 ## Rank
 
