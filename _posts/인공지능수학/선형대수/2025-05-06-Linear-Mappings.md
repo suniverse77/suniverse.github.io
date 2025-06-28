@@ -21,11 +21,19 @@ toc_sticky: true
 
 ### Special Mapping
 
-![Figure 1](/assets/images/인공지능수학/1-6. Figure1.png){: style="display:block; margin:0 auto; width: 80%; height: 80%;"}
+![Figure 1](/assets/images/인공지능수학/1-6. Figure1.png){: style="display:block; margin:0 auto; width: 100%; height: 100%;"}
 
 1. Injective (단사)
+
+   - 정의역과 공역의 치역이 일대일로 mapping
+   - 입력과 대응되지 않는 출력도 존재
+   - 입력값이 다르면 출력값도 다름
 2. Surjective (전사)
-3. Bijective (전단사)
+
+   
+5. Bijective (전단사)
+
+   
 
 ## 
 
