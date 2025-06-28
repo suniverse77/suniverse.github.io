@@ -43,7 +43,7 @@ ex) 좌표 공간에서의 subspace는 원점을 포함해야 한다.
 
 > ex) $\mathbb{R}^2$ vector space
 >
-> ![Figure 1](/assets/images/인공지능수학/1-3. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+> ![Figure 1](/assets/images/인공지능수학/1-3. Figure1.png){: style="display:block; margin:0 auto; width: 80%; height: 80%;"}
 >
 > 첫 번째 그림은 스칼라배에 대해 닫혀있지 않으므로, $\mathbb{R}^2$의 subspace가 아니다.
 >
