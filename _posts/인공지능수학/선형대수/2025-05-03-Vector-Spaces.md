@@ -15,13 +15,13 @@ toc_sticky: true
 공집합이 아닌 집합 $V=(\mathcal V,+,\cdot)$에 대해 아래의 조건을 만족하는 집합 $V$를 vector space라고 하며, $V$에 속하는 원소를 벡라고 정의한다.
 
 1. $V=(\mathcal V,+)$은 Abelian group (group에 대한 설명은 맨 아래에)
-2. Distributivity가 성립
+2. 분배 법칙이 성립
 
-	a. 벡터 분배법칙: $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies\lambda \cdot(\mathbf{x}+\mathbf{y})=\lambda \cdot\mathbf{x}+\lambda\cdot \mathbf{y}$
+	a. $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies\lambda \cdot(\mathbf{x}+\mathbf{y})=\lambda \cdot\mathbf{x}+\lambda\cdot \mathbf{y}$
 
-    b. 스칼라 분배법칙: $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies(\lambda+\psi)\cdot\mathbf{x}=\lambda\cdot \mathbf{x}+\psi\cdot \mathbf{y}$
+    b. $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies(\lambda+\psi)\cdot\mathbf{x}=\lambda\cdot \mathbf{x}+\psi\cdot \mathbf{y}$
     
-3. Associativity가 성립
+3. 교환 법칙이 성립
 
 	$\forall\lambda,\psi\in\mathbb{R},~\mathbf{x}\in\mathcal{V}\implies\lambda\cdot(\psi\cdot\mathbf{x})=(\lambda\psi)\cdot\mathbf{x}$
    
