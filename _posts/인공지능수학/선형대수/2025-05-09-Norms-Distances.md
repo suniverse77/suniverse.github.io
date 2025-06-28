@@ -26,5 +26,7 @@ $$
 >
 > 우측이 Euclidean Norm: $\displaystyle\lVert\mathbf{x}\rVert_2:=\sqrt{\sum_{i=1}^{n}{x_i^2}}$
 
+Inner Product가 정의되어 있다면,
+
 ## Distance
 
