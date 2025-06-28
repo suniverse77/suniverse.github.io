@@ -18,7 +18,7 @@ $$
 
 벡터 공간 내의 임의의 두 벡터를 스칼라로 매핑시키는 함수를 inner product라고 한다.
 
-Inner Product가 정의된 vector space를 **inner product space**라고 한다. → $(V,\langle\cdot,\cdot\rangle)$
+Inner product가 정의된 vector space를 **inner product space**라고 한다. → $(V,\langle\cdot,\cdot\rangle)$
 
 ### Inner Product의 조건
 
@@ -40,7 +40,7 @@ Inner Product가 정의된 vector space를 **inner product space**라고 한다.
 
 ### Inner Product의 종류
 
-Inner Product는 다양한 형태로 정의된다.
+Inner product는 다양한 형태로 정의된다.
 
 - $\langle\mathbf{x},\mathbf y\rangle:=\mathbf x^\top \mathbf y$ → 이런 형태로 정의되는 내적을 **Dot Product**라고 부른다.
 - $\langle\mathbf x,\mathbf y\rangle:=x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2$
