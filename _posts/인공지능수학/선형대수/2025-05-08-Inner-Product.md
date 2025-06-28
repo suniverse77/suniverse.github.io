@@ -47,7 +47,7 @@ Inner Product는 다양한 형태로 정의된다.
 ## Outer Product
 
 $$
-\mathbf{x}\times\mathbf{y}:=\mathbf{x}mathbf{y}^\top
+\mathbf{x}\times\mathbf{y}:=\mathbf{x}\mathbf{y}^\top
 $$
 
 두 벡터의 곱으로 행렬을 생성하는 연산을 outper product라고 한다.
