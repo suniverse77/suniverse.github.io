@@ -10,6 +10,8 @@ toc: true
 toc_sticky: true
 ---
 
-### Rotations in $\mathbb{R}^2$
 
-### Rotations in $\mathbb{R}^3$
+
+2차원 공간에서의 회전 변환 행렬은 위와 같이 정의된다.
+
+![Figure 1](/assets/images/인공지능수학/2-5. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
