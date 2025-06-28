@@ -50,7 +50,11 @@ Inner product는 다양한 형태로 정의된다.
 
 대칭 행렬 $A$에 대해 $\mathbf{x}^\top A\mathbf{x}$가 $\mathbf{0}$이 아닌 모든 $\mathbf{x}$에 대해 양수일 때, $A$를 symmetric, positive definite matrix라고 부른다.
 
-행렬 $A$가 symmetric, positive definite matrix라면, 내적을 $\langle\mathbf{x},\mathbf y\rangle:=\mathbf{x}^\top A\mathbf{x}$처럼 정의할 수 있다.
+$$
+\langle\mathbf{x},\mathbf y\rangle:=\mathbf{x}^\top A\mathbf{x}
+$$
+
+행렬 $A$가 symmetric, positive definite matrix라면, 내적을 위와 같이 정의할 수 있다.
 
 > ex) ![Figure 1](/assets/images/인공지능수학/2-1. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
 >
