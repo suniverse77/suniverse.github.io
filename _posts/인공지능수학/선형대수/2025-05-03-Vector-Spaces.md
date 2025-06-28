@@ -17,9 +17,9 @@ toc_sticky: true
 1. $V=(\mathcal V,+)$은 Abelian group (group에 대한 설명은 맨 아래에)
 2. 분배 법칙이 성립
 
-	a. $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies\lambda \cdot(\mathbf{x}+\mathbf{y})=\lambda \cdot\mathbf{x}+\lambda\cdot \mathbf{y}$
+   $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies\lambda \cdot(\mathbf{x}+\mathbf{y})=\lambda \cdot\mathbf{x}+\lambda\cdot \mathbf{y}$
 
-    b. $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies(\lambda+\psi)\cdot\mathbf{x}=\lambda\cdot \mathbf{x}+\psi\cdot \mathbf{y}$
+   $\forall \ \lambda,\psi\in \Bbb R,~\forall \ \mathbf{x},\mathbf{y}\in \mathcal{V}\implies(\lambda+\psi)\cdot\mathbf{x}=\lambda\cdot \mathbf{x}+\psi\cdot \mathbf{y}$
     
 3. 교환 법칙이 성립
 
