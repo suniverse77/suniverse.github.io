@@ -45,3 +45,17 @@ Inner Product는 다양한 형태로 정의된다.
 - $\langle f,g\rangle:=\int_a^b f(x)g(x)\,dx$ → 함수의 내적
 
 ## Outer Product
+
+$$
+\mathbf{x}\times\mathbf{y}:=\mathbf{x}mathbf{y}^\top
+$$
+
+두 벡터의 곱으로 행렬을 생성하는 연산을 outper product라고 한다.
+
+## Cross Product
+
+$$
+\mathbf{x}\otimes\mathbf{y}
+$$
+
+두 벡터에 수직인 벡터를 생성하는 연산을 cross product라고 한다.
