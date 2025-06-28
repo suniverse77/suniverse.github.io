@@ -27,8 +27,6 @@ $$
 \text{span}(\begin{bmatrix}1\\0\end{bmatrix},\begin{bmatrix}0\\1\end{bmatrix})=\mathbb{R}^2
 $$
 
----
-
 ## Dimension
 
 벡터 공간 $V$의 basis vector의 개수를 $V$의 dimension이라고 부른다.
