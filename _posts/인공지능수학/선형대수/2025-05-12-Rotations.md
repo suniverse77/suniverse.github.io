@@ -11,7 +11,7 @@ toc_sticky: true
 ---
 
 $$
-R(\theta)=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}
+R(\theta)=\begin{bmatrix}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\end{bmatrix}
 $$
 
 2차원 공간에서의 회전 변환 행렬은 위와 같이 정의된다.
