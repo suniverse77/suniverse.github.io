@@ -40,11 +40,11 @@ $$
 
 2. Triangle inequality
 
-   $\lVert\mathbf{x}+\mathbf{y}\rVert\geq\lVert\mathbf{x}\rVert+\lVert\mathbf{y}\rVert$
+   $\lVert\mathbf{x}+\mathbf{y}\rVert\leq\lVert\mathbf{x}\rVert+\lVert\mathbf{y}\rVert$
 
 3. Positive definite
 
-   $\lVert\mathbf{x}\rVert\leq0$
+   $\lVert\mathbf{x}\rVert\geq0$
 
    $\lVert\mathbf{x}\rVert=0\iff\mathbf{x}=\mathbf{0}$
 
