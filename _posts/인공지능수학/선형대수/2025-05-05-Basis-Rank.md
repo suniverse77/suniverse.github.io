@@ -72,7 +72,3 @@ $$
 2. $A\in\mathbb{R}^{m\times n}$에 대해 $\text{rank}(A)=\min(m,n)$의 경우, 해당 행렬을 full rank라고 한다.
 3. Square matrix $A\in\mathbb{R}^{n\times n}$에 대해 $\text{rank}(A)=n$일 경우, 해당 행렬은 invertible함
 4. $\text{rank}(A)=\text{rank}(A\mid \mathbf{b})$인 경우에만, $A\mathbf{x}=\mathbf{b}$의 해를 구할 수 있다.
-
-## Rank-Nullity Theorem
-
-$\dim(V)=\text{rank}(A)+\text{nullity}(A)$
