@@ -74,3 +74,11 @@ $$
 ## Rank-Nullity Theorem
 
 선형 사상 $\Phi : V → W$ 에 대해, **$\text{dim}(V)=\text{rank}(A)+\text{nullity}(A)$**가 성립한다.
+
+선형 사상이 행렬 $A\in \Bbb R^{m\times n}$로 표현될 경우, 아래와 같이 표현할 수 있다.
+
+$$
+\Phi(\mathbf{x})=A\mathbf{x}\implies n=\text{rank}(A)+\text{nullity}(A)
+$$
+
+즉, 정의역 $R^{n}$의 차원은 행렬 $A$ column space 차원(rank)과 null space 차원(nullity)의 합과 같다.
