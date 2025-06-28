@@ -4,7 +4,7 @@ title: "[선형대수] Affine Spaces"
 last_modified_at: 2025-05-07
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
-excerpt: "행렬 기초 & 곱셈"
+excerpt: "아핀 공간"
 use_math: true
 toc: true
 toc_sticky: true
