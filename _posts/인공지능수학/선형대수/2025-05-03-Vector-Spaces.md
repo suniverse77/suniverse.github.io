@@ -35,11 +35,10 @@ toc_sticky: true
 1. $V$에 존재하는 $\mathbf{0}$ (zero vector)를 포함해야 한다.
 2. $U$는 덧셈과 스칼라배에 대해 닫혀있어야 한다.
 
-ex) 좌표 공간에서의 subspace는 원점을 포함해야 한다.
+좌표 공간에서의 subspace는 원점을 포함해야 한다.
 
-> ex1) $\mathbb{R}^2$ 공간에서 vector subspace는 원점을 포함하는 직선
->
-> ex2) $\mathbb{R}^3$ 공간에서 vector subspace는 원점을 포함하는 직선 또는 평면
+- $\mathbb{R}^2$ 공간에서 vector subspace는 원점을 포함하는 직선
+- $\mathbb{R}^3$ 공간에서 vector subspace는 원점을 포함하는 직선 또는 평면
 
 > ex) $\mathbb{R}^2$ vector space
 >
