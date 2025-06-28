@@ -60,9 +60,9 @@ $$
 > A=\begin{bmatrix}1&2\\3&4\\5&6\end{bmatrix}
 > $$
 >
-> Gauss Elimination을 하면
-> $\text{rank}(A)=2$
-> 3개의 column vector들이 span하는 공간 $V$의 차원은 2차원 평면임
+> Gauss Elimination을 하면 $\text{rank}(A)=2$
+> 
+> 즉, 3개의 column vector들이 span하는 공간 $V$의 차원은 2차원 평면임
 
 ### Properties of Rank
 
