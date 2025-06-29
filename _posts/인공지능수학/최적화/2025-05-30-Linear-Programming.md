@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8a147950-61b1-4f7f-b2d6-d7a520cfad46)---
+---
 layout: single
 title: "[최적화] Linear Programming"
 last_modified_at: 2025-05-30
