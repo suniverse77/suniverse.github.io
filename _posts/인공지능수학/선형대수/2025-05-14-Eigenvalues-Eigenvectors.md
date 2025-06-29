@@ -14,6 +14,6 @@ $$
 A\mathbf{x}=\lambda\mathbf{x}
 $$
 
-Square matrix $A$에 대해 위의 식을 만족할 때, $\lambda$를 eigenvalue, $\mathbf{x}$를 eigenvector라고 한다.
+Square matrix $A$에 대해 $\mathbf{0}$이 아닌 $\mathbf{x}$가 위의 식을 만족할 때, $\lambda$를 eigenvalue, $\mathbf{x}$를 eigenvector라고 한다.
 
 즉, $\mathbf{x}$는 행렬 $A$에 의한 선형 변환 전후의 방향이 변하지 않고, 길이만 $\lambda$배되는 벡터이다.
