@@ -4,7 +4,7 @@ title: "[선형대수] Matrix Approximation"
 last_modified_at: 2025-05-17
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
-excerpt: "특이값 분해"
+excerpt: "행렬 근사"
 use_math: true
 toc: true
 toc_sticky: true
