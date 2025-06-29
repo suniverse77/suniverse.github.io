@@ -28,8 +28,11 @@ $$
 >
 >    $\pi_U(\mathbf{x})=\lambda\mathbf{b}$
 > 3. $\mathbf{x}-\lambda\mathbf{b}$는 $U$의 basis와 직교해야한다.
->    
+>
 >    $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0\to \mathbf{x}^\top\mathbf{b}=\lambda\mathbf{b}^\top\mathbf{b}$
+> 4. Find projection
+>    
+>    $\lambda=\frac{\mathbf{b}^\top\mathbf{x}}{\mathbf{b}^\top\mathbf{b}}\to\pi_U(\mathbf{x})=\frac{\mathbf{b}\mathbf{b}^\top}{\lVert\mathbf{b}\rVert}\mathbf{x}$
 
 ## Projection onto General Subspaces
 
@@ -57,7 +60,7 @@ $$
 >    
 >    ![Figure 4](/assets/images/인공지능수학/2-4. Figure4.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
 >    
-> 5. ㅏ
+> 5. Find projection
 >
 >    $\boldsymbol\lambda=(B^\top B)^{-1}B^\top\mathbf{x}\to\pi_U(\mathbf{x})=B(B^\top B)^{-1}B^\top\mathbf{x}$
 
