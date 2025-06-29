@@ -22,13 +22,13 @@ $$
 
 > **유도**
 >
-> 직선 vector space $U$에서 $\mathbf{x}$와 거리가 가장 가까운 벡터를 $\pi_U(\mathbf{x})$라고 정의
+> 1. 직선 vector space $U$에서 $\mathbf{x}$와 거리가 가장 가까운 벡터를 $\pi_U(\mathbf{x})$라고 정의
 >
-> $\pi_U(\mathbf{x})$는 $U$의 basis의 상수배이다. -> $\pi_U(\mathbf{x})=\lambda\mathbf{b}$
-> 
-> $\mathbf{x}-\lambda\mathbf{b}$는 직선 벡터 공간의 basis와 직교해야한다.
-> 
-> $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0$
+> 2. $\pi_U(\mathbf{x})$는 $U$의 basis의 상수배이다.
+>
+>    $\pi_U(\mathbf{x})=\lambda\mathbf{b}$
+> 3. $\mathbf{x}-\lambda\mathbf{b}$는 직선 벡터 공간의 basis와 직교해야한다.
+>    $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0$
 
 ## Projection onto General Subspaces
 
