@@ -43,7 +43,7 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 > $$
 >
 > ---
-> 1. Gauss Elimination 수행
+> 1. Gauss Elimination 수행 → (6)번에 의해 determinant 변화 X
 >
 >    $$
 >    A=\begin{bmatrix}1&2\\0&-2\end{bmatrix}
