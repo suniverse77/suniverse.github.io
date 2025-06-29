@@ -28,7 +28,8 @@ $$
 >
 >    $\pi_U(\mathbf{x})=\lambda\mathbf{b}$
 > 3. $\mathbf{x}-\lambda\mathbf{b}$는 직선 벡터 공간의 basis와 직교해야한다.
->    $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0$
+>    
+>    $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0\to \mathbf{x}^\top\mathbf{b}=\lambda\mathbf{b}^\top\mathbf{b}$
 
 ## Projection onto General Subspaces
 
@@ -42,7 +43,7 @@ $$
 
 > **유도**
 >
-> 1. $m$차원 vector space에서 $\mathbf{x}$와 가장 가까운 벡터를 $\pi_U(\mathbf{x})$라고 정의
+> 1. $m$차원 vector space $U$에서 $\mathbf{x}$와 가장 가까운 벡터를 $\pi_U(\mathbf{x})$라고 정의
 >
 > 2. $\pi_U(\mathbf{x})$는 $U$의 basis들의 선형 결합으로 표현될 수 있다.
 >
