@@ -29,7 +29,7 @@ Square matrix $A$에 대해 $\mathbf{0}$이 아닌 $\mathbf{x}$가 위의 식을
 > ex) 
 >
 > $$
-> A=\begin{batmrix}4&2\\1&3\end{bmatrix}
+> A=\begin{bmatrix}4&2\\1&3\end{bmatrix}
 > $$
 > 
 > ---
