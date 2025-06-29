@@ -42,7 +42,14 @@ $$
 
 > **유도**
 >
-> $m$차원 vector space에서 $\mathbf{x}$와 가장 가까운 벡
+> 1. $m$차원 vector space에서 $\mathbf{x}$와 가장 가까운 벡터를 $\pi_U(\mathbf{x})$라고 정의
+>
+> 2. $\pi_U(\mathbf{x})$는 $U$의 basis들의 선형 결합으로 표현될 수 있다.
+>
+>    $\pi_U(\mathbf{x})=\lambda_1\mathbf{b}_1+\cdots+\lambda_m\mathbf{b}_m$
+> 3. hh
+>   
+> 
 > $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}_1\rangle=0~\cdots~\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}_m\rangle=0$
 >
 > 
