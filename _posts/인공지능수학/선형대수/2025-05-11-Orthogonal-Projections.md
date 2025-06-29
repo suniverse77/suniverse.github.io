@@ -47,7 +47,7 @@ $$
 >
 > 2. $\pi_U(\mathbf{x})$는 $U$의 basis들의 선형 결합으로 표현될 수 있다.
 >
->    $\pi_U(\mathbf{x})=\lambda_1\mathbf{b}_1+\cdots+\lambda_m\mathbf{b}_m$
+>    $\pi_U(\mathbf{x})=\lambda_1\mathbf{b}_1+\cdots+\lambda_m\mathbf{b}_m=B\boldsymbol\lambda$
 > 3. $\mathbf{x}-\pi_U(\mathbf{x})$는 $U$의 basis들과 직교해야한다.
 >
 >    $\langle\mathbf{x}-\pi_U(\mathbf{x}),\mathbf{b}_1\rangle=0,~\cdots,~\langle\mathbf{x}-\pi_U(\mathbf{x}),\mathbf{b}_m\rangle=0$
@@ -59,5 +59,5 @@ $$
 >    
 > 5. ㅏ
 >
->    $\boldsymbol\lambda=(B^\top B)^{-1}B^\top\mathbf{x}$
+>    $\boldsymbol\lambda=(B^\top B)^{-1}B^\top\mathbf{x}\to\pi_U(\mathbf{x})=B(B^\top B)^{-1}B^\top\mathbf{x}$
 
