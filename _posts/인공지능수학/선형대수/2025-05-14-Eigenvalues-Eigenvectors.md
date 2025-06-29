@@ -17,3 +17,13 @@ $$
 Square matrix $A$에 대해 $\mathbf{0}$이 아닌 $\mathbf{x}$가 위의 식을 만족할 때, $\lambda$를 eigenvalue, $\mathbf{x}$를 eigenvector라고 한다.
 
 즉, $\mathbf{x}$는 행렬 $A$에 의한 선형 변환 전후의 방향이 변하지 않고, 길이만 $\lambda$배되는 벡터이다.
+
+행렬의 고유값과 고유벡터를 찾기 위해서는 $\text{det}(A-\lambda I)=0$을 만족하는 찾으면 된다.
+
+> **Why?**
+>
+> $A\mathbf{x}=\lambda\mathbf{x}$ → $(A-\lambda I)\mathbf{x}=0$
+>
+> $\mathbf{x}\not=\mathbf{0}$이므로, $\text{det}(A-\lambda I)=0$이어야 한다.
+
+> ex)
