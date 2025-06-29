@@ -15,7 +15,7 @@ toc_sticky: true
 ## Spectral Norm
 
 $$
-\displaystyle\lVert A\rVert_2:=\underset{\mathbf{x}}{\max}\frac{\lVert A\mathbf x\rVert_2}{\lVert \mathbf x\rVert_2}=\underset{\mathbf{x}}{\max}\lVert A\bold x\rVert_2
+\displaystyle\lVert A\rVert_2:=\underset{\mathbf{x}}{\max}\frac{\lVert A\mathbf x\rVert_2}{\lVert \mathbf x\rVert_2}=\underset{\mathbf{x}}{\max}\lVert A\mathbf x\rVert_2
 $$
 
 Matrix norm에는 여러 종류가 있으며, 그 중 spectral norm은 위와 같이 정의된다.
