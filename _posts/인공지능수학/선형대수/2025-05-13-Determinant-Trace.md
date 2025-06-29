@@ -18,7 +18,7 @@ toc_sticky: true
 2. $\text{det}(A)=\text{det}(A^\top)$
 3. $A$ is invertible $\implies\text{det}(A^{-1})=\frac{1}{\text{det}(A)}$
 4. $\text{det}(A)=\text{det}(S^{-1}AS)$
-5. $T$ is triangular matrix $\implies\text{det}(T)=\Prod_i T_{ii}$
+5. $T$ is triangular matrix $\implies\text{det}(T)=\prod_i T_{ii}$
 6. 
 
 ## Trace
