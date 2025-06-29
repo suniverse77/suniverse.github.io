@@ -30,7 +30,7 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 2. $\text{det}(A)=\text{det}(A^\top)$
 3. $A$ is invertible $\implies\text{det}(A^{-1})=\frac{1}{\text{det}(A)}$
 4. $\text{det}(A)=\text{det}(S^{-1}AS)$
-5. $T$ is triangular matrix $\implies\text{det}(T)=\prod_i T_{ii}$
+5. $T$ is triangular matrix $\implies\text{det}(T)=\prod_i t_{ii}$
 6. 하나의 column(row)에 어떤 숫자를 곱해서 다른 column(row)에 더해도 determinant는 동일
 8. 하나의 column(row)에 상수 $\lambda$를 곱하면 $\text{det}(\lambda A)=\lambda^n\text{det}(A)$
 9. 두 column(row)를 바꾸는 것은 determinant의 부호를 바꿈
@@ -57,9 +57,13 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 ### Properties of Trace
 
 $$
-\displaystyle\text{tr}(A)=\sum_iA_{ii}
+\displaystyle\text{tr}(A)=\sum_ia_{ii}
 $$
 
 Square matrix에 대해 정의되며, 대각 성분을 모두 더한 스칼라 값이다.
 
 1. $\text{tr}(A+B)=\text{tr}(A)+\text{tr}(B)$
+2. $\text{tr}(\lambda A)=\lambda\text{tr}(A)$
+3. $\text{tr}(I_n)=n$
+4. $A\in\mathbb{R}^{{\color{Orchid} n}\times k},B\in\mathbb{R}^{k\times n}\implies\text{tr}(AB)=\text{tr}(BA)$
+5. $\implies\text{tr}(ABC)=\text{tr}(CAB)=\text{tr}(BCA)$
