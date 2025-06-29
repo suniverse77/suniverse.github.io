@@ -31,7 +31,26 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 3. $A$ is invertible $\implies\text{det}(A^{-1})=\frac{1}{\text{det}(A)}$
 4. $\text{det}(A)=\text{det}(S^{-1}AS)$
 5. $T$ is triangular matrix $\implies\text{det}(T)=\prod_i T_{ii}$
-6. 
+6. 하나의 column(row)에 어떤 숫자를 곱해서 다른 column(row)에 더해도 determinant는 동일
+8. 하나의 column(row)에 상수 $\lambda&$를 곱하면 $\text{det}(\lambda A)=\lambda^n\text{det}(A)$
+9. 두 column(row)를 바꾸는 것은 determinant의 부호를 바꿈
+
+(5), (6), (7), (8)번의 성질을 이용해 행렬을 triangular matrix로 변환하면 determinant를 쉽게 구할 수 있다.
+
+> ex)
+> $$
+> A=\begin{bmatrix}1&2\\3&4\end{bmatrix}
+> $$
+>
+> ---
+> 1. Gauss Elimination 수행
+>
+>    $$
+>    A=\begin{bmatrix}1&2\\0&-2\end{bmatrix}
+>    $$
+> 2. (5)번 성질 사용
+>
+>    $\text{det}(A)=-2$
 
 ## Trace
 
