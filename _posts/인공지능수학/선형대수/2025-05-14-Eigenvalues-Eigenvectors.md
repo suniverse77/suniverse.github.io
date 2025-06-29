@@ -43,17 +43,19 @@ Square matrix $A$에 대해 $\mathbf{0}$이 아닌 $\mathbf{x}$가 위의 식을
 >    \lambda_1=5,~\lambda_2=2
 >    $$
 > 3. 고유값에 대응하는 고유벡터를 구함
->    
+>
+>    (1) $\lambda_1=5:~\mathbf{x}_1=\begin{bmatrix}1\\2\end{bmatrix}$
 >    $$
->    \lambda_1=5:~(A-5I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}-1&2&0\\1&-2&0\end{array}\end{bmatrix}
+>    ~(A-5I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}-1&2&0\\1&-2&0\end{array}\end{bmatrix}
 >    $$
 >
 >    $$
 >    x_1=2x_2~\to~\begin{bmatrix}x_1\\x_2\end{bmatrix}=c\begin{bmatrix}1\\2\end{bmatrix}
 >    $$
 >
+>    (2) $\lambda_1=2:~\mathbf{x}_2=$
 >    $$
->    \lambda_1=2:~(A-2I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}2&2&0\\1&1&0\end{array}\end{bmatrix}
+>    ~(A-2I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}2&2&0\\1&1&0\end{array}\end{bmatrix}
 >    $$
 >
 >    $$
