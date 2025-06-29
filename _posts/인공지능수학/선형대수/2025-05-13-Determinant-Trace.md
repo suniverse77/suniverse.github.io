@@ -65,7 +65,7 @@ Square matrix에 대해 정의되며, 대각 성분을 모두 더한 스칼라 �
 1. $\text{tr}(A+B)=\text{tr}(A)+\text{tr}(B)$
 2. $\text{tr}(\lambda A)=\lambda\text{tr}(A)$
 3. $\text{tr}(I_n)=n$
-4. $A\in\mathbb{R}^{\color{red}n\times k},B\in\mathbb{R}^{k\times \color{red}n}\implies\text{tr}(AB)=\text{tr}(BA)$
+4. $A\in\mathbb{R}^{\color{red}n\times \color{blue}k},B\in\mathbb{R}^{\color{blue}k\times \color{red}n}\implies\text{tr}(AB)=\text{tr}(BA)$
 5. $A\in\mathbb{R}^{\color{red}a\times \color{blue}k},B\in\mathbb{R}^{\color{blue}k\times \color{green}l},C\in\mathbb{R}^{\color{green}l\times \color{red}n}\implies\text{tr}(ABC)=\text{tr}(CAB)=\text{tr}(BCA)$
 6. $\text{tr}(\mathbf{x}^\top\mathbf{y})=\mathbf{x}^\top\mathbf{y}\in\mathbb{R}$
 7. $\text{tr}(A)=\text{tr}(S^{-1}AS)$
