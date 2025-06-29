@@ -32,7 +32,7 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 4. $\text{det}(A)=\text{det}(S^{-1}AS)$
 5. $T$ is triangular matrix $\implies\text{det}(T)=\prod_i T_{ii}$
 6. 하나의 column(row)에 어떤 숫자를 곱해서 다른 column(row)에 더해도 determinant는 동일
-8. 하나의 column(row)에 상수 $\lambda&$를 곱하면 $\text{det}(\lambda A)=\lambda^n\text{det}(A)$
+8. 하나의 column(row)에 상수 $\lambda$를 곱하면 $\text{det}(\lambda A)=\lambda^n\text{det}(A)$
 9. 두 column(row)를 바꾸는 것은 determinant의 부호를 바꿈
 
 (5), (6), (7), (8)번의 성질을 이용해 행렬을 triangular matrix로 변환하면 determinant를 쉽게 구할 수 있다.
@@ -55,5 +55,11 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 ## Trace
 
 ### Properties of Trace
+
+$$
+\displaystyle\text{tr}(A)=\sum_iA_{ii}
+$$
+
+Square matrix에 대해 정의되며, 대각 성분을 모두 더한 스칼라 값이다.
 
 1. $\text{tr}(A+B)=\text{tr}(A)+\text{tr}(B)$
