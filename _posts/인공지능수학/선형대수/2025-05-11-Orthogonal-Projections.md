@@ -32,7 +32,7 @@ $$
 >    $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0\to \mathbf{x}^\top\mathbf{b}=\lambda\mathbf{b}^\top\mathbf{b}$
 > 4. Find projection
 >    
->    $\lambda=\frac{\mathbf{b}^\top\mathbf{x}}{\mathbf{b}^\top\mathbf{b}}\to\pi_U(\mathbf{x})=\frac{\mathbf{b}\mathbf{b}^\top}{\lVert\mathbf{b}\rVert}\mathbf{x}$
+>    $\lambda=\frac{\mathbf{b}^\top\mathbf{x}}{\mathbf{b}^\top\mathbf{b}}~~\to~~\pi_U(\mathbf{x})=\frac{\mathbf{b}\mathbf{b}^\top}{\lVert\mathbf{b}\rVert}\mathbf{x}$
 
 ## Projection onto General Subspaces
 
@@ -62,5 +62,5 @@ $$
 >    
 > 5. Find projection
 >
->    $\boldsymbol\lambda=(B^\top B)^{-1}B^\top\mathbf{x}\to\pi_U(\mathbf{x})=B(B^\top B)^{-1}B^\top\mathbf{x}$
+>    $\boldsymbol\lambda=(B^\top B)^{-1}B^\top\mathbf{x}~~\to~~\pi_U(\mathbf{x})=B(B^\top B)^{-1}B^\top\mathbf{x}$
 
