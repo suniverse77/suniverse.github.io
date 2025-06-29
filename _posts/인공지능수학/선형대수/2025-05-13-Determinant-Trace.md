@@ -57,7 +57,7 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 ### Properties of Trace
 
 $$
-\displaystyle\text{tr}(A)=\sum_ia_{ii}
+\displaystyle\text{tr}(A)=\sum_{i=1}^na_{ii}
 $$
 
 Square matrix에 대해 정의되며, 대각 성분을 모두 더한 스칼라 값이다.
@@ -67,3 +67,6 @@ Square matrix에 대해 정의되며, 대각 성분을 모두 더한 스칼라 �
 3. $\text{tr}(I_n)=n$
 4. $A\in\mathbb{R}^{{\color{red} n}\times k},B\in\mathbb{R}^{k\times n}\implies\text{tr}(AB)=\text{tr}(BA)$
 5. $\implies\text{tr}(ABC)=\text{tr}(CAB)=\text{tr}(BCA)$
+6. $\text{tr}(\mathbf{x}^\top\mathbf{y})=\mathbf{x}^\top\mathbf{y}\in\mathbb{R}$
+7. $\text{tr}(A)=\text{tr}(S^{-1}AS)$
+8. $\text{det}(I+\Delta)=1+\text{tr}(\Delta)$
