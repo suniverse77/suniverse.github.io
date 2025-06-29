@@ -38,6 +38,7 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 (5), (6), (7), (8)번의 성질을 이용해 행렬을 triangular matrix로 변환하면 determinant를 쉽게 구할 수 있다.
 
 > ex)
+> 
 > $$
 > A=\begin{bmatrix}1&2\\3&4\end{bmatrix}
 > $$
