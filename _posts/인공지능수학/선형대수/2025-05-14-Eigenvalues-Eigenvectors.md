@@ -39,8 +39,10 @@ Square matrix $A$에 대해 $\mathbf{0}$이 아닌 $\mathbf{x}$가 위의 식을
 >    \text{det}(A-\lambda I)=\begin{vmatrix}4-\lambda&2\\1&3-\lambda\end{vmatrix}=(4-\lambda)(3-\lambda)-2=0
 >    $$
 >
->    $\lambda_1=5,~\lambda_2=2$
-> 2. 고유값에 대응하는 고유벡터를 구함
+>    $$
+>    \lambda_1=5,~\lambda_2=2
+>    $$
+> 3. 고유값에 대응하는 고유벡터를 구함
 >    
 >    $$
 >    \lambda_1=5:~(A-5I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}-1&2&0\\1&-2&0\end{array}\end{bmatrix}
