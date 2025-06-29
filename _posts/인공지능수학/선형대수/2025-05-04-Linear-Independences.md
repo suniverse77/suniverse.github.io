@@ -13,7 +13,7 @@ toc_sticky: true
 
 ### 정의
 
-벡터 집합 내의 벡터들 $\{\mathbf{x_1},\dots,\mathbf{x_n}\}$이 서로들의 선형 결합으로 표현될 수 없을 때, 그 벡터들은 선형 종속이라고 표현한다.
+벡터 집합 내의 벡터들 $\lbrace\mathbf{x_1},\dots,\mathbf{x_n}\rbrace$이 서로들의 선형 결합으로 표현될 수 없을 때, 그 벡터들은 선형 종속이라고 표현한다.
 
 $$
 \mathbf{0}=\lambda_1\mathbf{x_1}+\cdots+\lambda_n\mathbf{x_n}=\sum_{i=1}^n\lambda_i\mathbf{x}_i
