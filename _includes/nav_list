@@ -1,6 +1,6 @@
 {% assign nav_items = 
   "
-  논문리뷰:Diffusion,Transformer;
+  논문리뷰:Transformer,Diffusion,Video Generation;
   인공지능 수학:선형대수,확률,최적화,머신러닝 수학;
   딥러닝:
   " | split: ";" 
