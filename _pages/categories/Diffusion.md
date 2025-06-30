@@ -1,7 +1,7 @@
 ---
 title: "논문리뷰 / Diffusion"
 layout: archive
-permalink: /categories/논문리뷰/Diffusion/
+permalink: /categories/논문리뷰/diffusion/
 author_profile: true
 sidebar_main: true
 ---
