@@ -1,7 +1,7 @@
 ---
 title: "논문리뷰 / Transformer"
 layout: archive
-permalink: /categories/논문리뷰/Transformer/
+permalink: /categories/논문리뷰/transformer/
 author_profile: true
 sidebar_main: true
 ---
