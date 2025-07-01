@@ -20,14 +20,32 @@ toc_sticky: true
 
 비디오를 생성하기 위해서는 spatial한 차원뿐만 아니라 temporal한 차원까지 고려해야하기 때문에 대부분의 U-Net 기반 디퓨전 네트워크들을 수정하였다.
 
-- spatiotemporal decoder $D^t$는 64x64 크기의 RGB frame 16장을 생성
-- frame interpolation network $\uparrow_F$는 디코더가 생성한 16장의 frame 사이를 보간해 frame rate를 증가시킴
+- spatiotemporal decoder $D^t$는 64x64 크기의 RGB 프레임 16장을 생성
+- frame interpolation network $\uparrow_F$는 디코더가 생성한 16장의 프레임 사이를 보간해 frame rate를 증가시킴
 - super-resolution networks $\text{SR}^t_l$
 
 FC layer와 같은 layer들은 상관없기 때문에 추가적인 수정은 안했다고 한다.
 
 #### Pseudo-3D Convolutional Layers
 
+일반적인 3D conv를 사용하지 않고, pseudo-3D conv 방식을 사용하였다.
 
+$$
+Conv_{P3D}(h):=Conv_{1D}(Conv_{2d}(h)\circ T)\circ T
+$$
+
+Psuedo-3D conv는 위와 같이 정의되며, $\circ T$는 spatial 차원과 temporal 차원을 transpose하는 연산을 의미한다.
+
+1. 2D conv를 이용해 각 프레임별로 feature map을 추출
+2. 추출된 feature map을 프레임별로 채널축으로 쌓음
+3. 1D conv를 이용해 프레임별로 연산을 진행
 
 #### Pseudo-3D Attention Layers
+
+Pseudo-3D Conv와 동일하게 차원 분해 전략을 attention layer에도 적용하였다.
+
+$$
+ATTN_{P3D}(h)=unflatten(ATTN_{1D}(ATTN_{2d}(flatten(h))\circ T)\circ T)
+$$
+
+### Frame Interpolation Network
