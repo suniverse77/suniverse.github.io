@@ -42,6 +42,13 @@ Psuedo-3D conv는 위와 같이 정의되며, $\circ T$는 spatial 차원과 tem
 
 ```python
 x = rearrange(x, 'b c f h w -> (b f) c h w')
+x = self.spatial_conv(x)
+
+x = rearrange(x, '(b f) c h w -> b c f h w', b = b)
+x = rearrange(x, 'b c f h w -> (b h w) c f')
+x = self.temporal_conv(x)
+
+x = rearrange(x, '(b h w) c f -> b c f h w', h = h, w = w)
 ```
 
 #### Pseudo-3D Attention Layers
