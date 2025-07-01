@@ -41,11 +41,24 @@ Psuedo-3D conv는 위와 같이 정의되며, $\circ T$는 spatial 차원과 tem
 3. 1D conv를 이용해 프레임별로 연산을 진행
 
 ```python
-x = rearrange(x, 'b c f h w -> (b f) c h w')
+b, c, *_, h, w = x.shape
+
+is_video = x.ndim == 5
+enable_time &= is_video
+
+if is_video:
+    x = rearrange(x, 'b c f h w -> (b f) c h w')
+
 x = self.spatial_conv(x)
 
-x = rearrange(x, '(b f) c h w -> b c f h w', b = b)
+if is_video:
+    x = rearrange(x, '(b f) c h w -> b c f h w', b = b)
+
+if not enable_time or not exists(self.temporal_conv):
+    return x
+
 x = rearrange(x, 'b c f h w -> (b h w) c f')
+
 x = self.temporal_conv(x)
 
 x = rearrange(x, '(b h w) c f -> b c f h w', h = h, w = w)
@@ -60,5 +73,38 @@ ATTN_{P3D}(h)=unflatten(ATTN_{1D}(ATTN_{2d}(flatten(h))\circ T)\circ T)
 $$
 
 입력 텐서가 $\mathbb{R}^{B\times C\times F\times H\times W}$인 이유는 PyTorch의 nn.Conv3d가 (B, C, D, H, W) 형태의 입력을 받기 때문이다.
+
+```python
+b, c, *_, h, w = x.shape
+is_video = x.ndim == 5
+enable_time &= is_video
+
+if is_video:
+    x = rearrange(x, 'b c f h w -> (b f) (h w) c')
+else:
+    x = rearrange(x, 'b c h w -> b (h w) c')
+
+space_rel_pos_bias = self.spatial_rel_pos_bias(h, w) if exists(self.spatial_rel_pos_bias) else None
+
+x = self.spatial_attn(x, rel_pos_bias = space_rel_pos_bias) + x
+
+if is_video:
+    x = rearrange(x, '(b f) (h w) c -> b c f h w', b = b, h = h, w = w)
+else:
+    x = rearrange(x, 'b (h w) c -> b c h w', h = h, w = w)
+
+if enable_time:
+
+    x = rearrange(x, 'b c f h w -> (b h w) f c')
+
+    time_rel_pos_bias = self.temporal_rel_pos_bias(x.shape[1]) if exists(self.temporal_rel_pos_bias) else None
+
+    x = self.temporal_attn(x, rel_pos_bias = time_rel_pos_bias) + x
+
+    x = rearrange(x, '(b h w) f c -> b c f h w', w = w, h = h)
+
+if self.has_feed_forward:
+    x = self.ff(x, enable_time = enable_time) + x
+```
 
 ### Frame Interpolation Network
