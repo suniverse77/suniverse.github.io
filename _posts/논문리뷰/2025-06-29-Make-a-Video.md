@@ -48,4 +48,6 @@ $$
 ATTN_{P3D}(h)=unflatten(ATTN_{1D}(ATTN_{2d}(flatten(h))\circ T)\circ T)
 $$
 
+입력 텐서가 $\mathbb{R}^{B\times C\times F\times H\times W}$인 이유는 PyTorch의 nn.Conv3d가 (B, C, D, H, W) 형태의 입력을 받기 때문이다.
+
 ### Frame Interpolation Network
