@@ -40,6 +40,10 @@ Psuedo-3D conv는 위와 같이 정의되며, $\circ T$는 spatial 차원과 tem
 2. 추출된 feature map을 프레임별로 채널축으로 쌓음
 3. 1D conv를 이용해 프레임별로 연산을 진행
 
+```python
+x = rearrange(x, 'b c f h w -> (b f) c h w')
+```
+
 #### Pseudo-3D Attention Layers
 
 Pseudo-3D Conv와 동일하게 차원 분해 전략을 attention layer에도 적용하였다.
