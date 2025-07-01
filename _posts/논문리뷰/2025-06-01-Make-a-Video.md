@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[논문리뷰] Make-A-Video: Text-to-Video Generation without Text-Video Data"
-last_modified_at: 2025-06-29
+last_modified_at: 2025-06-01
 categories: ["논문리뷰"]
 tags: ["Video Generation"]
 excerpt: ""
