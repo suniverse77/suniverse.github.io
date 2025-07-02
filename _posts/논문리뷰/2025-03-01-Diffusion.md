@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[논문리뷰] Understanding Diffusion Models: A Unified Perspective"
-last_modified_at: 2025-04-01
+last_modified_at: 2025-03-01
 categories: ["논문리뷰"]
 tags: ["Diffusion"]
 excerpt: ""
