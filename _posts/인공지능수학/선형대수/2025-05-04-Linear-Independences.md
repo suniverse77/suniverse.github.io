@@ -11,7 +11,7 @@ toc_sticky: true
 ---
 
 
-### 정의
+## 정의
 
 벡터 집합 내의 벡터들 $\lbrace\mathbf{x_1},\dots,\mathbf{x_n}\rbrace$이 서로들의 선형 결합으로 표현될 수 없을 때, 그 벡터들은 선형 종속이라고 표현한다.
 
@@ -31,7 +31,7 @@ $$
    \begin{bmatrix}1&3&0\\0&0&2\end{bmatrix} → \begin{bmatrix}3\\0\end{bmatrix}=3\begin{bmatrix}1\\0\end{bmatrix}
    $$
 
-### Linear Independence 판단하는 방법
+## Linear Independence 판단하는 방법
 
 벡터들이 선형 독립인지 판단하는 방법에는 크게 2가지가 있다.
 
@@ -44,7 +44,7 @@ $$
 즉, 변수 $\lambda_i$에 free variable이 존재하면 안된다.
 
 <details>
-<summary><font color='purple'>Example</font></summary>
+<summary><font color='purple'>**Example**</font></summary>
 <div markdown="1">
 
 <center><img src='{{"/assets/images/인공지능수학/1-4. Figure1.png" | relative_url}}' width="50%"></center>
