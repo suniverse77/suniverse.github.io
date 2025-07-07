@@ -122,12 +122,17 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
    $$
 2. 가우스 소거법을 사용해 REF로 변환
 3. non-pivot column에 관련된 variable들을 free variable들로 표현
+   
    $$
-   x_2=-2x_3-12x_4,~x_1=-8x_3+4x_4
+   x_2=-2x_3-12x_4
    $$
-4. Homogeneous solution
 
-     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="40%"></center>
+   $$
+   x_1=-8x_3+4x_4
+   $$
+5. Homogeneous solution
+
+     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="35%"></center>
 
 **Find General solution**
 
