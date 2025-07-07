@@ -33,17 +33,16 @@ $$
 
 **벡터의 차원과 벡터 공간의 차원은 다르다.**
 
-> ex1) 3차원 벡터
-> 
-> $$
-> \mathbf{v}=\begin{bmatrix}2\\4\\6\end{bmatrix}~\to~\text{dim}(\mathbf{v})=3
-> $$
->
-> ex2) 3차원 벡터들이 만드는 2차원 공간
-> 
-> $$
-> V=\text{span}(\begin{bmatrix}1\\3\\5\end{bmatrix}~,~\begin{bmatrix}2\\4\\6\end{bmatrix})~\to~\text{dim}(V)=2
-> $$
+- 3차원 벡터
+
+  $$
+  \mathbf{v}=\begin{bmatrix}2\\4\\6\end{bmatrix}~\to~\text{dim}(\mathbf{v})=3
+  $$
+- 3차원 벡터들이 만드는 2차원 공간
+
+  $$
+  V=\text{span}(\begin{bmatrix}1\\3\\5\end{bmatrix}~,~\begin{bmatrix}2\\4\\6\end{bmatrix})~\to~\text{dim}(V)=2
+  $$
 
 Subspace의 차원은 원래 vector space의 차원보다 작거나 같아야 한다.
 
@@ -55,14 +54,22 @@ $$
 
 행렬 $A$에서 선형 독립인 row 또는 column의 개수를 rank라고 부르며, 해당 벡터들이 만드는 공간의 최대 차원을 나타낸다.
 
-> ex)
-> $$
-> A=\begin{bmatrix}1&2\\3&4\\5&6\end{bmatrix}
-> $$
->
-> Gauss Elimination을 하면 $\text{rank}(A)=2$
-> 
-> 즉, 3개의 column vector들이 span하는 공간 $V$의 차원은 2차원 평면이다.
+<details>
+<summary><font color='red'>Example</font></summary>
+<div markdown="1">
+  
+$$
+A=\begin{bmatrix}1&2\\3&4\\5&6\end{bmatrix}
+$$
+
+---
+
+Gauss Elimination을 하면 $\text{rank}(A)=2$
+
+즉, 3개의 column vector들이 span하는 공간 $V$의 차원은 2차원 평면이다.
+
+</div>
+</details>
 
 ### Properties of Rank
 
