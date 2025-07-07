@@ -26,11 +26,10 @@ $$
 
 1. 벡터 $\mathbf{x_1},\cdots,\mathbf{x_k}$ 중 적어도 하나가 $\mathbf{0}$이라면, linearly dependent하다.
 2. 행렬에서 non-pivot column은 왼쪽에 존재하는 column들의 선형 결합으로 표현될 수 있다.
-    
-> ex)
-> $$
-> \begin{bmatrix}1&3&0\\0&0&2\end{bmatrix} → \begin{bmatrix}3\\0\end{bmatrix}=3\begin{bmatrix}1\\0\end{bmatrix}
-> $$
+   
+   $$
+   \begin{bmatrix}1&3&0\\0&0&2\end{bmatrix} → \begin{bmatrix}3\\0\end{bmatrix}=3\begin{bmatrix}1\\0\end{bmatrix}
+   $$
 
 ### Linear Independence 판단하는 방법
 
@@ -43,33 +42,41 @@ $$
 **2. Homogeneous Equation $\sum\lambda_i\mathbf{x_i}=\mathbf{0}$이 있을 때, 해 $\boldsymbol\lambda$가 오직 trivial solution만 존재해야 한다.**
     
 즉, 변수 $\lambda_i$에 free variable이 존재하면 안된다.
-    
-> ex) ![Figure 1](/assets/images/인공지능수학/1-4. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
->
-> ---
-> 1. 벡터들을 행렬로 표현
->
->    $$
->    \begin{bmatrix}1&1&-1\\2&1&-2\\-3&0&1\\4&2&1\end{bmatrix}
->    $$
-> 2. Gauss Elimination 수행
->
->    $$
->    \begin{bmatrix}1&1&-1\\0&1&0\\0&0&1\\0&0&0\end{bmatrix}
->    $$
->
-> 3. Linearly Independent 판단
->
->    - 모든 column이 pivot column이므로, 세 벡터는 linearly independent하다.
->    - Homogeneous Equation의 해가 trivial solution이므로, 세 벡터는 linearly independent하다.
->    
->      $$
->      \lambda_1\begin{bmatrix}1\\0\\0\\0\end{bmatrix}+\lambda_2\begin{bmatrix}1\\1\\0\\0\end{bmatrix}
->      +\lambda_3\begin{bmatrix}-1\\0\\1\\0\end{bmatrix}=\begin{bmatrix}0\\0\\0\\0\end{bmatrix}
->      $$
->      
->      위 방정식을 만족시키는 해는 trivial solution밖에 없다.
->
->      $$
->      \mathbf{\lambda}=\begin{bmatrix}0&0&0\end{bmatrix}^\top
->      $$
+
+<details>
+<summary>Example</summary>
+<div markdown="1">
+
+<center><img src='{{"/assets/images/인공지능수학/1-4. Figure1.png" | relative_url}}' width="50%"></center>
+
+---
+
+1. 벡터들을 행렬로 표현
+
+   $$
+   \begin{bmatrix}1&1&-1\\2&1&-2\\-3&0&1\\4&2&1\end{bmatrix}
+   $$
+2. Gauss Elimination 수행
+
+   $$
+   \begin{bmatrix}1&1&-1\\0&1&0\\0&0&1\\0&0&0\end{bmatrix}
+   $$
+
+3. Linearly Independent 판단
+
+   - 모든 column이 pivot column이므로, 세 벡터는 linearly independent하다.
+   - Homogeneous Equation의 해가 trivial solution이므로, 세 벡터는 linearly independent하다.
+   
+     $$
+     \lambda_1\begin{bmatrix}1\\0\\0\\0\end{bmatrix}+\lambda_2\begin{bmatrix}1\\1\\0\\0\end{bmatrix}
+     +\lambda_3\begin{bmatrix}-1\\0\\1\\0\end{bmatrix}=\begin{bmatrix}0\\0\\0\\0\end{bmatrix}
+     $$
+     
+     위 방정식을 만족시키는 해는 trivial solution밖에 없다.
+
+     $$
+     \mathbf{\lambda}=\begin{bmatrix}0&0&0\end{bmatrix}^\top
+     $$
+
+</div>
+</details>
