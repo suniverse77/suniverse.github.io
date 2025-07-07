@@ -33,7 +33,7 @@ Square matrix $A$의 column vector들이 orthonormal하면, $A$를 **orthogonal 
 
 Basis $B=\lbrace\mathbf{b}_1,\dots,\mathbf{b}_n\rbrace$를 orthonormal basis로 변환하는 방법에는 크게 2가지가 있다.
 
-**1. $[BB^\top\vert B]$에 대해 Gauss Elimination 수행**
+1. **$[BB^\top\vert B]$에 대해 Gauss Elimination 수행**
 
   <details>
   <summary><font color='red'>Example</font></summary>
@@ -51,7 +51,7 @@ Basis $B=\lbrace\mathbf{b}_1,\dots,\mathbf{b}_n\rbrace$를 orthonormal basis로 
   </div>
   </details>
 
-**2. Gram-Schmidt method 적용**
+2. **Gram-Schmidt method 적용**
 
 <center><img src='{{"/assets/images/인공지능수학/2-3. Figure4.png" | relative_url}}' width="100%"></center>
 
