@@ -56,12 +56,20 @@ $$
 
 행렬 $A$가 symmetric, positive definite matrix라면, 내적을 위와 같이 정의할 수 있다.
 
-> ex) ![Figure 1](/assets/images/인공지능수학/2-1. Figure1.png){: style="display:block; margin:0 auto; width: 25%; height: 25%;"}
->
-> ---
-> ![Figure 2](/assets/images/인공지능수학/2-1. Figure2.png){: style="display:block; margin:0 auto; width: 100%; height: 100%;"}
-> 
-> $\mathbf{x}\not=\mathbf{0}$일 때 항상 양수이므로, $A$는 symmetric, positive definite matrix이다.
+<details>
+<summary><font color='red'>Example</font></summary>
+<div markdown="1">
+  
+<center><img src='{{"/assets/images/인공지능수학/2-1. Figure1.png" | relative_url}}' width="25%"></center>
+
+---
+
+<center><img src='{{"/assets/images/인공지능수학/2-1. Figure2.png" | relative_url}}' width="100%"></center>
+
+$\mathbf{x}\not=\mathbf{0}$일 때 항상 양수이므로, $A$는 symmetric, positive definite matrix이다.
+
+</div>
+</details>
 
 ## Outer Product
 
