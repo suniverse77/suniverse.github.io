@@ -111,7 +111,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
    $$
 6. Particular solution을 구함
 
-   <center><img src='{{"/assets/images/인공지능수학/1-2. Figure5.png" | relative_url}}' width="18%"></center>
+   <center><img src='{{"/assets/images/인공지능수학/1-2. Figure5.png" | relative_url}}' width="15%"></center>
 
 **Solve Homogeneous Equation**
 
@@ -127,11 +127,11 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
    $$
 4. Homogeneous solution
 
-     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="30%"></center>
+     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="40%"></center>
 
 **Find General solution**
 
-<center><img src='{{"/assets/images/인공지능수학/1-2. Figure7.png" | relative_url}}' width="35%"></center>
+<center><img src='{{"/assets/images/인공지능수학/1-2. Figure7.png" | relative_url}}' width="50%"></center>
 
 </div>
 </details>
