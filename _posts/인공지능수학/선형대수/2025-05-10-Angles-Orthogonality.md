@@ -35,6 +35,23 @@ Basis $B=\lbrace\mathbf{b}_1,\dots,\mathbf{b}_n\rbrace$를 orthonormal basis로 
 
 1. **$[BB^\top\vert B]$에 대해 Gauss Elimination 수행**
 
+   <details>
+   <summary><font color='red'>Example</font></summary>
+   <div markdown="1">
+    
+   ![Figure 1](/assets/images/인공지능수학/2-3. Figure1.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
+  
+   ---
+   ![Figure 2](/assets/images/인공지능수학/2-3. Figure2.png){: style="display:block; margin:0 auto; width: 100%; height: 100%;"}
+  
+   가우스 소거법을 적용해서 아래와 같은 orthonormal basis를 얻을 수 있다.
+  
+   ![Figure 3](/assets/images/인공지능수학/2-3. Figure3.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
+  
+   </div>
+   </details>
+3. **Gram-Schmidt method 적용**
+
   <details>
   <summary><font color='red'>Example</font></summary>
   <div markdown="1">
