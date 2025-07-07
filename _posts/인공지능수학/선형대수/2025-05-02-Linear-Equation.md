@@ -34,23 +34,29 @@ toc_sticky: true
 
 연립방정식을 Reduced REF로 변형하는 알고리즘
 
-> ex)
-> 
-> $$
-> \begin{bmatrix}\begin{array}{ccc|c}1&1&1&6\\2&3&1&14\\1&-1&2&2\end{array}\end{bmatrix}
-> $$
->
-> ---
-> 1. $\rho_2=\rho_2-2\rho_1$ , $\rho_3=\rho_3-\rho_1$
->
->    $$
->    \begin{bmatrix}\begin{array}{ccc|c}1&1&1&6\\0&1&-1&2\\0&-2&1&-4\end{array}\end{bmatrix}
->    $$
-> 2. $\rho_3=\rho_3+2\rho_1$
->
->    $$
->    \begin{bmatrix}\begin{array}{ccc|c}1&1&1&6\\0&1&-1&2\\0&0&-1&0\end{array}\end{bmatrix}
->    $$  
+<details>
+<summary>Example</summary>
+<div markdown="1">
+
+$$
+\begin{bmatrix}\begin{array}{ccc|c}1&1&1&6\\2&3&1&14\\1&-1&2&2\end{array}\end{bmatrix}
+$$
+
+---
+
+1. $\rho_2=\rho_2-2\rho_1$ , $\rho_3=\rho_3-\rho_1$
+
+   $$
+   \begin{bmatrix}\begin{array}{ccc|c}1&1&1&6\\0&1&-1&2\\0&-2&1&-4\end{array}\end{bmatrix}
+   $$
+2. $\rho_3=\rho_3+2\rho_1$
+
+   $$
+   \begin{bmatrix}\begin{array}{ccc|c}1&1&1&6\\0&1&-1&2\\0&0&-1&0\end{array}\end{bmatrix}
+   $$  
+
+</div>
+</details>
 
 ### Reduced REF (Row Echelon Form)
 
@@ -99,12 +105,13 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
    $$
    x_2+2x_3+12x_4=8~\to~x_2=8
    $$
+   
    $$
    x_1+8x_3-4x_4=42~\to~x_1=42
    $$
 6. Particular solution을 구함
 
-   <center><img src='{{"/assets/images/인공지능수학/1-2. Figure5.png" | relative_url}}' width="20%"></center>
+   <center><img src='{{"/assets/images/인공지능수학/1-2. Figure5.png" | relative_url}}' width="18%"></center>
 
 **Solve Homogeneous Equation**
 
@@ -120,11 +127,11 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
    $$
 4. Homogeneous solution
 
-     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="20%"></center>
+     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="30%"></center>
 
 **Find General solution**
 
-<center><img src='{{"/assets/images/인공지능수학/1-2. Figure7.png" | relative_url}}' width="20%"></center>
+<center><img src='{{"/assets/images/인공지능수학/1-2. Figure7.png" | relative_url}}' width="35%"></center>
 
 </div>
 </details>
