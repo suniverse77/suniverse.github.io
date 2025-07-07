@@ -28,13 +28,18 @@ $$
 
 2. $\pi_U(\mathbf{x})$는 $U$의 basis의 상수배이다.
 
-   $\pi_U(\mathbf{x})=\lambda\mathbf{b}$
-3. $\mathbf{x}-\lambda\mathbf{b}$는 $U$의 basis와 직교해야한다.
+   $$
+   \pi_U(\mathbf{x})=\lambda\mathbf{b}
+   $$
+4. $\mathbf{x}-\lambda\mathbf{b}$는 $U$의 basis와 직교해야한다.
 
-   $\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0\to \mathbf{x}^\top\mathbf{b}=\lambda\mathbf{b}^\top\mathbf{b}$
-4. Find projection
+   $$\langle\mathbf{x}-\lambda\mathbf{b},\mathbf{b}\rangle=0\to \mathbf{x}^\top\mathbf{b}=\lambda\mathbf{b}^\top\mathbf{b}
+   $$
+6. Find projection
    
-   $\lambda=\frac{\mathbf{b}^\top\mathbf{x}}{\mathbf{b}^\top\mathbf{b}}~\to~\pi_U(\mathbf{x})=\frac{\mathbf{b}\mathbf{b}^\top}{\lVert\mathbf{b}\rVert}\mathbf{x}$
+   $$
+   \lambda=\frac{\mathbf{b}^\top\mathbf{x}}{\mathbf{b}^\top\mathbf{b}}~\to~\pi_U(\mathbf{x})=\frac{\mathbf{b}\mathbf{b}^\top}{\lVert\mathbf{b}\rVert}\mathbf{x}
+   $$
 
 </div>
 </details>
@@ -57,19 +62,25 @@ $$
 
 2. $\pi_U(\mathbf{x})$는 $U$의 basis들의 선형 결합으로 표현될 수 있다.
 
-   $\pi_U(\mathbf{x})=\lambda_1\mathbf{b}_1+\cdots+\lambda_m\mathbf{b}_m=B\boldsymbol\lambda$
-3. $\mathbf{x}-\pi_U(\mathbf{x})$는 $U$의 basis들과 직교해야한다.
+   $$
+   \pi_U(\mathbf{x})=\lambda_1\mathbf{b}_1+\cdots+\lambda_m\mathbf{b}_m=B\boldsymbol\lambda
+   $$
+4. $\mathbf{x}-\pi_U(\mathbf{x})$는 $U$의 basis들과 직교해야한다.
 
-   $\langle\mathbf{x}-\pi_U(\mathbf{x}),\mathbf{b}_1\rangle=0,~\cdots,~\langle\mathbf{x}-\pi_U(\mathbf{x}),\mathbf{b}_m\rangle=0$
-4. 행렬로 표현
+   $$
+   \langle\mathbf{x}-\pi_U(\mathbf{x}),\mathbf{b}_1\rangle=0,~\cdots,~\langle\mathbf{x}-\pi_U(\mathbf{x}),\mathbf{b}_m\rangle=0
+   $$
+6. 행렬로 표현
 
    ![Figure 3](/assets/images/인공지능수학/2-4. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
    
    ![Figure 4](/assets/images/인공지능수학/2-4. Figure4.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
    
-5. Find projection
+7. Find projection
 
-   $\boldsymbol\lambda=(B^\top B)^{-1}B^\top\mathbf{x}~\to~\pi_U(\mathbf{x})=B(B^\top B)^{-1}B^\top\mathbf{x}$
+   $$
+   \boldsymbol\lambda=(B^\top B)^{-1}B^\top\mathbf{x}~\to~\pi_U(\mathbf{x})=B(B^\top B)^{-1}B^\top\mathbf{x}
+   $$
 
 </div>
 </details>
