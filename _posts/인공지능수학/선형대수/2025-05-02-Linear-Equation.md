@@ -35,7 +35,7 @@ toc_sticky: true
 연립방정식을 Reduced REF로 변형하는 알고리즘
 
 <details>
-<summary>Example</summary>
+<summary><font color='red'>Example</font></summary>
 <div markdown="1">
 
 $$
@@ -80,7 +80,7 @@ $Ax=0$에서 행렬 $A$가 invertible하다면, 해는 zero vector (trivial solu
 Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아닌 해를 non-trivial solution이라고 부른다.
 
 <details>
-<summary>Example</summary>
+<summary><font color='red'>Example</font></summary>
 <div markdown="1">
   
 <center><img src='{{"/assets/images/인공지능수학/1-2. Figure4.png" | relative_url}}' width="40%"></center>
