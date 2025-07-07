@@ -81,43 +81,50 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 
 ---
 
-> ---
-> Solve Non-Homogeneous Equation
->   1. Non-Homogeneous Equation을 Augmented Matrix로 변환
->      
->      $$
->      \begin{bmatrix}\begin{array}{cccc|c}1&0&8&-4&42\\0&1&2&12&8\end{array}\end{bmatrix}
->      $$
->   2. 가우스 소거법을 사용해 REF로 변환
->   3. Free variable들을 원하는 값으로 설정
->      
->      $x_3=0,~x_4=0$
->   4. Pivot variable들을 구함
->      
->      $x_2+2x_3+12x_4=8~\to~x_2=8$
->      $x_1+8x_3-4x_4=42~\to~x_1=42$
->   5. Particular solution을 구함
->
->      ![Figure 5](/assets/images/인공지능수학/1-2. Figure5.png){: style="display:block; margin:0 auto; width: 18%; height: 18%;"}
-> 
-> Solve Homogeneous Equation
->   1. Homogeneous Equation을 Augmented Matrix로 변환
->
->      $$
->      \begin{bmatrix}\begin{array}{cccc|c}1&0&8&-4&0\\0&1&2&12&0\end{array}\end{bmatrix}
->      $$
->
->   2. 가우스 소거법을 사용해 REF로 변환
->   3. non-pivot column에 관련된 variable들을 free variable들로 표현
->
->      $x_2=-2x_3-12x_4,~x_1=-8x_3+4x_4$
->   4. Homogeneous solution
->
->      ![Figure 6](/assets/images/인공지능수학/1-2. Figure6.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
->      
-> Find General solution
-> 
->   ![Figure 7](/assets/images/인공지능수학/1-2. Figure7.png){: style="display:block; margin:0 auto; width: 60%; height: 60%;"}
+**Solve Non-Homogeneous Equation**
+
+1. Non-Homogeneous Equation을 Augmented Matrix로 변환
+
+   $$
+   \begin{bmatrix}\begin{array}{cccc|c}1&0&8&-4&42\\0&1&2&12&8\end{array}\end{bmatrix}
+   $$
+2. 가우스 소거법을 사용해 REF로 변환
+3. Free variable들을 원하는 값으로 설정
+
+   $$
+   x_3=0,~x_4=0
+   $$
+4. Pivot variable들을 구함
+
+   $$
+   x_2+2x_3+12x_4=8~\to~x_2=8
+   $$
+   $$
+   x_1+8x_3-4x_4=42~\to~x_1=42
+   $$
+6. Particular solution을 구함
+
+   <center><img src='{{"/assets/images/인공지능수학/1-2. Figure5.png" | relative_url}}' width="20%"></center>
+
+**Solve Homogeneous Equation**
+
+1. Homogeneous Equation을 Augmented Matrix로 변환
+
+   $$
+   \begin{bmatrix}\begin{array}{cccc|c}1&0&8&-4&0\\0&1&2&12&0\end{array}\end{bmatrix}
+   $$
+2. 가우스 소거법을 사용해 REF로 변환
+3. non-pivot column에 관련된 variable들을 free variable들로 표현
+   $$
+   x_2=-2x_3-12x_4,~x_1=-8x_3+4x_4
+   $$
+4. Homogeneous solution
+
+     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="20%"></center>
+
+**Find General solution**
+
+<center><img src='{{"/assets/images/인공지능수학/1-2. Figure7.png" | relative_url}}' width="20%"></center>
 
 </div>
 </details>
