@@ -44,7 +44,7 @@ $$
 즉, 변수 $\lambda_i$에 free variable이 존재하면 안된다.
 
 <details>
-<summary><font color='purple'>**Example**</font></summary>
+<summary><font color='red'>Example</font></summary>
 <div markdown="1">
 
 <center><img src='{{"/assets/images/인공지능수학/1-4. Figure1.png" | relative_url}}' width="50%"></center>
