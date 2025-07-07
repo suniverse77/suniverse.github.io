@@ -74,7 +74,7 @@ $Ax=0$에서 행렬 $A$가 invertible하다면, 해는 zero vector (trivial solu
 Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아닌 해를 non-trivial solution이라고 부른다.
 
 <details>
-<summary>Example<\summary>
+<summary>Example</summary>
 <div markdown="1">
   
 ex) <center><img src='{{"/assets/images/인공지능수학/1-2. Figure4.png" | relative_url}}' width="50%"></center>
@@ -118,5 +118,5 @@ ex) ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="dis
 > 
 >   ![Figure 7](/assets/images/인공지능수학/1-2. Figure7.png){: style="display:block; margin:0 auto; width: 60%; height: 60%;"}
 
-<\div>
+</div>
 </details>
