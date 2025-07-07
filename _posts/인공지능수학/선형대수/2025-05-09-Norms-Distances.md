@@ -20,7 +20,7 @@ $$
 
 여러 종류의 norm이 있으며, 주로 사용하는 norm은 Manhattan Norm($l_1)$과 Euclidean Norm($l_2$)이다.
 
-<center><img src='{{"/assets/images/인공지능수학/2-2. Figure1.png" | relative_url}}' width="80%"></center>
+<center><img src='{{"/assets/images/인공지능수학/2-2. Figure1.png" | relative_url}}' width="65%"></center>
 
 - 좌측이 Manhattan Norm $\lVert\mathbf{x}\rVert_1:=\sum_{i=1}^{n}{\vert x_i\vert}$
 - 우측이 Euclidean Norm $\lVert\mathbf{x}\rVert_2:=\sqrt{\sum_{i=1}^{n}{x_i^2}}$
