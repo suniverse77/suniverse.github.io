@@ -60,11 +60,12 @@ $$
 <summary><font color='red'>Example</font></summary>
 <div markdown="1">
   
-<center><img src='{{"/assets/images/인공지능수학/2-1. Figure1.png" | relative_url}}' width="25%"></center>
+<center><img src='{{"/assets/images/인공지능수학/2-1. Figure1.png" | relative_url}}' width="20%"></center>
 
 ---
 
 <center><img src='{{"/assets/images/인공지능수학/2-1. Figure2.png" | relative_url}}' width="100%"></center>
+
 
 $\mathbf{x}\not=\mathbf{0}$일 때 항상 양수이므로, $A$는 symmetric, positive definite matrix이다.
 
