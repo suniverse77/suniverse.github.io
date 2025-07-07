@@ -77,7 +77,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 <summary>Example<\summary>
 <div markdown="1">
   
-  ex) <center><img src='{{"/assets/images/인공지능수학/1-2. Figure4.png" | relative_url}}' width="50%"></center>
+ex) <center><img src='{{"/assets/images/인공지능수학/1-2. Figure4.png" | relative_url}}' width="50%"></center>
 ex) ![Figure 4](/assets/images/인공지능수학/1-2. Figure4.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
 >
 > ---
