@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[논문리뷰] Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models"
+title: "[논문리뷰] AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning"
 last_modified_at: 2025-06-04
 categories: ["논문리뷰"]
 tags: ["Video Generation"]
