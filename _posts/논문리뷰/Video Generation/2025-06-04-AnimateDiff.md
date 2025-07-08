@@ -28,7 +28,7 @@ toc_sticky: true
 
 ## Methods
 
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-1.png" | relative_url}}' width="100%"></center>
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-1.png" | relative_url}}' width="80%"></center>
 
 추론 시에는 motion module(파란색)과 선택적으로 사용할 수 있는 MotionLoRA(초록색)를 personalized T2I 모델에 직접 삽입하여 애니메이션 생성기를 구성할 수 있다.
 
@@ -61,11 +61,11 @@ $$
 
 Domain adapater의 파라미터를 비디오 데이터셋에서 임의로 샘플링한 정적 프레임을 이용하여 아래의 목표 함수를 기반으로 최적화한다.
 
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-3.png" | relative_url}}' width="80%"></center>
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-3.png" | relative_url}}' width="60%"></center>
 
 ### 2. Learn Motion Priors with Motion Module
 
-motion dynamics을 모델링하기 위해, 사전학습된 T2I 위에 다음 두 가지 절차를 수행합니다:
+motion dynamics을 모델링하기 위해, 사전학습된 T2I 위에 아래의 두 가지 절차를 수행한다.
 
 **1. Network Inflation**
 
@@ -73,8 +73,8 @@ motion dynamics을 모델링하기 위해, 사전학습된 T2I 위에 다음 두
 
 5차원 텐서 $x\in\mathbb{R}^{b\times c\times f\times h\times w}$ 비디오 입력이 각 layer를 통과할 때 아래와 같이 형태를 변형한다.
 
-- Image layer를 통과할 때는 시간 축이 무시되도록 한다. → $x\in\mathbb{R}^{b\cdot f\times c\times h\times w}$ 
-- Motion module에서는 시간 축만 유지한 채 동작하도록 한다. → $x\in\mathbb{R}^{b\cdot h\cdot w\times c\times f}$ 
+- Image layer를 통과할 때는 시간 축이 무시되도록 한다. → $x\in\mathbb{R}^{(b\cdot f)\times c\times h\times w}$ 
+- Motion module에서는 시간 축만 유지한 채 동작하도록 한다. → $x\in\mathbb{R}^{(b\cdot h\cdot w)\times c\times f}$ 
 
 **2. Module Design**
 
@@ -85,7 +85,7 @@ Temporal Transformer는 시간 축을 따라 여러 개의 self-attention 블록
 앞서 언급한 것처럼, 모션 모듈의 입력은 공간 정보를 병합한 후 시간 순서대로 정렬된 피처 시퀀스이다.
 
 $$
-\lbrace z_1,\dots,z_f;z_i\in\mathbb{r}^{b\cdot h\cdot w\times c}\rbrace
+\lbrace z_1,\dots,z_f;~z_i\in\mathbb{r}^{(b\cdot h)\cdot w\times c}\rbrace
 $$
 
 이러한 시퀀스는 self-attention 블록에 의해 처리된다.
