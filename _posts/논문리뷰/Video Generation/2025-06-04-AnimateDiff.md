@@ -153,7 +153,7 @@ Domain Adapter는 추론 시 제거하는 방식이 기본이지만, 실제 실�
 **Domain Adapter**
 
 <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-7.png" | relative_url}}' width="100%"></center>
-
+<br>
 추론 때 $\alpha$ 값이 감소할수록 품질이 올라가는 것을 확인할 수 있다.
 
 **Motion LoRA**
