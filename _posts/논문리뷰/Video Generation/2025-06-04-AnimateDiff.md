@@ -44,7 +44,7 @@ toc_sticky: true
 
 ### 1. Alleviate Negative Effects from Training Data with Domain Adapter
 
-T2I 모델을 학습할 때 사용한 이미지 데이터셋과 motion module을 학습할 때 사용할 비디오 데이터셋 사이에는 domain gap이 존재한다.
+T2I 모델을 학습할 때 사용한 이미지 데이터셋과 motion module을 학습할 때 사용할 비디오 데이터셋 사이에는 domain gap이 존재하며, domain adapter는 비디오 프레임의 저품질 특성을 중화시키는 역할을 한다.
 
 - T2I 모델은 고품질의 이미지 데이터로 학습되어 있다. 만약 모델에 저품질의 비디오 데이터를 그대로 사용해 학습하면 애니메이션 생성 품질을 저해할 수 있다.
 - 비디오를 프레임별로 보면, 움직임 때문에 생긴 blur나 압축 과정에서 발생한 artifact가 포함되어 있다. 이러한 프레임을 독립된 이미지로 간주해 학습에 사용하면, 생성된 이미지에도 블러나 아티팩트가 그대로 반영될 수 있다.
@@ -57,7 +57,9 @@ $$
 Q=W^Qz+\text{AdapterLayer}(z)=W^Qz+\alpha\cdot AB^\top z
 $$
 
-여기서 $\alpha=1$은 추론 때 다른 값으로 변경될 수 있다. (값이 0이면 domain adapter의 영향이 사라짐)
+여기서 $\alpha=1$은 추론 때 다른 값으로 변경될 수 있다.
+
+추론은 노이즈에서 이미지를 생성하는 과정으로, 학습 때와 달리 domain gap이라는 것이 존재하지 않기 때문에 domain adapter의 영향이 있으면 오히려 성능이 저하될 수 있다. 따라서, 추론 때는 $\alpha=0$으로 설정한다.
 
 Domain adapater의 파라미터를 비디오 데이터셋에서 임의로 샘플링한 정적 프레임을 이용하여 아래의 목표 함수를 기반으로 최적화한다.
 
@@ -134,7 +136,7 @@ AnimateDiff는 3가지의 학습 가능한 모듈로 구성되며, 이 모듈들
 2. Inflate된 모델에 motion module을 삽입하여 애니메이션 생성을 수행하고, 선택적으로 MotionLoRA도 함께 삽입할 수 있다.
 3. Reverse diffusion 과정을 수행하고 latent code를 디코딩함으로써 애니메이션 프레임을 얻는다.
 
-Domain Adapter는 추론 시 제거하는 방식이 기본이지만, 실제 실험에서는 domain Adapter를 삽입한 채로 $\alpha$  값을 조절해 기여도를 조정하는 방법도 사용하였다.
+Domain Adapter는 추론 시 제거하는 방식이 기본이지만, 실제 실험에서는 domain Adapter를 삽입한 채로 $\alpha$ 값을 조절해 기여도를 조정하는 방법도 사용하였다.
 
 ## Experiments
 
@@ -152,9 +154,12 @@ Domain Adapter는 추론 시 제거하는 방식이 기본이지만, 실제 실�
 
 <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-7.png" | relative_url}}' width="100%"></center>
 
-$\alpha$  값이 감소할수록 
+추론 때 $\alpha$ 값이 감소할수록 품질이 올라가는 것을 확인할 수 있다.
 
 **Motion LoRA**
 
 <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-8.png" | relative_url}}' width="100%"></center>
 
+왼쪽의 첫 번째와 두 번째 샘플은 MotionLoRA가 소규모 파라미터 크기로도 zoom-in과 같은 새로운 카메라 모션을 성공적으로 학습할 수 있으며, 모션 품질도 유사한 수준으로 유지된다는 것을 보여준다.
+
+오른쪽은 참조 비디오 수가 50개 정도(N=50)만 되어도 원하는 모션 패턴을 성공적으로 학습할 수 있음을 보여준다. 그러나 참조 비디오 수가 지나치게 적을 경우(N = 5)에는 품질이 눈에 띄게 저하되며, 참조 비디오의 텍스처 정보에 의존하는 경향을 보인다.
