@@ -28,7 +28,7 @@ toc_sticky: true
 
 ## Methods
 
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-1.png" | relative_url}}' width="80%"></center>
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-1.png" | relative_url}}' width="70%"></center>
 
 추론 시에는 motion module(파란색)과 선택적으로 사용할 수 있는 MotionLoRA(초록색)를 personalized T2I 모델에 직접 삽입하여 애니메이션 생성기를 구성할 수 있다.
 
@@ -85,7 +85,7 @@ Temporal Transformer는 시간 축을 따라 여러 개의 self-attention 블록
 앞서 언급한 것처럼, 모션 모듈의 입력은 공간 정보를 병합한 후 시간 순서대로 정렬된 피처 시퀀스이다.
 
 $$
-\lbrace z_1,\dots,z_f;~z_i\in\mathbb{r}^{(b\cdot h)\cdot w\times c}\rbrace
+\lbrace z_1,\dots,z_f;~z_i\in\mathbb{R}^{(b\cdot h)\cdot w\times c}\rbrace
 $$
 
 이러한 시퀀스는 self-attention 블록에 의해 처리된다.
@@ -103,11 +103,51 @@ $$
 
 ### 3. Adapt to New Motion Patterns with MotionLoRA
 
+사전학습된 motion module은 일반적인 모션 패턴을 포착할 수는 있지만, camera zooming, panning 등과 같은 새로운 모션 패턴에 대해서도 적응시켜야 할 때가 발생한다. 이를 위해 소수의 참조 비디오와 적은 학습  횟수로도 높은 효율을 내는 방식이 필요하다.
 
+제안하는 MotionLoRA는 motion personalization을 위한 효율적인 파인튜닝 기법으로, 2절에서 설명한 motion module의 self-attention layer에 LoRA layer를 추가하고, 새로운 모션 패턴에 대한 참조 비디오를 기반으로 이 LoRA layer만 학습시킨다.
+
+다양한 촬영 유형(zooming, panning 등)에 대해 실험을 진행하였고, rule-based augmentation을 통해 참조 비디오를 생성했다. (예를 들어, zoom-in/out 효과가 있는 비디오를 얻기 위해 프레임의 크롭 영역을 시간축을 따라 점진적으로 축소 또는 확대하는 방식으로 비디오를 증강)
+
+MotionLoRA는 low-rank 성질 때문에 모션의 합성 능력도 가진다. 즉, 서로 다른 모션에 대해 학습한 여러 개의 MotionLoRA를 조합해서 새로운 모션 효과를 만들 수 있다.
 
 ### 4. AnimateDiff in Practice
 
+#### Training
 
+AnimateDiff는 3가지의 학습 가능한 모듈로 구성되며, 이 모듈들은 학습 목적이 다르다.
+
+- Domain Adapter는 기존 확산 모델의 목적 함수를 그대로 사용한다.
+
+    <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-3.png" | relative_url}}' width="60%"></center>
+- Motion module과 MotionLoRA는 애니메이션 생성기의 일부로서, 고차원 비디오 데이터에 적합하도록 약간 수정된 목적 함수를 사용한다.
+
+    <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-4.png" | relative_url}}' width="60%"></center>
+
+    여기서 $z_t^{1:f}=\sqrt{\bar{\alpha_t}}z_0^{1:f}+\sqrt{1-\bar{\alpha_t}}\epsilon^{1:f}$는 프레임별 latent code를 의미한다.
+
+#### Inference
+
+추론 시에는 아래와 같은 순서로 모델이 사용된다.
+
+1. Methods 2절에서 설명한 방식대로 모델이 inflate된다.
+2. Inflate된 모델에 motion module을 삽입하여 애니메이션 생성을 수행하고, 선택적으로 MotionLoRA도 함께 삽입할 수 있다.
+3. Reverse diffusion 과정을 수행하고 latent code를 디코딩함으로써 애니메이션 프레임을 얻는다.
+
+Domain Adapter는 추론 시 제거하는 방식이 기본이지만, 실제 실험에서는 도메인 어댑터를 삽입한 채로, Eq. (4)의 스칼라 값 α를 조절해 기여도를 조정하는 방법도 사용합니다.
 
 ## Experiments
 
+### Qualitative Results
+
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-5.png" | relative_url}}' width="100%"></center>
+
+### Quantitative Comparisons
+
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-6.png" | relative_url}}' width="60%"></center>
+
+### Ablation Study
+
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-7.png" | relative_url}}' width="100%"></center>
+
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-8.png" | relative_url}}' width="100%"></center>
