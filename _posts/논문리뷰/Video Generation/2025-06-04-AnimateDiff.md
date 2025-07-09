@@ -134,7 +134,7 @@ AnimateDiff는 3가지의 학습 가능한 모듈로 구성되며, 이 모듈들
 2. Inflate된 모델에 motion module을 삽입하여 애니메이션 생성을 수행하고, 선택적으로 MotionLoRA도 함께 삽입할 수 있다.
 3. Reverse diffusion 과정을 수행하고 latent code를 디코딩함으로써 애니메이션 프레임을 얻는다.
 
-Domain Adapter는 추론 시 제거하는 방식이 기본이지만, 실제 실험에서는 도메인 어댑터를 삽입한 채로, Eq. (4)의 스칼라 값 α를 조절해 기여도를 조정하는 방법도 사용합니다.
+Domain Adapter는 추론 시 제거하는 방식이 기본이지만, 실제 실험에서는 domain Adapter를 삽입한 채로 $\alpha$  값을 조절해 기여도를 조정하는 방법도 사용하였다.
 
 ## Experiments
 
@@ -144,10 +144,17 @@ Domain Adapter는 추론 시 제거하는 방식이 기본이지만, 실제 실�
 
 ### Quantitative Comparisons
 
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-6.png" | relative_url}}' width="60%"></center>
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-6.png" | relative_url}}' width="70%"></center>
 
 ### Ablation Study
 
+**Domain Adapter**
+
 <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-7.png" | relative_url}}' width="100%"></center>
 
+$\alpha$  값이 감소할수록 
+
+**Motion LoRA**
+
 <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-8.png" | relative_url}}' width="100%"></center>
+
