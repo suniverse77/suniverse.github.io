@@ -10,7 +10,7 @@ toc: true
 toc_sticky: true
 ---
 
-데이터 $X=\lbrace\mathbf{x}_1,\cdots\mathbf{x}_n\rbrace$ 가 있을 때, $\mathbf{x}\in\mathbb{R}^d$에 대한 가우시안 분포는 아래와 같은 식으로 표현된다.
+샘플 $X=\lbrace\mathbf{x}_1,\cdots\mathbf{x}_n\rbrace$ 가 있을 때, $\mathbf{x}\in\mathbb{R}^d$에 대한 가우시안 분포는 아래와 같은 식으로 표현된다.
 
 $$
 p(\mathbf{x};\boldsymbol\mu,\boldsymbol\Sigma)=\frac{1}{\sqrt{(2\pi)^d|\boldsymbol\Sigma|}}\exp(-\frac{(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)}{2})
@@ -24,31 +24,39 @@ $$
 \log p(\mathbf{x};\boldsymbol\mu,\boldsymbol\Sigma)=-\frac{d}{2}\log(2\pi)-\frac{1}{2}\log|\boldsymbol\Sigma|-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)
 $$
 
-MLE 방식의 목적 함수는 아래와 같다.
+Maximum likelihood 방식의 목적 함수는 아래와 같다.
 
 $$
-p^*=\underset{\boldsymbol\mu,\boldsymbol\Sigma}{\text{argmax}}~\log p(\mathbf{x};\boldsymbol\mu,\boldsymbol\Sigma)
+p^*=\underset{\boldsymbol\mu,\boldsymbol\Sigma}{\text{argmax}}~\prod_{i=1}^n p(\mathbf{x}_i;\boldsymbol\mu,\boldsymbol\Sigma)
 $$
 
-### 2. 목적 함수 최적화
+Maximum Log-likelihood 방식의 목적 함수는 아래와 같다.
+
+$$
+p^*=\underset{\boldsymbol\mu,\boldsymbol\Sigma}{\text{argmax}}~\sum_{i=1}^n\log p(\mathbf{x}_i;\boldsymbol\mu,\boldsymbol\Sigma)
+$$
+
+### 2. 목적 함수 최적화 (하나의 샘플에 대해)
 
 #### (1) $\boldsymbol\mu$에 대한 미분
 
 $\displaystyle
-~~~\nabla_{\boldsymbol\mu}\log p
+~~~~~\nabla_{\boldsymbol\mu}\log p
 =\nabla_{\boldsymbol\mu}\bigg(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)
 =(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
 
 #### (2) $\boldsymbol\Sigma$에 대한 미분
 
 $\displaystyle
-\nabla_{\boldsymbol\Sigma}\log p
+~~~~~\nabla_{\boldsymbol\Sigma}\log p
 =\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log|\boldsymbol\Sigma|-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)
-\\~~~~~=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
+\\ ~~~~~~~~~~=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
 
 - $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log|\Sigma|\bigg)=-\frac{1}{2}\Sigma^{-1}$
 - $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)=\frac{1}{2}\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
 
-### 4. 
+### 3. 전체 샘플에 대한 일반화
 
+$\sum_{i=1}^n(\mathbf{x}_i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}=\mathbf{0}$
 
+$\sum_{i=1}^n-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}_i-\boldsymbol\mu)(\mathbf{x}_i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
