@@ -18,9 +18,13 @@ $$
 
 ### 1. 목적 함수 설계 (MLE)
 
+가우시안 분포에 대한 log-likelihood 수식은 아래와 같이 정리될 수 있다.
+
 $$
 \log p(\mathbf{x};\boldsymbol\mu,\boldsymbol\Sigma)=-\frac{d}{2}\log(2\pi)-\frac{1}{2}\log|\boldsymbol\Sigma|-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)
 $$
+
+MLE 방식의 목적 함수는 아래와 같다.
 
 $$
 p^*=\underset{\boldsymbol\mu,\boldsymbol\Sigma}{\text{argmax}}~\log p(\mathbf{x};\boldsymbol\mu,\boldsymbol\Sigma)
@@ -38,10 +42,10 @@ $\nabla_{\boldsymbol\mu}\log p
 
 $\nabla_{\boldsymbol\Sigma}\log p
 =\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log|\boldsymbol\Sigma|-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)
-=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
+\\\quad=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
 
 - $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log|\Sigma|\bigg)=-\frac{1}{2}\Sigma^{-1}$
-- $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)=-\frac{1}{2}\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
+- $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)=\frac{1}{2}\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
 
 ### 4. 
 
