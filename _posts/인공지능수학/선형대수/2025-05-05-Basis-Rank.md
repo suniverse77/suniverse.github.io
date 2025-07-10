@@ -41,7 +41,7 @@ $$
 - 3차원 벡터들이 만드는 2차원 공간
 
   $$
-  V=\text{span}(\begin{bmatrix}1\\3\\5\end{bmatrix}~,~\begin{bmatrix}2\\4\\6\end{bmatrix})~\to~\text{dim}(V)=2
+  V=\text{span}(\begin{bmatrix}1\\3\\5\end{bmatrix},\begin{bmatrix}2\\4\\6\end{bmatrix})~\to~\text{dim}(V)=2
   $$
 
 Subspace의 차원은 원래 vector space의 차원보다 작거나 같아야 한다.
