@@ -60,13 +60,13 @@ $2\times2$ 행렬에 대해 determinant는 위와 같이 정의된다.
 
 ## Trace
 
-### Properties of Trace
-
 $$
 \displaystyle\text{tr}(A)=\sum_{i=1}^na_{ii}
 $$
 
 Square matrix에 대해 정의되며, 대각 성분을 모두 더한 스칼라 값이다.
+
+### Properties of Trace
 
 1. $\text{tr}(A+B)=\text{tr}(A)+\text{tr}(B)$
 2. $\text{tr}(\lambda A)=\lambda\text{tr}(A)$
