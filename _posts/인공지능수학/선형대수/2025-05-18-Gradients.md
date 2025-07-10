@@ -115,7 +115,9 @@ $\text{tr}(\mathbf{a}^\top (X+\Delta X)\mathbf{b}-\mathbf{a}^\top X\mathbf{b})=\
 <summary><font color='red'>Example2</font></summary>
 <div markdown="1">
 
-$\displaystyle\frac{\partial \mathbf a^\top X\mathbf b}{\partial X}=\mathbf b\mathbf a^\top~\rightarrow~$
+$$
+
+$$
 
 ---
 
@@ -131,6 +133,18 @@ $$
 $$
 
 ---
+
+$\displaystyle
+\text{tr}\big(\ln\text{det}(aX+a\Delta X)-\ln\text{det}(aX)\big)
+=\text{tr}\big(\ln\frac{\text{det}(aX)\text{det}(I+X^{-1}\Delta X)}{\text{det}(aX)}\big)
+=\text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)
+$
+
+$\displaystyle
+\text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)
+\approx\text{tr}\big(\ln(1+\text{tr}(X^{-1}\Delta X))\big)
+\approx\text{tr}(X^{-1}\Delta X)
+$
 
 </div>
 </details>
