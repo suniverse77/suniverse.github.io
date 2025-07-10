@@ -65,3 +65,41 @@ f_1(\mathbf x)\\\vdots\\f_n(\mathbf x)
 \end{bmatrix}$$
 
 ## Graident 계산법
+
+### 벡터 미분
+
+$$
+f(\mathbf x+\Delta\mathbf x)-f(\mathbf x)=\Box\Delta\mathbf x
+$$
+
+위의 공식에서 $\Box$에 들어갈 값이 $f(\mathbf x)$의 gradient이다.
+
+<details>
+<summary><font color='red'>Example</font></summary>
+<div markdown="1">
+
+1. $\displaystyle\frac{\partial A\mathbf x}{\partial\mathbf x}=A
+    ~\rightarrow~A(\mathbf{x}+\Delta\mathbf{x})-A\mathbf{x}=A\Delta\mathbf{x}$
+2. $\displaystyle\frac{\partial \mathbf x^\top A\mathbf x}{\partial\mathbf x}=\mathbf x^\top(A+A^\top)
+    ~\rightarrow~(\mathbf x+\Delta\mathbf{x})^\top A(\mathbf x+\Delta\mathbf{x})-\mathbf x^\top A\mathbf x=$
+3. $\displaystyle\frac{\partial\left<\mathbf x\cdot\mathbf x\right>}{\partial\mathbf x}=2\mathbf x^\top$
+
+</div>
+</details>
+
+### 행렬 미분
+
+$$
+f(X+\Delta X)-f(X)=\text{tr}(\Box\Delta X)
+$$
+
+위의 공식에서 $\Box$에 들어갈 값이 $f(X)$의 gradient이다.
+
+<details>
+<summary><font color='red'>Example</font></summary>
+<div markdown="1">
+
+
+
+</div>
+</details>
