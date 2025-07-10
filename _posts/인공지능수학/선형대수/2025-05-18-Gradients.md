@@ -139,7 +139,8 @@ $$
     $
 
     $\displaystyle
-    ~~~~~~~~~~~\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)\approx\text{tr}(Y^{-1}\Delta Y)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    \text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)\approx\text{tr}(Y^{-1}\Delta Y)
     $    
 3. 다시 $X$에 대한 식으로 표현
 
@@ -160,7 +161,7 @@ $$
 
 ---
 
-1. ㄴ
+1. $\log$ 성질을 사용해 식 전개
 
     $\displaystyle
     \text{tr}\big(\ln\text{det}(aX+a\Delta X)-\ln\text{det}(aX)\big)
@@ -168,7 +169,7 @@ $$
     $
 
     $
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     =\text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)
     $
 2. $\text{det}(I+\Delta)=1+\text{tr}(\Delta)$ 사용 해 전개
