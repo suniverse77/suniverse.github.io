@@ -75,7 +75,7 @@ $$
      위 방정식을 만족시키는 해는 trivial solution밖에 없다.
 
      $$
-     \mathbf{\lambda}=\begin{bmatrix}0&0&0\end{bmatrix}^\top
+     \boldsymbol{\lambda}=\begin{bmatrix}0\\0\\0\end{bmatrix}
      $$
 
 </div>
