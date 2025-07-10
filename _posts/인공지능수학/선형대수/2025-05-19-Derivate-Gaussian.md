@@ -34,15 +34,17 @@ $$
 
 #### (1) $\boldsymbol\mu$에 대한 미분
 
-$\nabla_{\boldsymbol\mu}\log p
+$\displaystyle
+~~~\nabla_{\boldsymbol\mu}\log p
 =\nabla_{\boldsymbol\mu}\bigg(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)
 =(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
 
 #### (2) $\boldsymbol\Sigma$에 대한 미분
 
-$\nabla_{\boldsymbol\Sigma}\log p
+$\displaystyle
+\nabla_{\boldsymbol\Sigma}\log p
 =\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log|\boldsymbol\Sigma|-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)
-\\\quad=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
+\\~~~~~=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
 
 - $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log|\Sigma|\bigg)=-\frac{1}{2}\Sigma^{-1}$
 - $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)=\frac{1}{2}\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
