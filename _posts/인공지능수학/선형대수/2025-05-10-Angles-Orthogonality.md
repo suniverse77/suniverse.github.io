@@ -53,9 +53,9 @@ Basis $B=\lbrace\mathbf{b}_1,\dots,\mathbf{b}_n\rbrace$를 orthonormal basis로 
 </details>
 <br>
 **2. Gram-Schmidt method 적용**
-<br>
-<center><img src='{{"/assets/images/인공지능수학/2-3. Figure4.png" | relative_url}}' width="100%"></center>
 
+<center><img src='{{"/assets/images/인공지능수학/2-3. Figure4.png" | relative_url}}' width="100%"></center>
+<br>
   <details>
   <summary><font color='red'>Example</font></summary>
   <div markdown="1">
