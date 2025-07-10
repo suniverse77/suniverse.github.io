@@ -50,13 +50,19 @@ $\displaystyle
 $\displaystyle
 ~~~~~\nabla_{\boldsymbol\Sigma}\log p
 =\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log|\boldsymbol\Sigma|-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)
-\\ ~~~~~~~~~~=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
+\\ 
 
-- $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log|\Sigma|\bigg)=-\frac{1}{2}\Sigma^{-1}$
+~~~~~~~~~~=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
+
+- $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log\Sigma\bigg)=-\frac{1}{2}\Sigma^{-1}$
 - $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)=\frac{1}{2}\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
 
 ### 3. 전체 샘플에 대한 일반화
 
+#### (1) $\boldsymbol\mu$ 값 측정
+
 $\sum_{i=1}^n(\mathbf{x}_i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}=\mathbf{0}$
+
+#### (2) $\boldsymbol\mu$ 값 측정
 
 $\sum_{i=1}^n-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}_i-\boldsymbol\mu)(\mathbf{x}_i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})$
