@@ -38,11 +38,8 @@ $$
 
    $$
    \text{det}(A-\lambda I)=\begin{vmatrix}4-\lambda&2\\1&3-\lambda\end{vmatrix}=(4-\lambda)(3-\lambda)-2=0
-   $$
+   $$ → $\lambda_1=5,~\lambda_2=2$
 
-   $$
-   \lambda_1=5,~\lambda_2=2
-   $$
 2. 고유값에 대응하는 고유벡터를 구함
 
    (1) $\lambda_1=5:~\mathbf{x}_1=[1~2]^\top$
