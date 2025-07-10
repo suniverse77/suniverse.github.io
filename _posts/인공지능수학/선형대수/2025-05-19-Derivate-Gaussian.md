@@ -53,7 +53,7 @@ $\displaystyle
 $
 
 $\displaystyle
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 =-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})
 $
 
@@ -72,6 +72,6 @@ $
 #### (2) $\boldsymbol\Sigma$ 값 측정
 
 $\displaystyle
-~~~~~\sum_{i=1}^N-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}\_i-\boldsymbol\mu)(\mathbf{x}_i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})
+~~~~~\sum_{i=1}^N-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}\_i-\boldsymbol\mu)(\mathbf{x}\_i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})
 \rightarrow\boldsymbol\Sigma=\frac{1}{N}\sum_{i=1}^N(\mathbf{x}_i-\boldsymbol\mu)(\mathbf{x}_i-\boldsymbol\mu)^\top
 $
