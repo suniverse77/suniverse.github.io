@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[선형대수] Affine Spaces"
-last_modified_at: 2025-05-07
+last_modified_at: 2024-11-07
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
 excerpt: "아핀 공간"

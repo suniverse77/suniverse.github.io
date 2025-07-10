@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[최적화] Lagrange Multiplier"
-last_modified_at: 2025-05-9
+title: "[최적화] Linear Programming"
+last_modified_at: 2024-11-30
 categories: ["인공지능 수학"]
 tags: ["최적화"]
 excerpt: "라그랑주"
@@ -42,8 +42,6 @@ Primal problem이 위와 같이 주어졌을 때, 아래와 같이 원래의 목
 원래의 최적화 문제 (primal problem)를 직접 푸는 대신, 다른 문제 (dual problem)를 풀어서 해를 유도하거나 경계를 줄 수 있음
 
 Primal은 원래의 최적화 문제, Dual은 라그랑지안을 통해 정의한 새로운 최적화 문제임
-
-### Lagrangian Dual problem
 
 ## Duality gap
 

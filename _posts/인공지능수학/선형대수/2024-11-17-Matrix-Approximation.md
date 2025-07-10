@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[선형대수] Matrix Approximation"
-last_modified_at: 2025-05-17
+last_modified_at: 2024-11-17
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
 excerpt: "SVD 기반의 행렬 근사와 Spectral norm"

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[선형대수] Eigenvalues & Eigenvectors"
-last_modified_at: 2025-05-14
+last_modified_at: 2024-11-14
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
 excerpt: "고유값과 고유벡터"

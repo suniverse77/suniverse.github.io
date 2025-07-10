@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[선형대수] Norms & Distances"
-last_modified_at: 2025-05-09
+last_modified_at: 2024-11-09
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
 excerpt: "벡터 노름"

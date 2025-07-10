@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[선형대수] Linear Equation"
-last_modified_at: 2025-05-02
+last_modified_at: 2024-11-02
 categories: ["인공지능 수학"]
 tags: ["선형대수"]
 excerpt: "선형 연립 방정식의 행렬 표현과 가우스 소거법"
