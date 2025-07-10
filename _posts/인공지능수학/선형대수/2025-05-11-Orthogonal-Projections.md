@@ -72,9 +72,9 @@ $$
    $$
 6. 행렬로 표현
 
-   <center><img src='{{"/assets/images/인공지능수학/2-4. Figure3.png" | relative_url}}' width="80%"></center>
+   <center><img src='{{"/assets/images/인공지능수학/2-4. Figure3.png" | relative_url}}' width="60%"></center>
    
-   <center><img src='{{"/assets/images/인공지능수학/2-4. Figure4.png" | relative_url}}' width="80%"></center>
+   <center><img src='{{"/assets/images/인공지능수학/2-4. Figure4.png" | relative_url}}' width="85%"></center>
    
 7. Find projection
 
