@@ -18,7 +18,7 @@ $$
 A=U\Sigma V^\top=\sum_{i=1}^r\sigma_i\mathbf{u}_i\mathbf{v}_i^\top=\sum_{i=1}^r\sigma_iA_i
 $$
 
-여기서 $A_i=\mathbf{u}_i\mathbf{v}_i^\top$는 rank-1 행렬로, $A$의 전체를 구성하는 rank-1 성분 중 i번째 방향의 기여를 나타낸다.
+여기서 $A_i=\mathbf{u}_i\mathbf{v}_i^\top$는 rank-1 행렬로, $A$의 전체를 구성하는 rank-1 성분 중 $i$번째 방향의 기여를 나타낸다.
 
 <center><img src='{{"/assets/images/인공지능수학/3-5. Figure1.png" | relative_url}}' width="80%"></center>
 <br>
