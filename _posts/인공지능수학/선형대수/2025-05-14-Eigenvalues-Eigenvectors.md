@@ -20,46 +20,47 @@ Square matrix $A$에 대해 $\mathbf{0}$이 아닌 $\mathbf{x}$가 위의 식을
 
 행렬의 고유값과 고유벡터를 찾기 위해서는 특성 방정식 $\text{det}(A-\lambda I)=0$을 만족하는 해를 찾으면 된다.
 
-> **Why?**
->
-> $A\mathbf{x}=\lambda\mathbf{x}$ → $(A-\lambda I)\mathbf{x}=0$
->
-> $\mathbf{x}\not=\mathbf{0}$이므로, $\text{det}(A-\lambda I)=0$이어야 한다.
+    **Why?**
 
-> ex) 
->
-> $$
-> A=\begin{bmatrix}4&2\\1&3\end{bmatrix}
-> $$
-> 
-> ---
-> 1. $\text{det}(A-\lambda I)=0$의 해를 구함
->
->    $$
->    \text{det}(A-\lambda I)=\begin{vmatrix}4-\lambda&2\\1&3-\lambda\end{vmatrix}=(4-\lambda)(3-\lambda)-2=0
->    $$
->
->    $$
->    \lambda_1=5,~\lambda_2=2
->    $$
-> 3. 고유값에 대응하는 고유벡터를 구함
->
->    (1) $\lambda_1=5:~\mathbf{x}_1=[1~2]^\top$
->    
->    $$
->    ~(A-5I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}-1&2&0\\1&-2&0\end{array}\end{bmatrix}
->    $$
->
->    $$
->    x_1=2x_2~\to~\begin{bmatrix}x_1\\x_2\end{bmatrix}=c\begin{bmatrix}1\\2\end{bmatrix}
->    $$
->
->    (2) $\lambda_1=2:~\mathbf{x}_2=[1~-1]^\top$
->    
->    $$
->    ~(A-2I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}2&2&0\\1&1&0\end{array}\end{bmatrix}
->    $$
->
->    $$
->    x_1=-x_2~\to~\begin{bmatrix}x_1\\x_2\end{bmatrix}=c\begin{bmatrix}1\\-1\end{bmatrix}
->    $$
+    $A\mathbf{x}=\lambda\mathbf{x}$ → $(A-\lambda I)\mathbf{x}=0$  →  $\mathbf{x}\not=\mathbf{0}$이므로, $\text{det}(A-\lambda I)=0$이어야 한다.
+
+<details>
+<summary><font color='red'>Example</font></summary>
+<div markdown="1">
+
+$$
+A=\begin{bmatrix}4&2\\1&3\end{bmatrix}
+$$
+
+---
+
+1. $\text{det}(A-\lambda I)=0$의 해를 구함
+
+   $$
+   \text{det}(A-\lambda I)=\begin{vmatrix}4-\lambda&2\\1&3-\lambda\end{vmatrix}=(4-\lambda)(3-\lambda)-2=0
+   $$
+
+   $$
+   \lambda_1=5,~\lambda_2=2
+   $$
+2. 고유값에 대응하는 고유벡터를 구함
+
+   (1) $\lambda_1=5:~\mathbf{x}_1=[1~2]^\top$
+   
+   $$
+   ~(A-5I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}-1&2&0\\1&-2&0\end{array}\end{bmatrix}
+   $$
+
+   $$
+   x_1=2x_2~\to~\begin{bmatrix}x_1\\x_2\end{bmatrix}=c\begin{bmatrix}1\\2\end{bmatrix}
+   $$
+
+   (2) $\lambda_1=2:~\mathbf{x}_2=[1~-1]^\top$
+   
+   $$
+   ~(A-2I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}2&2&0\\1&1&0\end{array}\end{bmatrix}
+   $$
+
+   $$
+   x_1=-x_2~\to~\begin{bmatrix}x_1\\x_2\end{bmatrix}=c\begin{bmatrix}1\\-1\end{bmatrix}
+   $$
