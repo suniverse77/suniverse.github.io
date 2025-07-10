@@ -97,10 +97,40 @@ $$
 위의 공식에서 $\Box$에 들어갈 값이 $f(X)$의 gradient이다.
 
 <details>
-<summary><font color='red'>Example</font></summary>
+<summary><font color='red'>Example1</font></summary>
 <div markdown="1">
 
+$$
+\frac{\partial \mathbf{a}^\top X\mathbf{b}}{\partial X}=\mathbf b\mathbf a^\top
+$$
 
+---
+
+$\text{tr}(\mathbf{a}^\top (X+\Delta X)\mathbf{b}-\mathbf{a}^\top X\mathbf{b})=\text{tr}(\mathbf{a}^\top \Delta X\mathbf{b})=\text{tr}(\mathbf{b}\mathbf{a}^\top \Delta X)$
+
+</div>
+</details>
+
+<details>
+<summary><font color='red'>Example2</font></summary>
+<div markdown="1">
+
+$\displaystyle\frac{\partial \mathbf a^\top X\mathbf b}{\partial X}=\mathbf b\mathbf a^\top~\rightarrow~$
+
+---
+
+</div>
+</details>
+
+<details>
+<summary><font color='red'>Example3</font></summary>
+<div markdown="1">
+
+$$
+\frac{\partial\ln \lvert aX\rvert}{\partial X}=X^{-1}
+$$
+
+---
 
 </div>
 </details>
