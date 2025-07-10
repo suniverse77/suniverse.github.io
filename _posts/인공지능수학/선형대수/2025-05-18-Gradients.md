@@ -116,10 +116,37 @@ $\text{tr}(\mathbf{a}^\top (X+\Delta X)\mathbf{b}-\mathbf{a}^\top X\mathbf{b})=\
 <div markdown="1">
 
 $$
-
+\frac{\partial \log X^{-1}}{\partial X}=X^{-1}
 $$
 
 ---
+
+$\displaystyle
+\text{tr}\big(\log(X+\Delta X)^{-1}-\log X^{-1}\big)
+=\text{tr}\big(\log(Y+\Delta Y)-\log Y\big)
+=\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
+$
+
+$\displaystyle
+\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
+\approx\text{tr}(Y^{-1}\Delta Y)
+=\text{tr}(-XX^{-1}\Delta XX^{-1})
+=\text{tr}(-X^{-1}\Delta X)
+$
+
+$\displaystyle
+Y=X^{-1}
+\rightarrow
+(X+\Delta X)(Y+\Delta Y)=I
+\rightarrow
+XY+X\Delta Y+\Delta XY=I
+\rightarrow
+\Delta Y=-X^{-1}\Delta XX^{-1}
+$
+
+$\displaystyle
+\text{tr}\big((X+\Delta X)^{-1}-X^{-1}\big)=\text{tr}\big((Y+\Delta Y)-Y\big)
+$
 
 </div>
 </details>
