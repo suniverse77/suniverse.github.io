@@ -9,3 +9,8 @@ use_math: true
 toc: true
 toc_sticky: true
 ---
+
+$$
+p(\mathbf{x};\boldsymbol\mu,\boldsymbol\Sigma)=\frac{1}{\sqrt{(2\pi)^d|\boldsymbol\Sigma|}}\exp(-\frac{(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)}{2})
+$$
+
