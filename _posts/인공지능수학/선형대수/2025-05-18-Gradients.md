@@ -131,11 +131,11 @@ $$
     $\displaystyle
     \text{tr}\big(\log(X+\Delta X)^{-1}-\log X^{-1}\big)
     =\text{tr}\big(\log(Y+\Delta Y)-\log Y\big)
-    =\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
     $
 
     $\displaystyle
-    ~~~~~~~~~=\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    =\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
     $
 
     $\displaystyle
@@ -160,17 +160,28 @@ $$
 
 ---
 
-$\displaystyle
-\text{tr}\big(\ln\text{det}(aX+a\Delta X)-\ln\text{det}(aX)\big)
-=\text{tr}\big(\ln\frac{\text{det}(aX)\text{det}(I+X^{-1}\Delta X)}{\text{det}(aX)}\big)
-=\text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)
-$
+1. ㄴ
 
-$\displaystyle
-\text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)
-\approx\text{tr}\big(\ln(1+\text{tr}(X^{-1}\Delta X))\big)
-\approx\text{tr}(X^{-1}\Delta X)
-$
+    $\displaystyle
+    \text{tr}\big(\ln\text{det}(aX+a\Delta X)-\ln\text{det}(aX)\big)
+    =\text{tr}\big(\ln\frac{\text{det}(aX)\text{det}(I+X^{-1}\Delta X)}{\text{det}(aX)}\big)
+    $
+
+    $
+    ~~~~~~~~~~~~~~~~~~~~~~~
+    =\text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)
+    $
+2. $$ 사용 해 전개
+
+    $\displaystyle
+    \text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)\approx\text{tr}\big(\ln(1+\text{tr}(X^{-1}\Delta X))\big)
+    $
+
+3. 1차 근사 $\log(1+x)\approx x$ 사용 해 전개
+
+    $\displaystyle
+    \text{tr}\big(\ln(1+\text{tr}(X^{-1}\Delta X))\big)\approx\text{tr}(X^{-1}\Delta X)
+    $
 
 </div>
 </details>
