@@ -39,25 +39,22 @@ Basis $B=\lbrace\mathbf{b}_1,\dots,\mathbf{b}_n\rbrace$를 orthonormal basis로 
 <summary><font color='red'>Example</font></summary>
 <div markdown="1">
 
-![Figure 1](/assets/images/인공지능수학/2-3. Figure1.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
+<center><img src='{{"/assets/images/인공지능수학/2-3. Figure1.png" | relative_url}}' width="30%"></center>
 
 ---
-![Figure 2](/assets/images/인공지능수학/2-3. Figure2.png){: style="display:block; margin:0 auto; width: 100%; height: 100%;"}
+
+<center><img src='{{"/assets/images/인공지능수학/2-3. Figure2.png" | relative_url}}' width="100%"></center>
 
 가우스 소거법을 적용해서 아래와 같은 orthonormal basis를 얻을 수 있다.
 
-![Figure 3](/assets/images/인공지능수학/2-3. Figure3.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
+<center><img src='{{"/assets/images/인공지능수학/2-3. Figure3.png" | relative_url}}' width="40%"></center>
 
 </div>
 </details>
-
-
-
+<br>
 **2. Gram-Schmidt method 적용**
 
 <center><img src='{{"/assets/images/인공지능수학/2-3. Figure4.png" | relative_url}}' width="100%"></center>
-
-
 
   <details>
   <summary><font color='red'>Example</font></summary>
