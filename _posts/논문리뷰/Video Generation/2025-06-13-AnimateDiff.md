@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[논문리뷰] AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning"
-last_modified_at: 2025-06-04
+last_modified_at: 2025-06-13
 categories: ["논문리뷰"]
 tags: ["Video Generation"]
 excerpt: "ICLR 2024"

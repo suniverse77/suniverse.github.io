@@ -12,6 +12,30 @@ toc_sticky: true
 
 ## Rank-k Approximation
 
+행렬 $A$의 SVD 분해는 아래와 같이 표현할 수 있다.
+
+$$
+A=U\Sigma V^\top=\sum_{i=1}^r\sigma_i\mathbf{u}_i\mathbf{v}_i^\top
+$$
+
+여기서 $A_i=\mathbf{u}_i\mathbf{v}_i^\top$는 행렬 $A$의 
+
+
+
+큰 특이값부터 $k$개만 남기면 데이터(이미지)의 주요 구조를 유지하면서 저장·연산량을 줄일 수 있음
+
+$$
+\hat{A}(k)=\sum_{i=1}^k\sigma_i\mathbf{u}_i\mathbf{v}_i^\top
+$$
+
+### Eckart-Young Theorem
+
+$$
+\hat{A}(k)=\underset{\text{rank}(B)=k}{\text{argmin}}~\lVert A-B\rVert_2
+$$
+
+SVD 기반의 rank-k 근사는 모든 rank-k 행렬 중에서 $A$와의 차이를 가장 작게 만드는 최적의 근사이며, 그 오차는 $k+1$번째 특이값과 같다.
+
 ## Spectral Norm
 
 $$
