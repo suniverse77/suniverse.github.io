@@ -12,7 +12,7 @@ toc_sticky: true
 
 ## Projection onto Lines
 
-![Figure 1](/assets/images/인공지능수학/2-4. Figure1.png){: style="display:block; margin:0 auto; width: 40%; height: 40%;"}
+<center><img src='{{"/assets/images/인공지능수학/2-4. Figure1.png" | relative_url}}' width="40%"></center>
 
 $$
 \pi_U(\mathbf{x})=\frac{\mathbf{b}\mathbf{b}^\top}{\lVert\mathbf{b}\rVert}\mathbf{x}
@@ -46,7 +46,7 @@ $$
 
 ## Projection onto General Subspaces
 
-![Figure 2](/assets/images/인공지능수학/2-4. Figure2.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+<center><img src='{{"/assets/images/인공지능수학/2-4. Figure2.png" | relative_url}}' width="50%"></center>
 
 $$
 \pi_U(\mathbf{x})=B(B^\top B)^{-1}B^\top\mathbf{x}
@@ -72,9 +72,9 @@ $$
    $$
 6. 행렬로 표현
 
-   ![Figure 3](/assets/images/인공지능수학/2-4. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+   <center><img src='{{"/assets/images/인공지능수학/2-4. Figure3.png" | relative_url}}' width="80%"></center>
    
-   ![Figure 4](/assets/images/인공지능수학/2-4. Figure4.png){: style="display:block; margin:0 auto; width: 90%; height: 90%;"}
+   <center><img src='{{"/assets/images/인공지능수학/2-4. Figure4.png" | relative_url}}' width="80%"></center>
    
 7. Find projection
 
