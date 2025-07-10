@@ -14,7 +14,7 @@ toc_sticky: true
 
 여러 개의 연립 방정식을 하나의 행렬로 나타낸 것을 Augmented Matrix라고 부른다.
 
-![Figure 1](/assets/images/인공지능수학/1-2. Figure1.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
+<center><img src='{{"/assets/images/인공지능수학/1-2. Figure1.png" | relative_url}}' width="50%"></center>
 
 ### 1. Unique solution
 
@@ -62,7 +62,7 @@ $$
 
 모든 pivot이 1이고, 해당 열에서 pivot이 0이 아닌 유일한 요소인 형태
 
-![Figure 3](/assets/images/인공지능수학/1-2. Figure3.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
+<center><img src='{{"/assets/images/인공지능수학/1-2. Figure2.png" | relative_url}}' width="30%"></center>
 
 - REF에서 각 행의 leading entry에 해당하는 성분을 pivot이라고 부른다.
 - REF에서 pivot에 대응되는 변수들을 pivot 또는 basic variable이라고 하고, 그 외의 변수들을 free variable이라고 부른다.
@@ -83,7 +83,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
 <summary><font color='red'>Example</font></summary>
 <div markdown="1">
   
-<center><img src='{{"/assets/images/인공지능수학/1-2. Figure4.png" | relative_url}}' width="40%"></center>
+<center><img src='{{"/assets/images/인공지능수학/1-2. Figure3.png" | relative_url}}' width="40%"></center>
 
 ---
 
@@ -111,7 +111,7 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
    $$
 6. Particular solution을 구함
 
-   <center><img src='{{"/assets/images/인공지능수학/1-2. Figure5.png" | relative_url}}' width="15%"></center>
+   <center><img src='{{"/assets/images/인공지능수학/1-2. Figure4.png" | relative_url}}' width="15%"></center>
 
 **Solve Homogeneous Equation**
 
@@ -132,11 +132,11 @@ Linear System에서 $\mathbf{0}$인 해를 trivial solution, $\mathbf{0}$이 아
    $$
 5. Homogeneous solution
 
-     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="35%"></center>
+     <center><img src='{{"/assets/images/인공지능수학/1-2. Figure5.png" | relative_url}}' width="35%"></center>
 
 **Find General solution**
 
-<center><img src='{{"/assets/images/인공지능수학/1-2. Figure7.png" | relative_url}}' width="50%"></center>
+<center><img src='{{"/assets/images/인공지능수학/1-2. Figure6.png" | relative_url}}' width="50%"></center>
 
 </div>
 </details>
