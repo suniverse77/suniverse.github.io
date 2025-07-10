@@ -134,7 +134,7 @@ $$
     $
 
     $\displaystyle
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     =\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
     $
 
@@ -171,10 +171,10 @@ $$
     ~~~~~~~~~~~~~~~~~~~~~~~
     =\text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)
     $
-2. $$ 사용 해 전개
+2. $\text{det}(I+\Delta)=1+\text{tr}(\Delta)$ 사용 해 전개
 
     $\displaystyle
-    \text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)\approx\text{tr}\big(\ln(1+\text{tr}(X^{-1}\Delta X))\big)
+    \text{tr}\big(\ln\text{det}(I+X^{-1}\Delta X)\big)=\text{tr}\big(\ln(1+\text{tr}(X^{-1}\Delta X))\big)
     $
 
 3. 1차 근사 $\log(1+x)\approx x$ 사용 해 전개
