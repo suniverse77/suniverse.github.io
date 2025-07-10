@@ -81,8 +81,9 @@ $$
 1. $\displaystyle\frac{\partial A\mathbf x}{\partial\mathbf x}=A
     ~\rightarrow~A(\mathbf{x}+\Delta\mathbf{x})-A\mathbf{x}=A\Delta\mathbf{x}$
 2. $\displaystyle\frac{\partial \mathbf x^\top A\mathbf x}{\partial\mathbf x}=\mathbf x^\top(A+A^\top)
-    ~\rightarrow~(\mathbf x+\Delta\mathbf{x})^\top A(\mathbf x+\Delta\mathbf{x})-\mathbf x^\top A\mathbf x=$
-3. $\displaystyle\frac{\partial\left<\mathbf x\cdot\mathbf x\right>}{\partial\mathbf x}=2\mathbf x^\top$
+    ~\rightarrow~(\mathbf x+\Delta\mathbf{x})^\top A(\mathbf x+\Delta\mathbf{x})-\mathbf x^\top A\mathbf x=\mathbf x^\top(A+A^\top)\Delta\mathbf{x}$
+3. $\displaystyle\frac{\partial\left<\mathbf x\cdot\mathbf x\right>}{\partial\mathbf x}=2\mathbf x^\top
+    ~\rightarrow~(\mathbf{x}+\Delta\mathbf{x})^\top(\mathbf{x}+\Delta\mathbf{x})-\mathbf{x}^\top\mathbf{x}=2\mathbf x^\top\Delta\mathbf{x}$
 
 </div>
 </details>
