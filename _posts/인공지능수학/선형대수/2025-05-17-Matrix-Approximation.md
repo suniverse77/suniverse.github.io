@@ -29,9 +29,13 @@ $A_i$는 단순히 두 벡터의 외적이기 때문에 rank-1 행렬이다. (�
 <div markdown="1">
 
 $$
+A=\mathbf{a}\mathbf{b}^\top
+\righarrow
 \begin{bmatrix}1\\3\\5\end{bmatrix}\begin{bmatrix}2&4&6\end{bmatrix}
-=\begin{bmatrix}1\end{bmatrix}
+=\begin{bmatrix}2&4&6\\6&12&18\\10&20&30\end{bmatrix}
 $$
+
+$A$의 각 row는 단순히 첫 번째 row의 상수배이기 때문에, $A$의 rank는 1이다.
 
 </div>
 </details>
