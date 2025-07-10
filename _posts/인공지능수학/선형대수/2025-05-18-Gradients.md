@@ -10,3 +10,8 @@ toc: true
 toc_sticky: true
 ---
 
+## Derivate
+
+## Gradient
+
+## Jacobian
