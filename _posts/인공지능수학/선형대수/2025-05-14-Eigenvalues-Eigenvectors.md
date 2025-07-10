@@ -20,9 +20,9 @@ Square matrix $A$에 대해 $\mathbf{0}$이 아닌 $\mathbf{x}$가 위의 식을
 
 행렬의 고유값과 고유벡터를 찾기 위해서는 특성 방정식 $\text{det}(A-\lambda I)=0$을 만족하는 해를 찾으면 된다.
 
-**Why?**
-
-$A\mathbf{x}=\lambda\mathbf{x}$ → $(A-\lambda I)\mathbf{x}=0$  →  $\mathbf{x}\not=\mathbf{0}$이므로, $\text{det}(A-\lambda I)=0$이어야 한다.
+> **Why?**
+> 
+> $A\mathbf{x}=\lambda\mathbf{x}$ → $(A-\lambda I)\mathbf{x}=0$  →  $\mathbf{x}\not=\mathbf{0}$이므로, $\text{det}(A-\lambda I)=0$이어야 한다.
 
 <details>
 <summary><font color='red'>Example</font></summary>
