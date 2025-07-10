@@ -121,32 +121,31 @@ $$
 
 ---
 
-$\displaystyle
-\text{tr}\big(\log(X+\Delta X)^{-1}-\log X^{-1}\big)
-=\text{tr}\big(\log(Y+\Delta Y)-\log Y\big)
-=\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
-$
+1. $Y=X^{-1}$라고 가정한 후, $\Delta Y$ 구하기
 
-$\displaystyle
-\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
-\approx\text{tr}(Y^{-1}\Delta Y)
-=\text{tr}(-XX^{-1}\Delta XX^{-1})
-=\text{tr}(-X^{-1}\Delta X)
-$
+    $\displaystyle
+    (X+\Delta X)(Y+\Delta Y)=I\rightarrow XY+X\Delta Y+\Delta XY=I\rightarrow\Delta Y=-X^{-1}\Delta XX^{-1}
+    $
+2. $X^{-1}=Y$ 치환 해 $Y$에 대한 식으로 표현 후, 전개
 
-$\displaystyle
-Y=X^{-1}
-\rightarrow
-(X+\Delta X)(Y+\Delta Y)=I
-\rightarrow
-XY+X\Delta Y+\Delta XY=I
-\rightarrow
-\Delta Y=-X^{-1}\Delta XX^{-1}
-$
+    $\displaystyle
+    \text{tr}\big(\log(X+\Delta X)^{-1}-\log X^{-1}\big)
+    =\text{tr}\big(\log(Y+\Delta Y)-\log Y\big)
+    =\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
+    $
 
-$\displaystyle
-\text{tr}\big((X+\Delta X)^{-1}-X^{-1}\big)=\text{tr}\big((Y+\Delta Y)-Y\big)
-$
+    $\displaystyle
+    ~~~~~~~~~=\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)
+    $
+
+    $\displaystyle
+    ~~~~~~~~~~~\text{tr}\big(\log(I+Y^{-1}\Delta Y)\big)\approx\text{tr}(Y^{-1}\Delta Y)
+    $    
+3. 다시 $X$에 대한 식으로 표현
+
+    $\displaystyle
+    \text{tr}(Y^{-1}\Delta Y)=\text{tr}(-XX^{-1}\Delta XX^{-1})=\text{tr}(-X^{-1}\Delta X)
+    $
 
 </div>
 </details>
