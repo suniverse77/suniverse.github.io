@@ -64,7 +64,7 @@ Basis $B=\lbrace\mathbf{b}_1,\dots,\mathbf{b}_n\rbrace$를 orthonormal basis로 
   
   ---
   1. $\mathbf{b}_2$를 $\mathbf{b}_1$ 방향과 $\mathbf{b}_1$에 수직한 벡터의 합으로 분리
-     <center><img src='{{"/assets/images/인공지능수학/2-3. Figure6.png" | relative_url}}' width="20%"></center>
+     <center><img src='{{"/assets/images/인공지능수학/2-3. Figure6.png" | relative_url}}' width="25%"></center>
   3. $\mathbf{b}_1$에 수직한 벡터를 구함
      <center><img src='{{"/assets/images/인공지능수학/2-3. Figure7.png" | relative_url}}' width="80%"></center>
   5. 크기를 1로 조절해 orthonormal basis로 변환
