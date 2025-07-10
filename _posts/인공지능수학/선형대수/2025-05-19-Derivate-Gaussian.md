@@ -53,22 +53,23 @@ $\displaystyle
 $
 
 $
-~~~~~~~~~~=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})
+~~~~~~~~~~~~~~~~~~~~~~~
+=-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})
 $
 
-- $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}\log\lvert\boldsymbol\Sigma\rvert\bigg)=-\frac{1}{2}\Sigma^{-1}$
-- $\nabla_{\boldsymbol\Sigma}\bigg(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\bigg)=\frac{1}{2}\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
+- $\nabla_{\boldsymbol\Sigma}\big(-\frac{1}{2}\log\lvert\boldsymbol\Sigma\rvert\big)=-\frac{1}{2}\Sigma^{-1}$
+- $\nabla_{\boldsymbol\Sigma}\big(-\frac{1}{2}(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)\big)=\frac{1}{2}\boldsymbol\Sigma^{-1}(\mathbf{x}-\boldsymbol\mu)(\mathbf{x}-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}$
 
 ### 3. 전체 샘플에 대한 일반화
 
 #### (1) $\boldsymbol\mu$ 값 측정
 
 $\displaystyle
-\sum_{i=1}^N(\mathbf{x}_i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}=\mathbf{0}
+\sum_{i=1}^N(\mathbf{x}i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1}=\mathbf{0}
 \rightarrow\boldsymbol\mu=\frac{1}{N}\sum_{i=1}^N\mathbf{x}_i
 $
 
-#### (2) $\boldsymbol\mu$ 값 측정
+#### (2) $\boldsymbol\Sigma$ 값 측정
 
 $\displaystyle
 \sum_{i=1}^N-\frac{1}{2}(\boldsymbol\Sigma^{-1}-\boldsymbol\Sigma^{-1}(\mathbf{x}_i-\boldsymbol\mu)(\mathbf{x}_i-\boldsymbol\mu)^\top\boldsymbol\Sigma^{-1})
