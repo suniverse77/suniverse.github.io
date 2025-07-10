@@ -43,8 +43,8 @@ $$
 2. 고유값에 대응하는 고유벡터를 구함
 
    (1) $$
-   \lambda_1=5:~\mathbf{x}_1=\begin{bmatrix}1//2\end{bmatrix}<font color='red'>.</font>
-   $$
+   \lambda_1=5:~\mathbf{x}_1=\begin{bmatrix}1//2\end{bmatrix}
+   $$<font color='red'>.</font>
    
    $$
    ~(A-5I)\mathbf{x}=0~\to~\begin{bmatrix}\begin{array}{cc|c}-1&2&0\\1&-2&0\end{array}\end{bmatrix}
