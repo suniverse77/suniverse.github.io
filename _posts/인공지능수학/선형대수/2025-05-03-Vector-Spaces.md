@@ -47,10 +47,13 @@ toc_sticky: true
 - 세 번째 그림은 $\mathbb{R}^2$의 subspace가 아니다.
 - 네 번째 그림은 subspace의 조건을 다 만족하므로, $\mathbb{R}^2$의 subspace이다.
 
-> ![Figure 2](/assets/images/인공지능수학/1-3. Figure2.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
-> 해당 직선에 있는 벡터들끼리 덧셈을 하거나 벡터에 스칼라배를 할 경우, 직선 밖으로 나가기 때문에 subspace가 아니다.
-> ![Figure 3](/assets/images/인공지능수학/1-3. Figure3.png){: style="display:block; margin:0 auto; width: 50%; height: 50%;"}
-> 해당 직선에 있는 벡터들끼리 덧셈을 하거나 벡터에 스칼라배를 해도 직선 내에 존재하기 때문에 subspace이다.
+<center><img src='{{"/assets/images/인공지능수학/1-3. Figure2.png" | relative_url}}' width="50%"></center>
+
+- 해당 직선에 있는 벡터들끼리 덧셈을 하거나 벡터에 스칼라배를 할 경우, 직선 밖으로 나가기 때문에 subspace가 아니다.
+
+<center><img src='{{"/assets/images/인공지능수학/1-3. Figure3.png" | relative_url}}' width="50%"></center>
+
+- 해당 직선에 있는 벡터들끼리 덧셈을 하거나 벡터에 스칼라배를 해도 직선 내에 존재하기 때문에 subspace이다.
 
 ## Span
 
@@ -59,11 +62,9 @@ toc_sticky: true
 - $$
 	\text{span}(\begin{bmatrix}1\\0\end{bmatrix},\begin{bmatrix}0\\1\end{bmatrix})=\mathbb{R}^2
 	$$ <font color='white'>.</font>
-
-> ex2)
-> $$
-> \text{span}(\begin{bmatrix}2\\1\end{bmatrix},\begin{bmatrix}1\\3\end{bmatrix})=\begin{bmatrix}2a+b\\a+3b\end{bmatrix}
-> $$
+- $$
+	\text{span}(\begin{bmatrix}2\\1\end{bmatrix},\begin{bmatrix}1\\3\end{bmatrix})=\begin{bmatrix}2a+b\\a+3b\end{bmatrix}
+	$$ <font color='white'>.</font>
 
 ## Null Space
 
@@ -72,7 +73,6 @@ Homogeneous Equation의 solution을 모두 모아놓은 집합을 Null Space라�
 $$
 N(A)=\lbrace\mathbf{x}\mid A\mathbf{x}=\mathbf{0}\rbrace
 $$
-![Figure 4](/assets/images/인공지능수학/1-3. Figure4.png){: style="display:block; margin:0 auto; width: 30%; height: 30%;"}
     
 - 어떠한 null space든지 항상 $\mathbf{0}$를 포함하므로, vector space이다.
 - Null space의 차원을 **nullity**라고 하며, free variable의 개수와 동일하다.
