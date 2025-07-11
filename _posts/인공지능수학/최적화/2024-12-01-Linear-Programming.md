@@ -19,9 +19,9 @@ $$
 \\\text{subject to}~~A\mathbf x\leq\mathbf b
 $$
 
-$A\in\mathbb{R}^{m\times d}$ , $\mathbf b\in\mathbb{R}^m$ , $\mathbf c\in\mathbb{R}^d$ , $\mathbf x\in\mathbb{R}^d$
+Primal problem을 위와 같이 나타낼 수 있으며, 각 차원은 $A\in\mathbb{R}^{m\times d}$ , $\mathbf b\in\mathbb{R}^m$ , $\mathbf c\in\mathbb{R}^d$ , $\mathbf x\in\mathbb{R}^d$이다.
 
-$d$개의 변수와 $m$개의 제약 조건을 가진다.
+Primal problem은 $d$개의 변수와 $m$개의 제약 조건을 가진다.
 
 $$
 \underset{\mathbf \lambda\in\mathbb{R}^m}\max~-\mathbf b^\top\boldsymbol\lambda
@@ -66,9 +66,9 @@ $$
 \text{subject to}~~A\mathbf x\leq\mathbf b
 $$
 
-$A\in\mathbb{R}^{m\times d}$ , $\mathbf b\in\mathbb{R}^m$ , $\mathbf c\in\mathbb{R}^d$ , $\mathbf x\in\mathbb{R}^d$
+Primal problem을 위와 같이 나타낼 수 있으며, 각 차원은 $A\in\mathbb{R}^{m\times d}$ , $\mathbf b\in\mathbb{R}^m$ , $\mathbf c\in\mathbb{R}^d$ , $\mathbf x\in\mathbb{R}^d$이다.
 
-$Q\in\mathbb{R}^{d\times d}$ is symmetric, positive definite
+$Q\in\mathbb{R}^{d\times d}$는 symmetric, positive definite 행렬이다.
 
 $$
 \underset{\mathbf \lambda\in\mathbb{R}^m}\max~
