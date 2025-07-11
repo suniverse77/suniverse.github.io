@@ -19,6 +19,42 @@ $$
 \\\text{subject to}~~A\mathbf x\leq\mathbf b
 $$
 
+$A\in\mathbb{R}^{m\times d}$ , $\mathbf b\in\mathbb{R}^m$ , $\mathbf c\in\mathbb{R}^d$ , $\mathbf x\in\mathbb{R}^d$
+
+$d$개의 변수와 $m$개의 제약 조건을 가진다.
+
+$$
+\underset{\mathbf \lambda\in\mathbb{R}^m}\max~-\mathbf b^\top\boldsymbol\lambda
+\\
+\text{subject to}~~
+\mathbf c+A^\top\boldsymbol\lambda=0
+\\ ~~~~~~~
+\boldsymbol\lambda\geq0
+$$
+
+Dual problem은 위와 같이 정의된다.
+
+<details>
+<summary><font color='blue'>공식 유도</font></summary>
+<div markdown="1">
+
+1. **Define lagrangian function**
+    
+    $\mathcal{L}(\bold x,\boldsymbol\lambda)=\bold c^\top\bold x+\boldsymbol\lambda^\top(A\bold x-\bold b)$
+    
+2. **Define dual function**
+    
+    $\mathcal{D}(\boldsymbol\lambda)=
+    \underset{\bold x}\min~\mathcal{L}(\bold x,\boldsymbol\lambda)
+    =-\bold b^\top\boldsymbol\lambda$
+    
+    $\nabla_\bold x\mathcal{L}(\bold x,\boldsymbol\lambda)=0
+    \to
+    \bold c^\top+\boldsymbol\lambda^\top A=0$
+
+</div>
+</details>
+
 ## Qudratic Programming
 
 목적함수가 2차식이고 제약조건이 선형식으로 표현된 최적화 문제를 의미한다.
@@ -29,3 +65,48 @@ $$
 \\
 \text{subject to}~~A\mathbf x\leq\mathbf b
 $$
+
+$A\in\mathbb{R}^{m\times d}$ , $\mathbf b\in\mathbb{R}^m$ , $\mathbf c\in\mathbb{R}^d$ , $\mathbf x\in\mathbb{R}^d$
+
+$Q\in\mathbb{R}^{d\times d}$ is symmetric, positive definite
+
+$$
+\underset{\mathbf \lambda\in\mathbb{R}^m}\max~
+\bigg(-\frac{1}{2}\mathbf b^\top\boldsymbol\lambda
+\bigg)
+\\
+\text{subject to}~~
+\boldsymbol\lambda\geq0
+$$
+
+Dual problem은 위와 같이 정의된다.
+
+<details>
+<summary><font color='blue'>공식 유도</font></summary>
+<div markdown="1">
+
+1. Define Lagrangian
+    
+    $\mathcal{L}(\bold x,\boldsymbol\lambda)=
+    \frac{1}{2}\bold x^\top Q\bold x+\bold c^\top\bold x
+    +\boldsymbol\lambda^\top(A\bold x-\bold b)$
+    
+2. Set the gradient of the Lagrangian to zero
+    
+    $\nabla_\bold x\mathcal{L}(\bold x,\boldsymbol\lambda)=0
+    \to
+    \bold x^\top Q+\bold c^\top+\boldsymbol\lambda^\top A=0$
+    
+3. Substitution
+    
+    $\mathcal{D}(\boldsymbol\lambda)=
+    -\frac{1}{2}(\bold c^\top+A^\top\boldsymbol\lambda)^\top Q^{-1}(\bold c+A^\top\boldsymbol\lambda)-\boldsymbol\lambda^\top\bold b$
+    
+4. Solve Dual problem
+    
+    $\nabla_{\boldsymbol\lambda}\mathcal{D}(\boldsymbol\lambda)=0$
+    
+</aside>
+
+</div>
+</details>
