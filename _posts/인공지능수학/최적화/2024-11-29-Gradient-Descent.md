@@ -16,31 +16,26 @@ $$
 \theta_t=\theta_{t-1}-\alpha\nabla_\theta\mathcal{L}(\theta)
 $$
 
-## Batch
-
-### Batch Gradient Descent
+### Full-batch Gradient Descent
 
 $$
 \theta_t=\theta_{t-1}-\alpha\sum_{n=1}^N\nabla_\theta
 \mathcal{L}_n(\theta)
 $$
 
-전체 샘플에 대해 한번에 손실을 계산한 후, 파라미터를 업데이트
+전체 $N$개의 샘플에 대해 손실을 계산한 후, 파라미터를 한 번만 업데이트한다.
 
 ### Mini-batch Gradient Descent
 
 $$
-\theta_t=\theta_{t-1}-\alpha\sum_{n\in B}\nabla_\theta
-\mathcal{L}_n(\theta)
-~,~|B|<N
+\theta_t=\theta_{t-1}-\alpha\sum_{n\in B}\nabla_\theta\mathcal{L}_n(\theta)~,~|B|<N
 $$
 
-- 일부 샘플들에 대해 손실을 계산한 후, 파라미터를 업데이트 → 배치 개수만큼 반복
-    1. 첫 번째 샘플 묶음에 대해 손실을 계산한 후, 파라미터를 업데이트
-    2. 두 번째 샘플 묶음에 대해 손실을 계산한 후, 파라미터를 업데이트
-    3. 반복
+일부 샘플 묶음 (미니 배치)에 대해 손실을 계산한 후, 파라미터를 업데이트하는 과정을 배치 개수만큼 반복한다.
 
-## Optimizer
+1. 첫 번째 샘플 묶음에 대해 손실을 계산한 후, 파라미터를 업데이트
+2. 두 번째 샘플 묶음에 대해 손실을 계산한 후, 파라미터를 업데이트
+3. ...
 
 ### Stochastic Gradient Descent
 
@@ -48,13 +43,11 @@ $$
 \theta_t=\theta_{t-1}-\alpha\nabla_\theta\mathcal{L}_i(\theta)
 $$
 
-한 개의 샘플에 대해 손실을 계산한 후, 파라미터를 업데이트
+한 개의 샘플에 대해 손실을 계산한 후, 파라미터를 업데이트한다.
 
-$$
-\theta_t=\theta_{t-1}-\alpha\sum_{m=1}^M\nabla_\theta\mathcal{L}_m(\theta)
-$$
+이 때, 샘플 1개는 무작위로 선택한다.
 
-샘플들을 배치로 나눴으면, 해당 미니 배치 내에서 한 개의 샘플에 대해 진행
+## Optimizer
 
 ### Momentum
 
