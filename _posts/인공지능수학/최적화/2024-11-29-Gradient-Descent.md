@@ -23,7 +23,7 @@ $$
 \theta_t=\theta_{t-1}-\alpha\nabla_\theta\mathcal{L}(\theta)
 $$
 
-여기서 $\alpha$는 learning rate라고 부르며, 한 번에 이동하는 보폭을 의미한다.
+여기서 $\alpha$를 learning rate라고 부르며, 한 번에 이동하는 보폭을 의미한다.
 
 <figure style="text-align: center;">
   <img src='{{ "/assets/images/인공지능수학/5-1. Figure2.png" | relative_url }}' style="display: block; margin: 0 auto; width: 60%;">
@@ -73,6 +73,8 @@ $$
 
 ### Momentum
 
+파라미터를 업데이트할 때, 이전 방향을 반영하여 업데이트한다.
+
 $$
 \theta_t=\theta_{t-1}-\eta m_t
 ~,~
@@ -80,17 +82,19 @@ m_t=\gamma m_{t-1}+(1-\gamma)\nabla_\theta
 \mathcal{L}(\theta)
 $$
 
-이전 방향을 반영해 진동을 줄이고 빠르게 수렴하도록 유도
+위의 수식에서 $m_t$를 모멘텀 term이라고 하며, 이전 step의 gradient와 현재 step의 gradient의 EMA로 이루어져 있다.
 
-- $m_t$는 모멘텀 term으로, 파라미터가 어떤 방향으로 얼마나 빠르게 바뀌는지를 나타내는 값임
-    
-    $m_t$는 이전 step의 gradient와 현재 step의 gradient의 EMA로 이루어져 있음
-    
-- $\gamma$는 모멘텀 계수로, 이전 방향에 가중치를 얼마나 부여할지를 나타냄
-    
-    일반적으로 $\gamma=0.9$로 설정
+$\gamma$는 모멘텀 계수로, 이전 방향에 가중치를 얼마나 부여할지를 의미한다.
+
+모멘텀은 이전 기울기의 방향을 반영하기 때문에 아래의 이점이 있다.
+
+- 좁고 깊이가 깊은 영역에서 진동을 줄일 수 있어 빠른 수렴이 가능하다.
+- 기울기가 거의 0인 영역에서도 느리게나마 탈출할 수 있다.
+- 관성에 의해 local minimum에서 탈출할 수 있다.
 
 ### Adam (Adaptive Moment Estimation)
+
+1차, 2차 모멘텀을 활용해 학습률을 적응적으로 조정하는 기법으로, 스케일이 다른 파라미터들에 대해 모든 파라미터가 균형있게 학습되도록 유도한다.
 
 $$
 \theta_t=\theta_{t-1}-\eta\frac{m_{t-1}}{\sqrt{v_{t-1}}+\epsilon}
@@ -102,9 +106,4 @@ v_t=\gamma_2 v_{t-1}+(1-\gamma_2)\lVert\nabla_\theta
 \mathcal{L}(\theta)\rVert^2
 $$
 
-1차, 2차 모멘텀을 활용해 학습률을 적응적으로 조정
-
-- Momentum과 AdaGrad를 융합한 기법
-- 스케일이 다른 파라미터들에 대해 모든 파라미터가 균형있게 학습되도록 유도
-- $m_t$는 1차 모멘텀으로, gradient에 대한 EMA임
-- $v_t$는 2차 모멘텀으로, graident의 크기에 대한 EMA임
+위의 수식에서 1차 모멘텀 $m_t$는 gradient에 대한 EMA, 2차 모멘텀 $v_t$는 graident의 크기에 대한 EMA를 의미한다.
