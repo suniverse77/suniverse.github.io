@@ -26,7 +26,7 @@ $$
 여기서 $\alpha$는 learning rate라고 부르며, 한 번에 이동하는 보폭을 의미한다.
 
 <figure style="text-align: center;">
-  <img src='{{ "/assets/images/인공지능수학/5-1. Figure2.png" | relative_url }}' width="80%">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure2.png" | relative_url }}' style="width:60%;">
   <figcaption>출처: https://fabiorosato.com/blog/navigating-success-as-gradient-descent</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ $$
 - "미분 = 0"인 지점이 global minimum이 아니라 local minimum일 수도 있다.
 
 <figure style="text-align: center;">
-  <img src='{{ "/assets/images/인공지능수학/5-1. Figure3.png" | relative_url }}' width="80%">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure3.png" | relative_url }}' width="60%">
   <figcaption>출처: https://variety82p.tistory.com/category/%E2%9A%A1AI/AI</figcaption>
 </figure>
 
@@ -67,9 +67,7 @@ $$
 \theta_t=\theta_{t-1}-\alpha\nabla_\theta\mathcal{L}_i(\theta)
 $$
 
-한 개의 샘플에 대해 손실을 계산한 후, 파라미터를 업데이트한다.
-
-이 때, 샘플 1개는 무작위로 선택한다.
+매 step마다 무작위로 선택된 한 개의 샘플에 대해 손실을 계산한 후, 파라미터를 업데이트한다.
 
 ## Optimizer
 
