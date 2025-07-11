@@ -13,7 +13,7 @@ toc_sticky: true
 ## Gradient Descent
 
 <figure style="text-align: center;">
-  <img src='{{ "/assets/images/인공지능수학/5-1. Figure1.png" | relative_url }}' width="60%">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure1.png" | relative_url }}' style="display: block; margin: 0 auto; width: 60%;">
   <figcaption>출처: https://medium.com/@anmoltalwar/gradient-descent-72b8d138cabe</figcaption>
 </figure>
 
@@ -26,7 +26,7 @@ $$
 여기서 $\alpha$는 learning rate라고 부르며, 한 번에 이동하는 보폭을 의미한다.
 
 <figure style="text-align: center;">
-  <img src='{{ "/assets/images/인공지능수학/5-1. Figure2.png" | relative_url }}' style="width:60%;">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure2.png" | relative_url }}' style="display: block; margin: 0 auto; width: 60%;">
   <figcaption>출처: https://fabiorosato.com/blog/navigating-success-as-gradient-descent</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ $$
 - "미분 = 0"인 지점이 global minimum이 아니라 local minimum일 수도 있다.
 
 <figure style="text-align: center;">
-  <img src='{{ "/assets/images/인공지능수학/5-1. Figure3.png" | relative_url }}' width="60%">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure3.png" | relative_url }}' style="display: block; margin: 0 auto; width: 60%;">
   <figcaption>출처: https://variety82p.tistory.com/category/%E2%9A%A1AI/AI</figcaption>
 </figure>
 
