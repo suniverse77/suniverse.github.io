@@ -38,19 +38,18 @@ Dual problem은 위와 같이 정의된다.
 <summary><font color='blue'>공식 유도</font></summary>
 <div markdown="1">
 
-1. **Define lagrangian function**
+1. Define lagrangian function
     
-    $\mathcal{L}(\bold x,\boldsymbol\lambda)=\bold c^\top\bold x+\boldsymbol\lambda^\top(A\bold x-\bold b)$
+    $\mathcal{L}(\mathbf x,\boldsymbol\lambda)=\mathbf c^\top\mathbf x+\boldsymbol\lambda^\top(A\mathbf x-\mathbf b)$
     
-2. **Define dual function**
+2. Define dual function
     
     $\mathcal{D}(\boldsymbol\lambda)=
-    \underset{\bold x}\min~\mathcal{L}(\bold x,\boldsymbol\lambda)
-    =-\bold b^\top\boldsymbol\lambda$
+    \underset{\mathbf x}\min~\mathcal{L}(\mathbf x,\boldsymbol\lambda)
+    =-\mathbf b^\top\boldsymbol\lambda$
     
-    $\nabla_\bold x\mathcal{L}(\bold x,\boldsymbol\lambda)=0
-    \to
-    \bold c^\top+\boldsymbol\lambda^\top A=0$
+    $\nabla_\mathbf x\mathcal{L}(\mathbf x,\boldsymbol\lambda)=0
+    \to\mathbf c^\top+\boldsymbol\lambda^\top A=0$
 
 </div>
 </details>
@@ -87,20 +86,18 @@ Dual problem은 위와 같이 정의된다.
 
 1. Define Lagrangian
     
-    $\mathcal{L}(\bold x,\boldsymbol\lambda)=
-    \frac{1}{2}\bold x^\top Q\bold x+\bold c^\top\bold x
-    +\boldsymbol\lambda^\top(A\bold x-\bold b)$
+    $\mathcal{L}(\mathbf x,\boldsymbol\lambda)=
+    \frac{1}{2}\mathbf x^\top Q\mathbf x+\mathbf c^\top\mathbf x
+    +\boldsymbol\lambda^\top(A\mathbf x-\mathbf b)$
     
 2. Set the gradient of the Lagrangian to zero
     
-    $\nabla_\bold x\mathcal{L}(\bold x,\boldsymbol\lambda)=0
-    \to
-    \bold x^\top Q+\bold c^\top+\boldsymbol\lambda^\top A=0$
+    $\nabla_\mathbf x\mathcal{L}(\mathbf x,\boldsymbol\lambda)=0
+    \to\mathbf x^\top Q+\mathbf c^\top+\boldsymbol\lambda^\top A=0$
     
 3. Substitution
     
-    $\mathcal{D}(\boldsymbol\lambda)=
-    -\frac{1}{2}(\bold c^\top+A^\top\boldsymbol\lambda)^\top Q^{-1}(\bold c+A^\top\boldsymbol\lambda)-\boldsymbol\lambda^\top\bold b$
+    $\mathcal{D}(\boldsymbol\lambda)=-\frac{1}{2}(\mathbf c^\top+A^\top\boldsymbol\lambda)^\top Q^{-1}(\mathbf c+A^\top\boldsymbol\lambda)-\boldsymbol\lambda^\top\mathbf b$
     
 4. Solve Dual problem
     
