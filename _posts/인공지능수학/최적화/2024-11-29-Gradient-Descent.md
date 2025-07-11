@@ -12,9 +12,33 @@ toc_sticky: true
 
 ## Gradient Descent
 
+<figure style="text-align: center;">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure1.png" | relative_url }}' width="80%">
+  <figcaption>출처: https://medium.com/@anmoltalwar/gradient-descent-72b8d138cabe</figcaption>
+</figure>
+
+함수의 최소값을 찾기 위한 최적화 알고리즘으로, 함수의 기울기를 계산해서 기울기가 낮아지는 방향으로 조금씩 이동하는 방법을 사용한다.
+
 $$
 \theta_t=\theta_{t-1}-\alpha\nabla_\theta\mathcal{L}(\theta)
 $$
+
+여기서 $\alpha$는 learning rate라고 부르며, 한 번에 이동하는 보폭을 의미한다.
+
+<figure style="text-align: center;">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure2.png" | relative_url }}' width="80%">
+  <figcaption>출처: https://fabiorosato.com/blog/navigating-success-as-gradient-descent</figcaption>
+</figure>
+
+함수의 최소값을 찾을 때 단순히 "미분 = 0"을 계산하지 않는 이유는 아래와 같다.
+
+- 실제 모델이 사용하는 함수는 매우 복잡하기 때문에 "미분 = 0"인 지점을 수식으로 직접 계산하기가 불가능한 경우가 많다.
+- "미분 = 0"인 지점이 global minimum이 아니라 local minimum일 수도 있다.
+
+<figure style="text-align: center;">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure3.png" | relative_url }}' width="80%">
+  <figcaption>출처: https://variety82p.tistory.com/entry/Local-Minima-%EB%AC%B8%EC%A0%9C%EC%97%90%EB%8F%84-%EB%B6%88%EA%B5%AC%ED%95%98%EA%B3%A0-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%B4-%EC%9E%98-%EB%90%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EB%8A%94</figcaption>
+</figure>
 
 ### Full-batch Gradient Descent
 
