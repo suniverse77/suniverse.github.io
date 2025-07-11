@@ -13,7 +13,7 @@ toc_sticky: true
 ## Gradient Descent
 
 <figure style="text-align: center;">
-  <img src='{{ "/assets/images/인공지능수학/5-1. Figure1.png" | relative_url }}' width="80%">
+  <img src='{{ "/assets/images/인공지능수학/5-1. Figure1.png" | relative_url }}' width="60%">
   <figcaption>출처: https://medium.com/@anmoltalwar/gradient-descent-72b8d138cabe</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ $$
 
 <figure style="text-align: center;">
   <img src='{{ "/assets/images/인공지능수학/5-1. Figure3.png" | relative_url }}' width="80%">
-  <figcaption>출처: https://variety82p.tistory.com/entry/Local-Minima-%EB%AC%B8%EC%A0%9C%EC%97%90%EB%8F%84-%EB%B6%88%EA%B5%AC%ED%95%98%EA%B3%A0-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%B4-%EC%9E%98-%EB%90%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EB%8A%94</figcaption>
+  <figcaption>출처: https://variety82p.tistory.com/category/%E2%9A%A1AI/AI</figcaption>
 </figure>
 
 ### Full-batch Gradient Descent
@@ -82,6 +82,8 @@ m_t=\gamma m_{t-1}+(1-\gamma)\nabla_\theta
 \mathcal{L}(\theta)
 $$
 
+이전 방향을 반영해 진동을 줄이고 빠르게 수렴하도록 유도
+
 - $m_t$는 모멘텀 term으로, 파라미터가 어떤 방향으로 얼마나 빠르게 바뀌는지를 나타내는 값임
     
     $m_t$는 이전 step의 gradient와 현재 step의 gradient의 EMA로 이루어져 있음
@@ -101,6 +103,8 @@ m_t=\gamma_1 m_{t-1}+(1-\gamma_1)\nabla_\theta
 v_t=\gamma_2 v_{t-1}+(1-\gamma_2)\lVert\nabla_\theta
 \mathcal{L}(\theta)\rVert^2
 $$
+
+1차, 2차 모멘텀을 활용해 학습률을 적응적으로 조정
 
 - Momentum과 AdaGrad를 융합한 기법
 - 스케일이 다른 파라미터들에 대해 모든 파라미터가 균형있게 학습되도록 유도
