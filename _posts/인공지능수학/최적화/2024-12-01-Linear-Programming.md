@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[최적화] Linear Programming"
-last_modified_at: 2024-11-30
+last_modified_at: 2024-12-01
 categories: ["인공지능 수학"]
 tags: ["최적화"]
 excerpt: "라그랑주"
