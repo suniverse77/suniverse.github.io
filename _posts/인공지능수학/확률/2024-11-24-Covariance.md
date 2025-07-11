@@ -23,6 +23,16 @@ $$
 
 $X$와 $Y$가 독립이면 공분산이 0이며 역은 성립하지 않는다.
 
+<details>
+<summary><font color='blue'>유도</font></summary>
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+
 ## Correlation
 
 $$
