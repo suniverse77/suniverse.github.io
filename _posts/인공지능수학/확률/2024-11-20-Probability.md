@@ -1,10 +1,10 @@
 ---
 layout: single
-title: "[확률] Probability & Random Variables"
+title: "[확률] Probability"
 last_modified_at: 2024-11-20
 categories: ["인공지능 수학"]
 tags: ["확률"]
-excerpt: "확률 변수와 확률 법칙"
+excerpt: "확률 공간과 확률 법칙"
 use_math: true
 toc: true
 toc_sticky: true
@@ -28,46 +28,6 @@ Event (사건)는 sample space의 부분집합으로, 실험 결과가 만족해
 Event space는 가능한 모든 사건들의 집합을 의미한다.
     
 > $\Omega=\lbrace a,b\rbrace$ → $\mathcal{A}=\lbrace\emptyset,\lbrace a\rbrace,\\lbrace b\rbrace,\lbrace a,b\rbrace\rbrace$
-
-## Random Variable
-
-$$
-X:\Omega\mapsto \mathbb{R}
-$$
-
-확률 변수란 sample space를 target space로 매핑하는 함수이다.
-
-- sample space: 특정 확률로 발생하는 결과들
-- target space: 실수값
-
-함수의 역할을 하는데, 값처럼 다루기 때문에 변수라고 명명하였다.
-
-<details>
-<summary><font color='red'>Example</font></summary>
-<div markdown="1">
-
-주사위를 던지는 상황
-
-- Sample space: $\Omega=\lbrace1,2,3,4,5,6\rbrace$
-- 주사위의 눈을 확률 변수 $X$로 설정
-- $X(1)=1~,~X(2)=2~,~X(3)=3$
-    
-    $X(4)=4~,~X(5)=5~,~X(6)=6$
-- Target space: $\mathcal{T}=\lbrace1,2,3,4,5,6\rbrace$
-
----
-
-동전 2개를 던지는 상황
-
-- $\Omega=\lbrace\text{HH,~HT,~TH,~TT}\rbrace$
-- 앞면의 개수를 확률 변수 $X$로 설정
-- $X(\text{HH})=2~,~X(\text{TT})=0$
-    
-    $X(\text{HT})=1~,~X(\text{TH})=1$
-- Target space: $\mathcal{T}=\lbrace0,1,2\rbrace$
-
-</div>
-</details>
 
 ## Basic Rules of Probability
 
@@ -95,12 +55,12 @@ $$
 P(A,B)=P(A)P(B)
 $$
 
-두 확률 변수 $A$와 $B$가 독립이라면, 위의 식이 성립한다.
+두 사건 $A$와 $B$가 독립이라면, 위의 식이 성립한다.
 
 ### Conditional Independence
 
 $$
-P(A,B|C)=P(A|C)P(B|C)
+P(A,B\mid C)=P(A\mid C)P(B\mid C)
 $$
 
 사건 $C$가 발생했을 때에도 두 사건 $A$와 $B$가 독립이라면, 이를 조건부 독립이라고 한다.
