@@ -10,6 +10,8 @@ toc: true
 toc_sticky: true
 ---
 
+## Rotations
+
 $$
 R(\theta)=\begin{bmatrix}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\end{bmatrix}
 $$

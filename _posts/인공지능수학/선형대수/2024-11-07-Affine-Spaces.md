@@ -10,6 +10,8 @@ toc: true
 toc_sticky: true
 ---
 
+## Afine Spaces
+
 ![Figure 1](/assets/images/인공지능수학/1-7. Figure1.png){: style="display:block; margin:0 auto; width: 70%; height: 70%;"}
 
 Vector space를 평행 이동한 공간을 affine subspace라고 부른다.
