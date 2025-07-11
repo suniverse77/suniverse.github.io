@@ -102,8 +102,6 @@ Dual problem은 위와 같이 정의된다.
 4. Solve Dual problem
     
     $\nabla_{\boldsymbol\lambda}\mathcal{D}(\boldsymbol\lambda)=0$
-    
-</aside>
 
 </div>
 </details>
