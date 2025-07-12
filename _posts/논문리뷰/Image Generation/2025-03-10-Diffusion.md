@@ -50,7 +50,7 @@ $$
 -D_{KL}(q_\phi(z\mid x)\mid\mid p(z))
 $$
 
-ELBO는 재구성 term $\mathbb{E}_{q\_\phi(z\mid x)}\bigg[\log p\_\theta(x\mid z)\bigg]$과 정규화 term $D\_{KL}(q\_\phi(z\mid x)\mid\mid p(z))$으로 구성된다.
+ELBO는 재구성 term $\mathbb{E}_{q\_\phi(z\mid x)}\big[\log p\_\theta(x\mid z)\big]$과 정규화 term $D\_{KL}(q\_\phi(z\mid x)\mid\mid p(z))$으로 구성된다.
 
 - 재구성 term: latent variable $z$로부터 복원한 $x$가 실제 $x$와 얼마나 유사한지를 측정한다. (복원력)
 - 정규화 term: 설계한 $q_\phi(z\mid x)$가 적어도 사전 설정한 분포 $p(z)$를 따르도록 강제한다.
@@ -98,14 +98,16 @@ ELBO는 재구성 term $\mathbb{E}_{q\_\phi(z\mid x)}\bigg[\log p\_\theta(x\mid 
     $$
     D_{KL}(q_\phi(z\mid x)\mid\mid \log p(z\mid x))
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\big(\log p(x,z)-\log p(x)\big)\bigg]
-    \\ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    \\ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\log p(x,z)\bigg]+\log p(x)
     $$
 
 4. 이항
 
     $$
+    \begin{equation}
     \log p(x)=\mathbb{E}_{q_\phi(x\mid z)}\bigg[\log p_\theta(x\mid z)\bigg]-D_{KL}(q_\phi(z\mid x)\mid\mid p(z))
+    \end{equation}
     $$
 
 ---
@@ -117,7 +119,7 @@ $$
 +D_{KL}(q_\phi(z\mid x)\mid\mid p(z\mid x))
 $$
 
-위의 식은 **Evidence = ELBO + KL**으로 표현되며, KL term은 항상 0 이상이기 때문에 $\rm Evidence\geq ELBO$ 이다.
+위의 식은 **Evidence = ELBO + KL**으로 표현되며, KL term은 항상 0 이상이기 때문에 <mark style='background-color: fff5b1'>$\rm Evidence\geq ELBO$</mark> 이다.
     
 Evidence는 상수이므로, KL을 최소화하는 것은 Evidence를 최대화하는 것과 같다.
     
