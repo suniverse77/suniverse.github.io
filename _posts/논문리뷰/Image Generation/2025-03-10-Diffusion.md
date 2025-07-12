@@ -4,11 +4,17 @@ title: "[논문리뷰] Understanding Diffusion Models: A Unified Perspective"
 last_modified_at: 2025-03-10
 categories: ["논문리뷰"]
 tags: ["Image Generation"]
-excerpt: ""
+excerpt: "2022"
 use_math: true
 toc: true
 toc_sticky: true
 ---
+
+> [[Paper]](https://arxiv.org/abs/2208.11970)
+>
+> **2022**
+
+논문을 읽고 제가 이해한 방식으로 정리하였습니다.
 
 ## Bayes' Rule
 
@@ -92,6 +98,7 @@ ELBO는 재구성 term과 정규화 term으로 구성된다.
     $$
     D_{KL}(q_\phi(z\mid x)\mid\mid \log p(z\mid x))
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\big(\log p(x,z)-\log p(x)\big)\bigg]
+    \\ ~~~~~~~~~~~~~~~
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\log p(x,z)\bigg]+\log p(x)
     $$
 
@@ -130,7 +137,7 @@ $$
 - Encoder는 Multivariate Gaussian으로 설정
 
 $$
-p(\mathbf z)=\mathcal{N}(\mathbf z;\bold0,\mathbf I)
+p(\mathbf z)=\mathcal{N}(\mathbf z;\mathbf0,\mathbf I)
 $$
 
 - Prior는 Standard Multivariate Gaussian으로 설정
@@ -152,7 +159,7 @@ $$
 
 ### Decoder
 
-- 샘플링된 $\bold z$를 이용해 이미지 생성
+- 샘플링된 $\mathbf z$를 이용해 이미지 생성
 
 ## Hierarchical VAE
 
