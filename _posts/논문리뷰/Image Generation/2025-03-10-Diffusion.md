@@ -22,15 +22,19 @@ $$
 p(z\mid x)=\frac{p(x\mid z)p(z)}{p(x)}=\frac{p(x,z)}{p(x)}
 $$
 
-- Prior $p(z)$는 우리가 latent의 분포 Gaussian Distribution를 사전에 임의로 정의할 수 있기 때문에 알고 있는 값이다. *ex) Normal Distribution, Gaussian Distribution*
-- Conditional Likelihood $p(x\mid z)$는 latent
+- Prior $p(z)$는 latent의 사전 분포로, Gaussian 분포처럼 사전에 임의로 정의할 수 있기 때문에 알고 있는 값이다.
+- Likelihood $p(x\mid z)$는 latent
 
-- Posterior Distribution $p(z\mid x)$는 주어진 데이터 $x$를 가장 완벽하게 표현하는 latent variable
-- Evidence $p(x)$는 latent의 차원이 매우 크다면 계산이 불가능해진다.
-    - $p(\mathbf x)=\int p(\mathbf x,\mathbf z)\mathbf z$으로, 모든 가능한 latent variable에 대해서 $\mathbf x$의 적분이다.
-    - 만약 $\mathbf z\in\mathbb{R}^{100}$라면, $\mathbf z\in\mathbb{R}^{100}\to p(\mathbf x)=\int_{z_{100}}\cdots\int_{z_{1}}p(\mathbf x,\mathbf z)d\mathbf z$이기 때문에 적분이 어려워진다.
+- Posterior Distribution $p(z\mid x)$는 주어진 데이터 $x$를 가장 완벽하게 표현하는 latent의 분포로, 직접 계산이 어렵기 때문에 일반적으로 근사하여 구한다.
+- Evidence $p(x)$는 모든 가능한 $z$에 대해 joint를 적분한 marginal likelihood이다.
+    
+    $$
+    p(\mathbf x)=\int p(\mathbf x,\mathbf z)\mathbf z
+    $$
+    
+    latent의 차원이 $\mathbf z\in\mathbb{R}^{100}$처럼 매우 크면 $\mathbf z\in\mathbb{R}^{100}\to p(\mathbf x)=\int_{z_{100}}\cdots\int_{z_{1}}p(\mathbf x,\mathbf z)d\mathbf z$처럼 다중 적분을 해야하기 때문에 사실상 계산이 불가능해진다.
 
-$p(z\mid x)$를 직접 찾을 수 없으니 모델을 이용해 근사한다.
+따라서, 실제 학습에서는 $p(z\mid x)$를 직접 계산할 수 없기 때문에 모델을 이용해 근사한다.
 
 $$
 q_\phi(z\mid x)\sim p(z\mid x)
@@ -38,24 +42,20 @@ $$
 
 ## ELBO (Evidence Lower BOund)
 
-ELBO는 log evidence를 직접 계산할 수 없을 때, 이를 하한선으로 근사하는 데 사용된다.
+log evidence는 직접 계산하기 어렵기 때문에, 그 하한인 ELBO를 최대화함으로써 근사한다.
 
 $$
-\mathbb{E}_{q_\phi(x\mid z)}\bigg[\log\frac{p(x,z)}{q_\phi(z\mid x)}\bigg]=
-\mathbb{E}_{q_\phi(x\mid z)}\bigg[\log p_\theta(x\mid z)\bigg]
+\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log\frac{p(x,z)}{q_\phi(z\mid x)}\bigg]=
+\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log p_\theta(x\mid z)\bigg]
 -D_{KL}(q_\phi(z\mid x)\mid\mid p(z))
 $$
 
-ELBO는 재구성 term과 정규화 term으로 구성된다.
+ELBO는 재구성 term $\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log p_\theta(x\mid z)\bigg]$과 정규화 term $D_{KL}(q_\phi(z\mid x)\mid\mid p(z))$으로 구성된다.
 
-- 재구성 term: 우리가 전달한 latent variable로부터 나온 출력이 입력 데이터와 얼마나 유사한지를 의미한다. (복원력)
-- 정규화 term: 우리가 설계한 $q_\phi(z\mid x)$가 적어도 사전 설정한 분포를 따르도록 강제한다.
-
-> ex) $p(z)$를 사전에 가우시안으로 정의했으면 $q_\phi(z\mid x)$도 가우시안이 되도록 설정
+- 재구성 term: latent variable $z$로부터 복원한 $x$가 실제 $x$와 얼마나 유사한지를 측정한다. (복원력)
+- 정규화 term: 설계한 $q_\phi(z\mid x)$가 적어도 사전 설정한 분포 $p(z)$를 따르도록 강제한다.
 
 학습에는 경사 하강법을 사용하므로, 실제 손실 함수로는 $\min(-\text{ELBO})$를 사용한다.
-
-재구성 term과 정규화 term 모두 음수의 값을 가지기 때문에 ELBO도 항상 음수이다.
 
 <details>
 <summary><font color='blue'>공식 유도</font></summary>
@@ -98,7 +98,7 @@ ELBO는 재구성 term과 정규화 term으로 구성된다.
     $$
     D_{KL}(q_\phi(z\mid x)\mid\mid \log p(z\mid x))
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\big(\log p(x,z)-\log p(x)\big)\bigg]
-    \\ ~~~~~~~~~~~~~~~
+    \\ ~~~~~~~~~~~~~~~~~~~~~~~~~
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\log p(x,z)\bigg]+\log p(x)
     $$
 
@@ -117,13 +117,11 @@ $$
 +D_{KL}(q_\phi(z\mid x)\mid\mid p(z\mid x))
 $$
 
-위의 식은 **Evidence = ELBO + KL**으로 표현된다.
+위의 식은 **Evidence = ELBO + KL**으로 표현되며, KL term은 항상 0 이상이기 때문에 $\rm Evidence\geq ELBO$ 이다.
     
 Evidence는 상수이므로, KL을 최소화하는 것은 Evidence를 최대화하는 것과 같다.
     
-우리의 목적은 $q_\phi(z\mid x)$를 $p(z\mid x)$에 근사시키는 것이며, KL은 직접 계산할 수 없기 때문에 Evidence를 최대화하는 방식으로 진행한다.
-    
-KL term은 항상 0 이상이기 때문에, 결국 $\rm Evidence\geq ELBO$가 됨
+KL을 직접 계산할 수 없기 때문에 Evidence를 최대화하여 간접적으로 $q_\phi(z\mid x)$를 $p(z\mid x)$에 근사시킨다.
 
 </div>
 </details>
