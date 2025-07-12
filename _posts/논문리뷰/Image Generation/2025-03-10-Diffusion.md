@@ -132,14 +132,6 @@ KL을 직접 계산할 수 없기 때문에 Evidence를 최대화하여 간접�
 
 <center><img src='{{"/assets/images/논문리뷰/Diffusion-1.png" | relative_url}}' width="70%"></center>
 
-- Encoder는 Multivariate Gaussian으로 설정
-
-$$
-p(\mathbf z)=\mathcal{N}(\mathbf z;\mathbf0,\mathbf I)
-$$
-
-- Prior는 Standard Multivariate Gaussian으로 설정
-
 ### Encoder
 
 고차원 데이터 $x$를 저차원 잠재변수 $z$로 압축해 의미적인 특징만 보존하는 역할을 한다.
@@ -205,3 +197,36 @@ $t\geq2$ step은 바로 이전 step $t+1$에만 의존한다.
 ## Diffusion Model
 
 <center><img src='{{"/assets/images/논문리뷰/Diffusion-3.png" | relative_url}}' width="70%"></center>
+
+Hierarchical VAE에 3가지 제약 조건을 추가한 것으로 이해할 수 있다.
+
+1. latent 차원과 data 차원이 동일하다. ($\mathbf z$를 $\mathbf x$로 표기)
+2. Encoder는 학습하지 않는다. (forward process에 학습 가능한 파라미터가 없음)
+3. $T$ step에서는 standard gaussian이 된다.
+
+Diffusion process가 정규 분포를 따를 경우, time step 폭이 충분히 작으면 reverse process도 정규 분포를 따름
+
+### Encoder (Forward process)
+
+$$
+q(\mathbf x_{1:T}\mid\mathbf x_0):=\prod_{t=1}^Tq(\mathbf x_t\mid\mathbf x_{t-1})
+$$
+
+Markov로 이루어져 있으며, $\mathbf x_t$는 $\mathbf x_{t-1}$에만 의존한다.
+
+HVAE 수식에서 학습 파라미터가 사라졌으며, $z$ 기호를 사용하지 않기 때문에 초기 step도 곱셈 기호 안에 넣을 수 있다.
+
+### Decoder (Backward process)
+
+$$
+p_\theta(\mathbf x_{0:T}):=p(\mathbf x_T)\prod_{t=1}^Tp_\theta(\mathbf x_{t-1}\mid\mathbf x_t)
+~,~p(\mathbf x_T)\sim\mathcal{N}(\mathbf0,\mathbf I)
+$$
+
+Markov로 이루어져 있으며, $\mathbf x_{t-1}$에서 $\mathbf x_t$를 복원한다.
+
+$$
+p_\theta(\mathbf x_{t-1}\mid\mathbf x_t):=\mathcal{N}(\mathbf x_{t-1};\boldsymbol{\mu}_\theta(\mathbf x_t,\mathbf x_0),\boldsymbol\Sigma_\theta(\mathbf x_t,t))
+$$
+
+이전 시점 $\mathbf{x}_{t-1}$의 분포를 복원하기 위해 평균과 분산을 예측해야 한다.
