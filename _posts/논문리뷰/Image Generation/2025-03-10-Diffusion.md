@@ -50,7 +50,7 @@ $$
 -D_{KL}(q_\phi(z\mid x)\mid\mid p(z))
 $$
 
-ELBO는 재구성 term $\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log p_\theta(x\mid z)\bigg]$과 정규화 term $D_{KL}(q_\phi(z\mid x)\mid\mid p(z))$으로 구성된다.
+ELBO는 재구성 term $\mathbb{E}_{q\_\phi(z\mid x)}\bigg[\log p\_\theta(x\mid z)\bigg]$과 정규화 term $D\_{KL}(q\_\phi(z\mid x)\mid\mid p(z))$으로 구성된다.
 
 - 재구성 term: latent variable $z$로부터 복원한 $x$가 실제 $x$와 얼마나 유사한지를 측정한다. (복원력)
 - 정규화 term: 설계한 $q_\phi(z\mid x)$가 적어도 사전 설정한 분포 $p(z)$를 따르도록 강제한다.
@@ -98,7 +98,7 @@ ELBO는 재구성 term $\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log p_\theta(x\mid z)
     $$
     D_{KL}(q_\phi(z\mid x)\mid\mid \log p(z\mid x))
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\big(\log p(x,z)-\log p(x)\big)\bigg]
-    \\ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    \\ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\log p(x,z)\bigg]+\log p(x)
     $$
 
