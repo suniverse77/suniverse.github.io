@@ -32,20 +32,30 @@ $$
 
 ## ELBO (Evidence Lower BOund)
 
-ELBO는 
+ELBO는 log evidence를 직접 계산할 수 없을 때, 이를 하한선으로 근사하는 데 사용된다.
 
 $$
-\mathbb{E}_{q_\phi(x\midz)}\bigg[\log\frac{p(x,z)}{q_\phi(z\midx)}\bigg]=
-\mathbb{E}_{q_\phi(x\mid z)}\bigg[\log p_\theta(x\midz)\bigg]
--D_{KL}(q_\phi(z\midx)\mid\mid p(z))
+\mathbb{E}_{q_\phi(x\mid z)}\bigg[\log\frac{p(x,z)}{q_\phi(z\mid x)}\bigg]=
+\mathbb{E}_{q_\phi(x\mid z)}\bigg[\log p_\theta(x\mid z)\bigg]
+-D_{KL}(q_\phi(z\mid x)\mid\mid p(z))
 $$
 
+ELBO는 재구성 term과 정규화 term으로 구성된다.
+
+- 재구성 term: 우리가 전달한 latent variable로부터 나온 출력이 입력 데이터와 얼마나 유사한지를 의미한다. (복원력)
+- 정규화 term: 우리가 설계한 $q_\phi(z\mid x)$가 적어도 사전 설정한 분포를 따르도록 강제한다.
+
+> ex) $p(z)$를 사전에 가우시안으로 정의했으면 $q_\phi(z\mid x)$도 가우시안이 되도록 설정
+
+학습에는 경사 하강법을 사용하므로, 실제 손실 함수로는 $\min(-\text{ELBO})$를 사용한다.
+
+재구성 term과 정규화 term 모두 음수의 값을 가지기 때문에 ELBO도 항상 음수이다.
 
 <details>
 <summary><font color='blue'>공식 유도</font></summary>
 <div markdown="1">
 
-1. 식
+1. 항등식
 
     $$
     \log p(x)=\log p(x)
@@ -68,45 +78,54 @@ $$
     $$
 
 - 위의 식은 **Evidence = ELBO + KL**으로 표현된다.
+- 우리의 목적은 $q_\phi(z\mid x)$를 $p(z\mid x)$에 근사시키는 것임
+    
+Evidence는 상수이므로, KL을 최소화하는 것은 Evidence를 최대화하는 것과 같다.
+    
+KL은 직접 계산할 수 없으므로, Evidence를 최대화하는 방식으로 진행
+    
+KL term은 항상 0 이상이기 때문에, $\rm Evidence\geq ELBO$가 됨
 
 </div>
 </details>
 
-- Expectation: $\mathbb{E}_{f(z)\sim g(z)}[f(z)]=\int f(z)g(z)dz$
-
-
-- 위의 식은 $\rm Evidence=ELBO+KL$으로 표현됨
-- 우리의 목적은 $q_\phi(z|x)$를 $p(z|x)$에 근사시키는 것임
-    
-    $\rm Evidence$는 상수이므로, $\rm KL$ 최소화 = $\rm Evidence$ 최대화
-    
-    $\rm$$\rm KL$은 직접 계산할 수 없으므로, $\rm Evidence$를 최대화하는 방식으로 진행
-    
-- $\rm KL$은 항상 0 이상이기 때문에, $\rm Evidence\geq ELBO$가 됨
-
-### ELBO
-
-$$
-\mathbb{E}_{q_\phi(x|z)}\bigg[\log\frac{p(x,z)}{q_\phi(z|x)}\bigg]
-=
-\mathbb{E}_{q_\phi(x|z)}\bigg[\log p_\theta(x|z)\bigg]
--
-D_{KL}(q_\phi(z|x)||p(z))
-$$
-
-- $\rm ELBO$를 위처럼 풀어 쓸 수 있음
-- 위의 식은 $\rm ELBO=Reconstruction-Prior~matching$으로 표현됨
-- $\rm Reconstruction$은 우리가 전달한 latent variable로부터 나온 출력이 입력 데이터와 얼마나 유사한지를 의미함 (복원력)
-- $\rm Prior~matching$은 우리가 설계한 $q_\phi(z|x)$가 적어도 사전 설정한 분포를 따르도록 강제함
-    
-    ex) $p(z)$를 사전에 가우시안으로 정의했으면 $q_\phi(z|x)$도 가우시안이 되도록 설정
-    
-- 학습에는 경사 하강법을 사용하므로, 실제 손실 함수로는 $\min(-\text{ELBO})$를 사용
-    
-    $\rm Reconstruction$과 $-\rm Prior~matching$이 모두 음수임 → $\rm ELBO$도 항상 음수
-
 ## VAE (Variational Auto Encoder)
+
+$$
+q_\phi(\mathbf z\mid\mathbf x)=\mathcal{N}(\mathbf z;\boldsymbol\mu_\phi(\mathbf x),\boldsymbol\sigma^2_\phi(\mathbf x)\mathbf I)
+$$
+
+- Encoder는 Multivariate Gaussian으로 설정
+
+$$
+p(\bold z)=\mathcal{N}(\bold z;\bold0,\bold I)
+$$
+
+- Prior는 Standard Multivariate Gaussian으로 설정
+
+### Encoder
+
+- 각 feature에 대한 평균과 분산을 출력함: $\bold z\in\mathbb{R}^D\to\boldsymbol \mu\in\mathbb{R}^D$
+- $\bold z$의 각 $z_i$는 Gaussian을 따름
+
+### Sampling
+
+- Decoder의 입력을 위해서 하나의 $\bold z$값이 필요하기 때문에, 샘플링이 필요함
+    
+    샘플링하는 $\bold z$값마다 다른 이미지가 생성됨
+    
+- $z$를 단순히 샘플링하면 backpropagation이 불가능하므로, reparameterization trick 사용
+    - $x=\mu+\sigma\epsilon~,~\epsilon\sim\mathcal{N}(\epsilon;0,I)$
+    - $\bold z=\boldsymbol\mu_\phi(\bold x)+\boldsymbol\sigma_\phi(\bold x)\boldsymbol\epsilon~,~\boldsymbol\epsilon\sim\mathcal{N}(\boldsymbol\epsilon;\bold 0,\bold I)$
+
+### Decoder
+
+- 샘플링된 $\bold z$를 이용해 이미지 생성
 
 ## Hierarchical VAE
 
+
+
 ## Diffusion Model
+
+
