@@ -110,14 +110,13 @@ $$
 +D_{KL}(q_\phi(z\mid x)\mid\mid p(z\mid x))
 $$
 
-- 위의 식은 **Evidence = ELBO + KL**으로 표현된다.
-- 우리의 목적은 $q_\phi(z\mid x)$를 $p(z\mid x)$에 근사시키는 것임
+위의 식은 **Evidence = ELBO + KL**으로 표현된다.
     
 Evidence는 상수이므로, KL을 최소화하는 것은 Evidence를 최대화하는 것과 같다.
     
-KL은 직접 계산할 수 없으므로, Evidence를 최대화하는 방식으로 진행
+우리의 목적은 $q_\phi(z\mid x)$를 $p(z\mid x)$에 근사시키는 것이며, KL은 직접 계산할 수 없기 때문에 Evidence를 최대화하는 방식으로 진행한다.
     
-KL term은 항상 0 이상이기 때문에, $\rm Evidence\geq ELBO$가 됨
+KL term은 항상 0 이상이기 때문에, 결국 $\rm Evidence\geq ELBO$가 됨
 
 </div>
 </details>
@@ -131,25 +130,25 @@ $$
 - Encoder는 Multivariate Gaussian으로 설정
 
 $$
-p(\bold z)=\mathcal{N}(\bold z;\bold0,\bold I)
+p(\mathbf z)=\mathcal{N}(\mathbf z;\bold0,\mathbf I)
 $$
 
 - Prior는 Standard Multivariate Gaussian으로 설정
 
 ### Encoder
 
-- 각 feature에 대한 평균과 분산을 출력함: $\bold z\in\mathbb{R}^D\to\boldsymbol \mu\in\mathbb{R}^D$
-- $\bold z$의 각 $z_i$는 Gaussian을 따름
+- 각 feature에 대한 평균과 분산을 출력함: $\mathbf z\in\mathbb{R}^D\to\boldsymbol \mu\in\mathbb{R}^D$
+- $\mathbf z$의 각 $z_i$는 Gaussian을 따름
 
 ### Sampling
 
-- Decoder의 입력을 위해서 하나의 $\bold z$값이 필요하기 때문에, 샘플링이 필요함
+- Decoder의 입력을 위해서 하나의 $\mathbf z$값이 필요하기 때문에, 샘플링이 필요함
     
-    샘플링하는 $\bold z$값마다 다른 이미지가 생성됨
+    샘플링하는 $\mathbf z$값마다 다른 이미지가 생성됨
     
 - $z$를 단순히 샘플링하면 backpropagation이 불가능하므로, reparameterization trick 사용
     - $x=\mu+\sigma\epsilon~,~\epsilon\sim\mathcal{N}(\epsilon;0,I)$
-    - $\bold z=\boldsymbol\mu_\phi(\bold x)+\boldsymbol\sigma_\phi(\bold x)\boldsymbol\epsilon~,~\boldsymbol\epsilon\sim\mathcal{N}(\boldsymbol\epsilon;\bold 0,\bold I)$
+    - $\mathbf z=\boldsymbol\mu_\phi(\mathbf x)+\boldsymbol\sigma_\phi(\mathbf x)\boldsymbol\epsilon~,~\boldsymbol\epsilon\sim\mathcal{N}(\boldsymbol\epsilon;\mathbf 0,\mathbf I)$
 
 ### Decoder
 
