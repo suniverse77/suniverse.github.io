@@ -149,7 +149,7 @@ $$
 Decoder는 하나의 입력 $\mathbf{z}$가 필요하기 때문에, 확률 분포에서 하나의 값을 샘플링해야 된다. 이때, 샘플링하는 $\mathbf{z}$값마다 디코더의 결과가 달라진다.
     
 $$
-\mathbf z=\boldsymbol\mu_\phi(\mathbf x)+\boldsymbol\sigma_\phi^2(\mathbf x)\circ\boldsymbol\epsilon
+\mathbf z=\boldsymbol\mu_\phi(\mathbf x)+\boldsymbol\sigma_\phi^2(\mathbf x)\odot\boldsymbol\epsilon
 $$
 
 $\mathbf{z}$를 단순히 샘플링하면 미분이 안되서 역전파가 불가능하므로, 위와 같이 reparameterization trick을 사용한다.
@@ -197,7 +197,7 @@ $t\geq2$ step은 바로 이전 step $t+1$에만 의존한다.
 ## Diffusion Model
 
 <center><img src='{{"/assets/images/논문리뷰/Diffusion-3.png" | relative_url}}' width="70%"></center>
-
+<br>
 Hierarchical VAE에 3가지 제약 조건을 추가한 것으로 이해할 수 있다.
 
 1. latent 차원과 data 차원이 동일하다. ($\mathbf z$를 $\mathbf x$로 표기)
