@@ -13,7 +13,7 @@ toc_sticky: true
 ## Bayes' Rule
 
 $$
-p(z|x)=\frac{p(x|z)p(z)}{p(x)}=\frac{p(x,z)}{p(x)}
+p(z\mid x)=\frac{p(x\mid z)p(z)}{p(x)}=\frac{p(x,z)}{p(x)}
 $$
 
 - Prior $p(z)$는 우리가 latent의 분포 Gaussian Distribution를 사전에 임의로 정의할 수 있기 때문에 알고 있는 값이다. *ex) Normal Distribution, Gaussian Distribution*
@@ -68,14 +68,47 @@ ELBO는 재구성 term과 정규화 term으로 구성된다.
 3. $\log p(x)$를 적분 안으로 넣으면 기대값으로 표현할 수 있다.
 
     $$
+    \begin{equation}
     \log p(x)=\int q_\phi(z\mid x)(\log p(x))dz=\mathbb{E}_{q_\phi(z\mid x)}\big[\log p(x)\big]
+    \end{equation}
     $$
-4. $\log p(x)$를 product rule을 이용해 변환한다.
+
+---
+
+1. Bayes' Rule을 사용해 $\log p(z\mid x)$를 아래와 같이 표현할 수 있다.
 
     $$
-    \log p(x)=\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log\frac{p(x,z)}{q_\phi(z\mid x)}\bigg]
-    +D_{KL}(q_\phi(z\mid x)\mid\mid p(z\mid x))
+    p(z\mid x)=\frac{p(x|z)p(z)}{p(x)}=\frac{p(x,z)}{p(x)}
+    ~\rightarrow~\log p(z\mid x)=\log p(x,z)-\log p(x)
     $$
+2. KL은 아래와 같이 정의된다.
+
+    $$
+    D_{KL}(q_\phi(z\mid x)\mid\mid \log p(z\mid x))=
+    \mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\log p(z\mid x)\bigg]
+    $$
+3. KL 정의에 Bayes' Rule로 정리한 수식 대입
+
+    $$
+    D_{KL}(q_\phi(z\mid x)\mid\mid \log p(z\mid x))
+    =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\big(\log p(x,z)-\log p(x)\big)\bigg]
+    =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\log p(x,z)\bigg]+\log p(x)
+    $$
+
+4. 이항
+
+    $$
+    \log p(x)=\mathbb{E}_{q_\phi(x\mid z)}\bigg[\log p_\theta(x\mid z)\bigg]-D_{KL}(q_\phi(z\mid x)\mid\mid p(z))
+    $$
+
+---
+
+식 (1)과 식 (2)를 통해 아래와 같은 결과를 얻을 수 있다.
+
+$$
+\log p(x)=\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log\frac{p(x,z)}{q_\phi(z\mid x)}\bigg]
++D_{KL}(q_\phi(z\mid x)\mid\mid p(z\mid x))
+$$
 
 - 위의 식은 **Evidence = ELBO + KL**으로 표현된다.
 - 우리의 목적은 $q_\phi(z\mid x)$를 $p(z\mid x)$에 근사시키는 것임
