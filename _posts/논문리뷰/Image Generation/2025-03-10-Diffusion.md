@@ -166,10 +166,10 @@ $$
 ## Hierarchical VAE
 
 <center><img src='{{"/assets/images/논문리뷰/Diffusion-2.png" | relative_url}}' width="70%"></center>
+<br>
+VAE의 latent variable을 여러 층으로 쌓은 모델로, 상하위 잠재 변수 간의 조건부 독립성을 1차 마르코프 가정으로 둔다.
 
-VAE의 latent variable을 여러 층으로 쌓은 모델로, $t$시점의 latent는 $t+1$시점의 latent의 영향만 받는다는 Markov 가정 하에 진행한다.
-    
-$p(z_t\mid z_{t+1},z_{t+2},\dots)$는 매우 복잡하기 때문에 풀어쓸 수 없다.
+즉, $t$시점의 latent는 $t+1$시점 또는 $t-1$ 시점의 latent의 영향만 받는다.
 
 ### Encoder
 
@@ -177,7 +177,11 @@ $$
 q_\phi(z_{1:T}\mid x)=q_\phi(z_{1}\mid x)\prod_{t=2}^Tq_\phi(z_t\mid z_{t-1})
 $$
 
-- 처음 step에는 $x$가 포함되어 있으므로, $\prod$ 안에 넣을 수 없음
+$p(z_{1:T})=p(z_1,z_2,\dots,z_T)$는 joint 분포를 의미한다.
+
+$t=1$ step은 $x$에 의존하므로, 곱셈 기호 안으로 합치지 않는다.
+
+$t\geq2$ step은 바로 이전 step $t-1$에만 의존한다.
 
 ### Decoder
 
@@ -185,8 +189,11 @@ $$
 p(x,z_{1:T})=p(z_T)p_\theta(x\mid z_1)\prod_{t=2}^Tp_\theta(z_{t-1}\mid z_t)
 $$
 
-- Latent가 여러 층이므로 VAE와 달리 $z_{1:T}$로 표현
-- 우변은 Markov 정의에 의해 나온 식임
+$z_T$는 사전 분포 $p(z_T)$에서 샘플링한다.
+
+$t\geq2$ step은 바로 이전 step $t+1$에만 의존한다.
+
+마지막에는 $z_1$으로부터 $x$를 복원한다.
 
 ## Diffusion Model
 
