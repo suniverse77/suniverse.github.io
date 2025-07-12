@@ -52,7 +52,7 @@ $$
 
 ELBO는 재구성 term $\mathbb{E}_{q\_\phi(z\mid x)}\big[\log p\_\theta(x\mid z)\big]$과 정규화 term $D\_{KL}(q\_\phi(z\mid x)\mid\mid p(z))$으로 구성된다.
 
-- 재구성 term: latent variable $z$로부터 복원한 $x$가 실제 $x$와 얼마나 유사한지를 측정한다. (복원력)
+- 재구성 term: latent variable $z$로부터 복원한 $x$가 실제 $x$와 얼마나 유사한지를 측정한다.
 - 정규화 term: 설계한 $q_\phi(z\mid x)$가 적어도 사전 설정한 분포 $p(z)$를 따르도록 강제한다.
 
 학습에는 경사 하강법을 사용하므로, 실제 손실 함수로는 $\min(-\text{ELBO})$를 사용한다.
@@ -98,7 +98,7 @@ ELBO는 재구성 term $\mathbb{E}_{q\_\phi(z\mid x)}\big[\log p\_\theta(x\mid z
     $$
     D_{KL}(q_\phi(z\mid x)\mid\mid \log p(z\mid x))
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\big(\log p(x,z)-\log p(x)\big)\bigg]
-    \\ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    \\ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     =\mathbb{E}_{q_\phi(z\mid x)}\bigg[\log q_\phi(z\mid x)-\log p(x,z)\bigg]+\log p(x)
     $$
 
@@ -129,6 +129,8 @@ KL을 직접 계산할 수 없기 때문에 Evidence를 최대화하여 간접�
 </details>
 
 ## VAE (Variational Auto Encoder)
+
+<center><img src='{{"/assets/images/논문리뷰/Diffusion-1.png" | relative_url}}' width="70%"></center>
 
 $$
 q_\phi(\mathbf z\mid\mathbf x)=\mathcal{N}(\mathbf z;\boldsymbol\mu_\phi(\mathbf x),\boldsymbol\sigma^2_\phi(\mathbf x)\mathbf I)
@@ -163,8 +165,29 @@ $$
 
 ## Hierarchical VAE
 
+<center><img src='{{"/assets/images/논문리뷰/Diffusion-2.png" | relative_url}}' width="70%"></center>
 
+VAE의 latent variable을 여러 층으로 쌓은 모델로, $t$시점의 latent는 $t+1$시점의 latent의 영향만 받는다는 Markov 가정 하에 진행한다.
+    
+$p(z_t\mid z_{t+1},z_{t+2},\dots)$는 매우 복잡하기 때문에 풀어쓸 수 없다.
+
+### Encoder
+
+$$
+q_\phi(z_{1:T}\mid x)=q_\phi(z_{1}\mid x)\prod_{t=2}^Tq_\phi(z_t\mid z_{t-1})
+$$
+
+- 처음 step에는 $x$가 포함되어 있으므로, $\prod$ 안에 넣을 수 없음
+
+### Decoder
+
+$$
+p(x,z_{1:T})=p(z_T)p_\theta(x\mid z_1)\prod_{t=2}^Tp_\theta(z_{t-1}\mid z_t)
+$$
+
+- Latent가 여러 층이므로 VAE와 달리 $z_{1:T}$로 표현
+- 우변은 Markov 정의에 의해 나온 식임
 
 ## Diffusion Model
 
-
+<center><img src='{{"/assets/images/논문리뷰/Diffusion-3.png" | relative_url}}' width="70%"></center>
