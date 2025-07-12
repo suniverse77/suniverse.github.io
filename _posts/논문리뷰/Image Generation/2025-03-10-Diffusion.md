@@ -204,7 +204,7 @@ Hierarchical VAE에 3가지 제약 조건을 추가한 것으로 이해할 수 �
 2. Encoder는 학습하지 않는다. (forward process에 학습 가능한 파라미터가 없음)
 3. $T$ step에서는 standard gaussian이 된다.
 
-Diffusion process가 정규 분포를 따를 경우, time step 폭이 충분히 작으면 reverse process도 정규 분포를 따름
+<mark style='background-color: fff5b1'>Diffusion process의 각 step이 가우시안 분포로 구성될 경우, time step 폭이 충분히 작으면 reverse process도 가우시안 분포로 근사할 수 있다.</mark>
 
 ### Encoder (Forward process)
 
