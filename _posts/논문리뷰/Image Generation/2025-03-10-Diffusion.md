@@ -132,10 +132,6 @@ KL을 직접 계산할 수 없기 때문에 Evidence를 최대화하여 간접�
 
 <center><img src='{{"/assets/images/논문리뷰/Diffusion-1.png" | relative_url}}' width="70%"></center>
 
-$$
-q_\phi(\mathbf z\mid\mathbf x)=\mathcal{N}(\mathbf z;\boldsymbol\mu_\phi(\mathbf x),\boldsymbol\sigma^2_\phi(\mathbf x)\mathbf I)
-$$
-
 - Encoder는 Multivariate Gaussian으로 설정
 
 $$
@@ -146,22 +142,33 @@ $$
 
 ### Encoder
 
-- 각 feature에 대한 평균과 분산을 출력함: $\mathbf z\in\mathbb{R}^D\to\boldsymbol \mu\in\mathbb{R}^D$
-- $\mathbf z$의 각 $z_i$는 Gaussian을 따름
+고차원 데이터 $x$를 저차원 잠재변수 $z$로 압축해 의미적인 특징만 보존하는 역할을 한다.
+
+이때, 직접 계산이 불가능한 사후분포 $p(z\mid x)$를 인코더의 뉴럴 네트워크로 근사한다.
+
+$$
+q_\phi(\mathbf z\mid\mathbf x)=\mathcal{N}(\mathbf z;\boldsymbol\mu_\phi(\mathbf x),\boldsymbol\sigma^2_\phi(\mathbf x)\mathbf I)
+$$
+
+인코더의 출력은 각 feature에 대한 평균과 분산으로, $\mathbf z\in\mathbb{R}^D$이면, $\boldsymbol\mu\in\mathbb{R}^D$이다.
 
 ### Sampling
 
-- Decoder의 입력을 위해서 하나의 $\mathbf z$값이 필요하기 때문에, 샘플링이 필요함
+Decoder는 하나의 입력 $\mathbf{z}$가 필요하기 때문에, 확률 분포에서 하나의 값을 샘플링해야 된다. 이때, 샘플링하는 $\mathbf{z}$값마다 디코더의 결과가 달라진다.
     
-    샘플링하는 $\mathbf z$값마다 다른 이미지가 생성됨
-    
-- $z$를 단순히 샘플링하면 backpropagation이 불가능하므로, reparameterization trick 사용
-    - $x=\mu+\sigma\epsilon~,~\epsilon\sim\mathcal{N}(\epsilon;0,I)$
-    - $\mathbf z=\boldsymbol\mu_\phi(\mathbf x)+\boldsymbol\sigma_\phi(\mathbf x)\boldsymbol\epsilon~,~\boldsymbol\epsilon\sim\mathcal{N}(\boldsymbol\epsilon;\mathbf 0,\mathbf I)$
+$$
+\mathbf z=\boldsymbol\mu_\phi(\mathbf x)+\boldsymbol\sigma_\phi^2(\mathbf x)\circ\boldsymbol\epsilon
+$$
+
+$\mathbf{z}$를 단순히 샘플링하면 미분이 안되서 역전파가 불가능하므로, 위와 같이 reparameterization trick을 사용한다.
 
 ### Decoder
 
-- 샘플링된 $\mathbf z$를 이용해 이미지 생성
+주어진 $z$로부터 데이터 분포를 모델링한다.
+
+$$
+p_\theta(\mathbf{x}\mid\mathbf{z})
+$$
 
 ## Hierarchical VAE
 
