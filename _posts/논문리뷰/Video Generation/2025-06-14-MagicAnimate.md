@@ -17,7 +17,7 @@ toc_sticky: true
 <details>
 <summary><font color='#FF8C00'>📝핵심 아이디어</font></summary>
 <div markdown="1">
-
+<br>
 Reference 이미지의 정체성, 배경 등의 정보를 보존하기 위해 Appearance Encoder 설계
 
 프레임별 화질을 향상시키기 위해, image-video joint 학습 전략 사용
@@ -44,39 +44,35 @@ Reference 이미지의 정체성, 배경 등의 정보를 보존하기 위해 Ap
 
 ## Methods
 
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-1.png" | relative_url}}' width="70%"></center>
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-1.png" | relative_url}}' width="80%"></center>
 
-추론 시에는 motion module(파란색)과 선택적으로 사용할 수 있는 MotionLoRA(초록색)를 personalized T2I 모델에 직접 삽입하여 애니메이션 생성기를 구성할 수 있다.
-
-이를 가능하게 하기 위해 AnimateDiff는 세 가지 구성요소를 학습한다.
-
-- Domain Adapter: 학습 단계에서만 사용되며, 기존 T2I 모델의 사전학습 데이터와 비디오 학습 데이터 간의 시각적 분포 차이로 인한 부정적 영향을 완화하는 것이 목적이다.
-- Motion module: motion prior를 학습하는 AnimateDiff의 핵심 구성요소이다.
-- MotionLoRA: 사전학습된 motion module을 새로운 모션 패턴에 적응시키는 데 사용한다.
+- Reference 이미지 $I_{\text{ref}}$를 appearance encoder $\mathcal{F}_a$에 통과시켜 appearance 임베딩 $\mathbf{y}_a$로 변환한다.
+- 만들고자 하는 pose sequence $\mathbf{p}^{1:N}$를 pose ControlNet $\mathcal{F}_p$에 통과시켜 motion condition $\mathbf{y}_p^{1:K}$을 추출한다.
+- Video Diffusion Model은 이 두 신호를 조건으로 받아, reference 이미지가 주어진 motion을 따라하는 비디오를 생성한다.
 
 ---
 
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-2.png" | relative_url}}' width="100%"></center>
-
 ### 1. Temporal Consistency Modeling
 
+2D UNet 구조를 3D temporal UNet 구조로 변형하는 과정으로, [기존 방식]()과 동일하다.
 
+- 원본 shape: $\mathbb{R}^{N\times C\times K\times H\times W}$
+- 모델 입력을 위한 shape: $\mathbb{R}^{(NK)\times C\times H\times W}$
+- temporal 모듈 입력을 위한 shape: $\mathbb{R}^{(NHW)\times K\times C}$
 
 ### 2. Appearance Encoder
 
-참조 이미지 $I_{\text{ref}}$의 얼굴, 신체 특징, 배경 요소 같은 세밀한 정보를 보존하기 위해 설계하였다.
+Reference 이미지의 얼굴, 신체 특징, 배경 요소 같은 세밀한 정보를 보존하기 위해 설계하였다.
 
-구체적으로, Appearance Encoder는 base UNet $\mathcal{F}_a(\theta^a)$의 trainable copy이며, 참조 이미지에 대한 condition feature를 계산한다.
-
-trainable copy란 base UNet의 구조를 그대로 복제
+구체적으로, Appearance Encoder는 base UNet $\mathcal{F}_a(\theta^a)$의 구조를 복제하여 사용하였다. (trainable copy)
 
 $$
 \mathbf{y}_a=\mathcal{F}_a(\mathbf{z}_t\mid I_{\text{ref}},\mathbf{t},\theta^a)
 $$
 
-위의 식에서 $\mathbf{y}_a$는 UNet의 중간에서의 attention hidden state이다.
+인코딩 과정은 위와 같이 표현되며, $\mathbf{y}_a$는 UNet의 middle block과 upsampling block에서의 attention hidden state를 의미한다.
 
-ControlNet에서 조건을 주는 방식과는 달리, 
+단순히 조건을 residual 방식으로 더하는 ControlNet과 달리, 조건 feature를 UNet의 spatial self-attention layer에 주입한다.
 
 $$
 \text{Attention}(Q,K,V,\mathbf{y}_a)=\text{Softmax}(\frac{QK'^\top}{\sqrt{d}})V'
@@ -86,6 +82,8 @@ $$
 Q=W^Q\mathbf{z}_t,~K'=W^K[\mathbf{z}_t,\mathbf{y}_a],~V'=W^V[\mathbf{z}_t,\mathbf{y}_a]
 $$
 
+Key와 Value를 생성할 때, $\mathbf{y}_a$와 원래 UNet의 self-attention hidden state를 concatenation한다.
+
 ### 3. Animation Pipeline
 
 #### Motion transfer
@@ -94,36 +92,60 @@ DensPose를 사용하였다.
 
 #### Denoising process
 
+
+
 #### Long video animation
+
+장시간 비디오를 생성하려면 연산량이 많이 필요하기 때문에, segment-by-segment 방식으로 생성하였다. (여러 개의 프레임으로 분할해서 생성)
+
+하지만 긴 동영상을 프레임 단위로 나눠서 생성하면 세그먼트 사이의 전환이 부자연스럽고 디테일이 일관되지 않을 수 있기 때문에 inference 단계에서 sliding window 기법을 적용하였다.
+
+긴 모션 시퀀스(총 
+𝑁
+N 프레임)를 겹치는 작은 세그먼트로 나눔
+
+각 세그먼트의 길이는 
+𝐾
+K 프레임
+
+세그먼트들은 서로 
+𝑠
+s 프레임만큼 겹치도록(오버랩) 설정 (
+𝑠
+<
+𝐾
+s<K)
+
+- 긴 motion sequence를 $K$의 길이를 갖는 여러 개의 segment로 분할 (segment는 시간적으로 조금씩 겹치게 함)
+
+$$
+\lbrace
+\mathbf{z}^{1:K}
+\rbrace
+$$
 
 ### 4. Training
 
-#### Training
+#### Learning objectives
 
-An
+첫 번째 stage에서는 temporal attention layer를 제외하고, appearance encoder와 pose ControlNet을 함께 학습한다.
+
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-2.png" | relative_url}}' width="60%"></center>
+
+두 번째 stage에서는 temporal attention layer만 학습한다.
+
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-3.png" | relative_url}}' width="60%"></center>
+
+#### Image-video joint training
+
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-4.png" | relative_url}}' width="60%"></center>
 
 ## Experiments
 
-### Qualitative Results
-
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-5.png" | relative_url}}' width="100%"></center>
-
 ### Quantitative Comparisons
 
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-6.png" | relative_url}}' width="70%"></center>
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-5.png" | relative_url}}' width="80%"></center>
 
-### Ablation Study
+### Qualitative Comparisons
 
-**Domain Adapter**
-
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-7.png" | relative_url}}' width="100%"></center>
-<br>
-추론 때 $\alpha$ 값이 감소할수록 품질이 올라가는 것을 확인할 수 있다.
-
-**Motion LoRA**
-
-<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-8.png" | relative_url}}' width="100%"></center>
-<br>
-왼쪽의 첫 번째와 두 번째 샘플은 MotionLoRA가 소규모 파라미터 크기로도 zoom-in과 같은 새로운 카메라 모션을 성공적으로 학습할 수 있으며, 모션 품질도 유사한 수준으로 유지된다는 것을 보여준다.
-
-오른쪽은 참조 비디오 수가 50개 정도(N=50)만 되어도 원하는 모션 패턴을 성공적으로 학습할 수 있음을 보여준다. 그러나 참조 비디오 수가 지나치게 적을 경우(N = 5)에는 품질이 눈에 띄게 저하되며, 참조 비디오의 텍스처 정보에 의존하는 경향을 보인다.
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-6.png" | relative_url}}' width="100%"></center>
