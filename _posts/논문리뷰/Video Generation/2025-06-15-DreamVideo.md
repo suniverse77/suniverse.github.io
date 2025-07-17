@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[논문리뷰] MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model"
-last_modified_at: 2025-06-14
+title: "[논문리뷰] DreamVideo: Composing Your Dream Videos with Customized Subject and Motion"
+last_modified_at: 2025-06-15
 categories: ["논문리뷰"]
 tags: ["Video Generation"]
 excerpt: "CVPR 2024"
@@ -11,8 +11,8 @@ toc_sticky: true
 ---
 
 **CVPR 2024** 
-[[Paper]](https://arxiv.org/abs/2311.16498)
-[[Github]](https://github.com/magic-research/magic-animate)
+[[Paper]](https://arxiv.org/abs/2312.04433)
+[[Github]](https://github.com/ali-vilab/VGen)
 
 <details>
 <summary><font color='#FF8C00'>📝핵심 아이디어</font></summary>
@@ -143,13 +143,12 @@ $$
 **첫 번째 stage**
 
 - 임계값 $\tau_0$를 설정하고 랜덤한 숫자 $r\sim U(0,1)$을 뽑는다.
-- $r\leq\tau_0$이면, 이미지와 해당 이미지에서 추정된 포즈를 조건으로 사용하고, 모델은 해당 이미지를 재구성하도록 학습한다.
+- $r\leq\tau_0$이면, 
+- $r\geq\tau_0$: 
 
 **두 번째 stage**
 
-시간적 일관성도 향상시키는 동시에 개별 프레임별 품질도 향상시키기 위해 임계값에 따라 다른 조건에서 학습된다.
-
-- $r\leq\tau_1$이면, 이미지 데이터셋의 데이터를 이용해 학습한다.
+프레임별 품질 저하를 방지하기 위해 임계값에 따라 다른 조건에서 학습된다.
 
 <center><img src='{{"/assets/images/논문리뷰/MagicAnimate-4.png" | relative_url}}' width="60%"></center>
 
