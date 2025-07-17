@@ -10,11 +10,12 @@ toc: true
 toc_sticky: true
 ---
 
+**CVPR 2024** 
 [[Paper]](https://arxiv.org/abs/2311.16498)
 [[Github]](https://github.com/magic-research/magic-animate)
 
 <details>
-<summary><font color='orange'>📝**핵심 아이디어**</font></summary>
+<summary><font color='#FF8C00'>📝핵심 아이디어</font></summary>
 <div markdown="1">
 
 Reference 이미지의 정체성, 배경 등의 정보를 보존하기 위해 Appearance Encoder 설계
@@ -87,7 +88,13 @@ $$
 
 ### 3. Animation Pipeline
 
-사
+#### Motion transfer
+
+DensPose를 사용하였다.
+
+#### Denoising process
+
+#### Long video animation
 
 ### 4. Training
 
