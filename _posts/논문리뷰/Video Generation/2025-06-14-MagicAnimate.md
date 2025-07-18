@@ -133,10 +133,10 @@ $$
 첫 번째 stage에서는 temporal attention layer를 제외하고, appearance encoder와 pose ControlNet을 함께 학습한다.
 
 <center><img src='{{"/assets/images/논문리뷰/MagicAnimate-2.png" | relative_url}}' width="40%"></center>
-
+<br>
 두 번째 stage에서는 temporal attention layer만 학습한다.
 
-<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-3.png" | relative_url}}' width="45%"></center>
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-3.png" | relative_url}}' width="50%"></center>
 
 #### Image-video joint training
 
