@@ -64,11 +64,11 @@ Video diffusion model은 고정시켜 놓고, pseudo-word $S^*$의 텍스트 임
 
 텍스트 임베딩은 고정시켜 놓고, identity adapter만 최적화한다.
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-2.png" | relative_url}}' width="30%"></center>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-2.png" | relative_url}}' width="20%"></center>
 
-Identity adapter는 위와 같이 skip connection이 있는 병목 구조를 사용하며, down-projected linear layer $\mathbf{W}_{\text{down}}$, up-projected linear layer $\mathbf{W}_{\text{up}}$과 비선형 활성 함수 $\sigma$로 이루어져 있다.
+Identity adapter는 위와 같이 skip connection이 있는 병목 구조를 사용하며, down-projected linear layer $\mathbf{W}\_{\text{down}}$, up-projected linear layer $\mathbf{W}\_{\text{up}}$과 비선형 활성 함수 $\sigma$로 이루어져 있다.
 
-Adapter의 학습 과정은 아래와 같이 표현된다.
+Identity adapter의 학습 과정은 아래와 같이 표현된다.
 
 $$
 h'_t=h_t+\sigma\left(h_t*\mathbf{W}_{\text{down}}\right)*\mathbf{W}_{\text{up}}
@@ -80,40 +80,90 @@ $$
 
 #### Motion Learning
 
+효율적으로 motion을 모델링하기 위해 motion adapter의 구조를 identity adapter와 유사하도록 설계하였다.
+
+Motion adapter가 motion의 패턴을 학습할 수 있지만, subject의 외형 또한 함께 학습할 수도 있다.
+
+이를 방지하기 위해 외형 가이던스를 motion adapter에 주입시켜 motion adapter가 motion만 학습할 수 있도록 한다.
+
 <center><img src='{{"/assets/images/논문리뷰/DreamVideo-3.png" | relative_url}}' width="30%"></center>
+
+구체적으로, 위와 같이 condition linear layer $\mathbf{W}_{\text{cond}}$를 더했다.
+
+외형 가이던스는 입력 비디오에서 무작위로 하나의 프레임을 선택한 후, 인코딩함으로써 만들어진다.
+
+Motion adapter의 학습 과정은 아래와 같이 표현된다.
+
+$$
+\hat{h}_t^e=\hat{h}_t+\text{broadcast}(e*\mathbf{W}_{\text{cond}})
+$$
+
+$$
+\hat{h}'_t=\hat{h}_t+\sigma\left(\hat{h}_t^e=\hat{h}_t*\mathbf{W}_{\text{down}}\right)*\mathbf{W}_{\text{up}}
+$$
+
+$e$는 이미지 임베딩을 의미하며, linear layer를 통과한 이미지 임베딩 $e*\mathbf{W}_{\text{cond}}$는 모든 프레임에 broadcast된다.
 
 ### 2. Model Analysis, Training and Inference
 
-Reference 이미지의 얼굴, 신체 특징, 배경 요소 같은 세밀한 정보를 보존하기 위해 설계하였다.
+#### Where to put these two adapters
 
-구체적으로, Appearance Encoder는 base UNet $\mathcal{F}_a(\theta^a)$의 구조를 복제하여 사용하였다. (trainable copy)
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-4.png" | relative_url}}' width="100%"></center>
 
-$$
-\mathbf{y}_a=\mathcal{F}_a(\mathbf{z}_t\mid I_{\text{ref}},\mathbf{t},\theta^a)
-$$
+위의 그림은 파인튜닝동안 adapter의 삽입 위치에 따른 가중치 변화 $\Delta_l=\frac{\lVert\theta'_l\theta_l\rVert_2}{\lVert\theta_l\rVert_2}$를 비교한 결과이다.
 
-인코딩 과정은 위와 같이 표현되며, $\mathbf{y}_a$는 UNet의 middle block과 upsampling block에서의 attention hidden state를 의미한다.
+최종적으로, identity adapter는 cross-attention layer에, motion adapter는 temporal 트랜스포머의 모든 layer에 삽입하였다.
 
-단순히 조건을 residual 방식으로 더하는 ControlNet과 달리, 조건 feature를 UNet의 spatial self-attention layer에 주입한다.
+#### Decoupled training strategy
 
-$$
-\text{Attention}(Q,K,V,\mathbf{y}_a)=\text{Softmax}(\frac{QK'^\top}{\sqrt{d}})V'
-$$
+Subject와 motion을 동시에 커스터마이징하려면 각 조합에 대해 따로따로 학습해야하므로 비용이 많이 든다.
 
-$$
-Q=W^Q\mathbf{z}_t,~K'=W^K[\mathbf{z}_t,\mathbf{y}_a],~V'=W^V[\mathbf{z}_t,\mathbf{y}_a]
-$$
+제안하는 방법은 사전학습 모델을 고정시키고, 각 adapter만 독립적으로 학습시키면 되므로 효율적이다.
 
-Key와 Value를 생성할 때, $\mathbf{y}_a$와 원래 UNet의 self-attention hidden state를 concatenation한다.
+#### Inference
 
-
+추론 시, 두 adapter를 결합하거나 하나의 adapter만 사용함으로써 개별적으로 커스터마이징을 할 수 있다.
 
 ## Experiments
 
-### Quantitative Comparisons
+### Qualitative Results
 
-<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-5.png" | relative_url}}' width="80%"></center>
+**Arbitrary combinations of subjects and motions**
 
-### Qualitative Comparisons
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-5.png" | relative_url}}' width="80%"></center>
+<br>
+Subject와 motion이 주어졌을 때의 비디오 생성 결과이다.
 
-<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-6.png" | relative_url}}' width="100%"></center>
+**Subject customization**
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-6.png" | relative_url}}' width="100%"></center>
+<br>
+Subject의 외형을 보존하면서도 주어진 프롬프트에 적합한 비디오를 생성할 수 있다.
+
+**Motion customization**
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-7.png" | relative_url}}' width="100%"></center>
+<br>
+Target motion을 잘 포착하면서도 주어진 프롬프트에 적합한 비디오를 생성할 수 있다.
+
+**Ablation studies**
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-8.png" | relative_url}}' width="100%"></center>
+
+### Quantitative Results
+
+**Arbitrary combinations of subjects and motions**
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-9.png" | relative_url}}' width="40%"></center>
+
+**Subject customization**
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-10.png" | relative_url}}' width="40%"></center>
+
+**Motion customization**
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-11.png" | relative_url}}' width="40%"></center>
+
+**Ablation studies**
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-12.png" | relative_url}}' width="40%"></center>
