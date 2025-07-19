@@ -27,21 +27,25 @@ Reference 이미지의 정체성, 배경 등의 정보를 보존하기 위해 Ap
 
 ## Introduction
 
-기존 사람 이미지 애니메이션을 위한 기법들은 크게 2가지로 나눌 수 있다.
-
-- GAN 기반 프레임워크: warping 함수를 사용해 참조 이미지를 목표 포즈로 변형한 뒤, GAN 모델을 사용해 누락되거나 가려진 신체 부위를 보완
-- Diffusion 기반 프레임워크: 사전학습된 디퓨전 모델을 기반으로 외형과 포즈 조건을 활용해 이미지 생성
+기존 사람 이미지 애니메이션을 위한 기법들은 크게 GAN 기반 프레임워크와 Diffusion 기반 프레임워크 2가지로 나눌 수 있다.
 
 **기존 연구들의 한계점**
-- GAN 기반 프레임워크는 제한된 모션 전이 능력으로 인해, 가려진 영역에서 비현실적인 디테일 발생 및 identity가 다른 사람에게 일반화하는 데 한계 존재
-- Diffusion 기반 프레임워크: 시간적 일관성을 고려하지 않아 결과에 flickering 현상이 나타날 수 있음, 주로 CLIP을 이용해 인코딩하는 데 이 방법은 디테일 보존에 취약함
+
+- GAN 기반 기법
+
+    은 제한된 모션 전이 능력을 가지며, 이로 인해 가려진 영역에서 비현실적인 디테일을 생성하고, 서로 다른 정체성 간(cross-identity)의 일반화 능력이 부족하다.
+- Diffusion 기반 기법
+
+    시간적 일관성을 고려하지 않아 생성된 비디오에 flickering 현상이 나타날 수 있다. 또한, appearance를 인코딩하기 위해 일반적으로 CLIP을 사용하는 데, 이 방법은 디테일 보존에 취약하다.
 
 **제안하는 방법**
-- MagicAnimate라는 사람 이미지 애니메이션 프레임워크 제안
-    1. temporal attention block을 도입해 시간 정보를 인코딩
-    2. 기존의 CLIP 대신, 혁신적인 appearance encoder를 도입해 정체성, 배경, 의상 등의 요소를 더 잘 유지할 수 있음
-    3. 프레임별 화질을 향상시키기 위해, 단일 프레임 이미지 데이터를 활용한 image-video joint 학습 전략을 설계해 더 풍부한 시각적 단서를 통해 세부 묘사 능력 강화
-    4. 매우 단순한 비디오 융합 기법을 활용해 장시간의 애니메이션에서도 부드러운 전환을 가능하게 함
+
+MagicAnimate라는 사람 이미지 애니메이션 프레임워크 제안한다.
+
+- Temporal attention block을 도입해 시간 정보를 인코딩하였다.
+- 기존의 CLIP 대신, 정체성, 배경, 의상 등의 요소를 더 잘 유지할 수 있는 새로운 appearance encoder를 도입하였다.
+- 단일 프레임 이미지 데이터를 활용한 image-video joint 학습 전략을 설계해 프레임별 화질을 향상시켰다.
+- 매우 단순한 비디오 융합 기법을 활용해 장시간의 애니메이션에서도 부드러운 전환을 가능하게 하였다.
 
 ## Methods
 
@@ -55,7 +59,7 @@ Reference 이미지의 정체성, 배경 등의 정보를 보존하기 위해 Ap
 
 ### 1. Temporal Consistency Modeling
 
-2D UNet 구조를 3D temporal UNet 구조로 변형하는 과정으로, [기존 방식]()과 동일하다.
+2D UNet 구조를 3D temporal UNet 구조로 변형하는 과정으로, [기존 방식](https://suniverse77.github.io/논문리뷰/MAV/)과 동일하다.
 
 - 원본 shape: $\mathbb{R}^{N\times C\times K\times H\times W}$
 - 모델 입력을 위한 shape: $\mathbb{R}^{(NK)\times C\times H\times W}$
@@ -89,7 +93,17 @@ Key와 Value를 생성할 때, $\mathbf{y}_a$와 원래 UNet의 self-attention h
 
 #### Motion transfer
 
-DensPose를 사용하였다.
+ControlNet은 OpenPose keypoints를 이용해 reference 사람 이미지를 애니메이션화하는 데 일반적으로 사용된다.
+
+이 방식은 그럴듯한 결과를 생성하지만, 저자들은 신체의 주요 keypoint들이 드물고 회전과 같은 특정 움직임에 대해 견고하지 않다고 주장한.
+
+따라서 보다 밀도 높고 견고한 포즈 조건을 위해 DensePose를 모션 신호 $\mathbf{p}_i$로 선택하였다.
+
+포즈 ControlNet $\mathbf{y}_{\mathbf{p},i}=\mathcal{F}_(\cdot,\theta^{\mathbf{p}})$를 사용하며, 프레임 $i$에 대한 pose condition은 아래와 같이 계산된다.
+
+$$
+\mathcal{F}_{\mathbf{p}}(\mathbf{z}_t\mid\mathbf{p},\mathbf{t},\theta^{\mathbf{p}})
+$$
 
 #### Denoising process
 
@@ -107,18 +121,15 @@ $$
 
 하지만 긴 동영상을 프레임 단위로 나눠서 생성하면 세그먼트 사이의 전환이 부자연스럽고 디테일이 일관되지 않을 수 있기 때문에 inference 단계에서 sliding window 기법을 적용하였다.
 
-- 긴 모션 시퀀스(총 N 프레임)를 겹치는 작은 세그먼트로 나눔
-- 각 세그먼트의 길이는 K 프레임
-- 세그먼트들은 서로 s 프레임만큼 겹치도록(오버랩) 설정
-
-- 긴 motion sequence를 $K$의 길이를 갖는 여러 개의 segment로 분할 (segment는 시간적으로 조금씩 겹치게 함)
+- 긴 모션 시퀀스(총 $N$ 프레임)를 $K$의 길이를 갖는 여러 개의 세그먼트로 나눈다.
+- 세그먼트들은 서로 $s$ 프레임만큼 겹치도록(오버랩) 설정
 
 $$
 \lbrace
 \mathbf{z}^{1:K},\mathbf{z}^{K-s+1:2K-s},\dots,\mathbf{z}^{n(K-s)+1:n(K-s)+K}
 \rbrace
 ~~,~~
-n=\lceil\frac{N-K}{K-s}\rceil
+n=\left\lceil\frac{N-K}{K-s}\right\rceil
 $$
 
 마지막 segment의 길이는 $K$보다 작을 수 있으며, 이때는 단순하게 처음 몇 장의 프레임으로 길이가 $K$가 되도록 패딩하였다.
