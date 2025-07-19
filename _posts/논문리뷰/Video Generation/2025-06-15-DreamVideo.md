@@ -12,7 +12,7 @@ toc_sticky: true
 
 **CVPR 2024** 
 [[Paper]](https://arxiv.org/abs/2312.04433)
-[[Github]](https://github.com/ali-vilab/VGen)
+[[GitHub]](https://github.com/ali-vilab/VGen)
 
 <details>
 <summary><font color='#FF8C00'>📝핵심 아이디어</font></summary>

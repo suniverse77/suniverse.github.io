@@ -10,9 +10,9 @@ toc: true
 toc_sticky: true
 ---
 
-> [[Paper]](https://arxiv.org/abs/2304.08818)
-> 
-> **ICLR 2024**
+**ICLR 2024** 
+[[Paper]](https://arxiv.org/abs/2304.08818)
+[[GitHub]](https://github.com/guoyww/AnimateDiff)
 
 ## Introduction
 

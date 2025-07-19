@@ -12,7 +12,7 @@ toc_sticky: true
 
 **CVPR 2024** 
 [[Paper]](https://arxiv.org/abs/2311.16498)
-[[Github]](https://github.com/magic-research/magic-animate)
+[[GitHub]](https://github.com/magic-research/magic-animate)
 
 <details>
 <summary><font color='#FF8C00'>📝핵심 아이디어</font></summary>
