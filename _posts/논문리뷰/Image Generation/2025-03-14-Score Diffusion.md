@@ -42,9 +42,9 @@ DDPM과 같은 기존 방식처럼 유한한 단계의 time step을 사용하는
 <details>
 <summary><font color='purple'>SDE (Stochastic Differential Equation)</font></summary>
 <div markdown="1">
-<br>
+
 <center><img src='{{"/assets/images/논문리뷰/Score Diffusion-1.png" | relative_url}}' width="100%"></center>
-<brs>
+<br>
 미분방정식이란 미분을 포함하는 방정식으로, 어떤 값 $y$가 시간에 따라 어떻게 변하는지를 수식으로 표현한 것이다.
 
 $$
@@ -102,9 +102,13 @@ reverse-time SDE는 아래와 같이 주어진다.
 $$
 d\mathbf{x}=
 \left[
-\mathbf{f}(\mathbf{x},t)-g(t)^2\log p_t(\mathbf{x})
+\mathbf{f}(\mathbf{x},t)-g(t)^2\nabla_{\mathbf{x}}\log p_t(\mathbf{x})
 \right]dt+g(t)d\bar{\mathbf{w}}
 $$
+
+여기서 $\bar{\mathbf{w}}$는 $T\to0$처럼 시간이 역으로 흐를 때의 standard Wiener process를, $dt$는 매우 작은 negative timestep을 의미한다.
+
+각 $t$에서 marginal 분포의 score $\nabla_{\mathbf{x}}\log p_t(\mathbf{x})$를 모두 알고 있다면, 위의 식을 통해 reverse diffusion process를 유도할 수 있으며, $\mathbf{x}_0$ 또한 샘플링할 수 있다.
 
 #### Estimating Scores for the SDE
 
