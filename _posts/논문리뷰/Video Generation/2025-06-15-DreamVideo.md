@@ -50,11 +50,37 @@ Subject 학습과 motion 학습을 분리하여, 두 개의 어댑터를 통해 
 
 #### Subject Learning
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-2.png" | relative_url}}' width="60%"></center>
+**첫 번째 stage**
+
+[Textual Inversion](https://suniverse77.github.io/논문리뷰/Textual-Inversion/)을 사용해 textual identity를 학습한다.
+
+Video diffusion model은 고정시켜 놓고, pseudo-word $S^*$의 텍스트 임베딩만 최적화한다.
+
+하지만 textual identity만으로는 subject의 외형 디테일을 복원하기 어렵기 때문에 두 번째 stage가 필요하다.
+
+**첫 번째 stage**
+
+앞서 학습된 textual identity를 결합해 lightweight identity adapter를 학습한다.
+
+텍스트 임베딩은 고정시켜 놓고, identity adapter만 최적화한다.
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-2.png" | relative_url}}' width="30%"></center>
+
+Identity adapter는 위와 같이 skip connection이 있는 병목 구조를 사용하며, down-projected linear layer $\mathbf{W}_{\text{down}}$, up-projected linear layer $\mathbf{W}_{\text{up}}$과 비선형 활성 함수 $\sigma$로 이루어져 있다.
+
+Adapter의 학습 과정은 아래와 같이 표현된다.
+
+$$
+h'_t=h_t+\sigma\left(h_t*\mathbf{W}_{\text{down}}\right)*\mathbf{W}_{\text{up}}
+$$
+
+본 논문에서는 활성 함수로 GELU를 선택했다.
+
+또한 학습 초기에 사전학습된 디퓨전 모델의 지식이 손상되지 않도록 $\mathbf{W}_{\text{up}}$을 0으로 초기화한다.
 
 #### Motion Learning
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-3.png" | relative_url}}' width="60%"></center>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-3.png" | relative_url}}' width="30%"></center>
 
 ### 2. Model Analysis, Training and Inference
 
