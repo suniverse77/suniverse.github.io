@@ -14,30 +14,26 @@ toc_sticky: true
 [[Paper]](https://arxiv.org/abs/2011.13456)
 [[GitHub]](https://github.com/yang-song/score_sde)
 
+<details>
+<summary><font color='#FF8C00'>📝 Summary</font></summary>
+<div markdown="1">
+<br>
+하나의 모델을 학습해두면, 이후 생성 단계에서 원하는 샘플링 경로(길이/간격)를 선택하여 유연하고 빠르게 생성할 수 있다.
+
+</div>
+</details>
+
 ## Introduction
 
-Score Matching with Langevin Dynamics (SMLD)는 각 노이즈 수준에서 데이터에 대한 로그 확률 밀도의 그래디언트(=스코어)를 추정하고, 생성 시에는 점차 노이즈가 줄어드는 과정을 따라 Langevin dynamics로 샘플을 생성합니다.
+Score Matching with Langevin Dynamics (SMLD)는 각 노이즈 수준에서 데이터에 대한 score를 추정하고, 생성 시에는 점차 노이즈가 줄어드는 과정을 따라 Langevin dynamics로 샘플을 생성한다.
 
-Denoising Diffusion Probabilistic Models (DDPM)는 노이즈 오염의 각 단계를 역전시키는 확률 모델을 학습합니다. 이때 역분포의 함수적 형태를 알고 있다는 가정 하에 학습이 가능해집니다. 연속적인 상태 공간에서는 DDPM의 학습 목적 함수가 각 노이즈 수준의 스코어를 암묵적으로 계산하게 됩니다.
+Denoising Diffusion Probabilistic Models (DDPM)는 역분포의 함수적 형태를 알고 있다는 가정 하에 노이즈가 추가되는 각 단계를 역전시키는 확률 모델을 학습한다. 연속적인 상태 공간에서는 DDPM의 학습 목적 함수가 각 노이즈 수준의 스코어를 암묵적으로 계산하게 된다.
 
 이러한 이유로 위 두 모델을 통틀어 score-based generative models이라고 부른다.
 
-**기존 연구들의 한계점**
-
-- 기존 SMLD와 DDPM은 유한한 개수의 노이즈 단계만 고려하여, 연속적이지 못하다.
-
 **제안하는 방법**
 
-SMLD와 DDPM는 결국 SDE라는 프레임워크 내에서 동일한 모델이다.
-
 스코어 기반 생성 모델의 새로운 샘플링 방법을 가능하게 하기 위해, 기존 접근 방식을 SDE 관점에서 일반화하는 통합 프레임워크를 제안한다.
-
-DDPM과 같은 기존 방식처럼 유한한 단계의 time step을 사용하는 대신, 연속 시간 확률 과정으로 일반화한다.
-
-- 주어진 forward SDE를 따라 데이터 포인트를 점차 무작위 노이즈로 변형시킨다. 이 SDE는 데이터에 의존하지 않으며, 학습 가능한 파라미터도 없다.
-- Forward SDE에 대응되는 reverse SDE가 존재하며, 이를 사용해 노이즈로부터 데이터 생성이 가능하다.
-- 하지만 reverse SDE를 직접 알 수 없기 때문에, 스코어 함수 $\nabla_{\mathbf{x}}\log p()$를 예측하는 뉴럴 네트워크를 학습시켜 이를 근사한다. 
-- 학습된 스코어 함수로 reverse SDE가 정의되면, Euler-Maruyama와 같은 SDE solver를 통해 데이터를 샘플링한다.
 
 <details>
 <summary><font color='purple'>SDE (Stochastic Differential Equation)</font></summary>
@@ -74,7 +70,7 @@ $f(\mathbf x,t)$, $g(t)$는 사전에 정의된 함수로 학습 파라미터가
 </div>
 </details>
 
-<center><img src='{{"/assets/images/논문리뷰/Score-1.png" | relative_url}}' width="70%"></center>
+<center><img src='{{"/assets/images/논문리뷰/Score Diffusion-2.png" | relative_url}}' width="90%"></center>
 
 ## Methods
 
@@ -95,9 +91,7 @@ $$
 
 #### Generating Samples by Reversing the SDE
 
-$\mathbf{x}_T\sim p_T$에서 시작해서 
-
-reverse-time SDE는 아래와 같이 주어진다.
+Reverse-time SDE는 아래와 같이 주어진다.
 
 $$
 d\mathbf{x}=
@@ -112,8 +106,52 @@ $$
 
 #### Estimating Scores for the SDE
 
-확률 분포의 score는 score matching으로 score-based 모델을 학습시켜 추정할 수 있다.
+확률 분포의 score는 score matching을 사용하여 학습된 score-based 모델을 통해 추정할 수 있다.
+
+Score를 추정하기 위해 아래와 같은 손실함수를 최소하하여 학습한다.
+
+$$
+\boldsymbol{\theta}^*=\underset{\boldsymbol{\theta}}{\arg\min}~\mathbb{E}_t 
+\left\{
+\lambda(t)\mathbb{E}_{\mathbf{x}(0)}\mathbb{E}_{\mathbf{x}(t) \mid \mathbf{x}(0)}
+\left[\lVert
+\mathbf{s}_{\boldsymbol{\theta}}(\mathbf{x}(t), t)
+- \nabla_{\mathbf{x}(t)} \log p_{0t}(\mathbf{x}(t) \mid \mathbf{x}(0)) 
+\rVert_2^2\right]
+\right\}
+$$
+
+충분한 데이터와 모델 용량이 있다면, score matching은 모든 $\mathbf{x}_t$와 $t$에 대해서 optimal solution $\mathbf{s}\_{\boldsymbol{\theta}^*}(\mathbf{x}, t)$와 $\nabla_{\mathbf{x}(t)}\log p_t(\mathbf{x})$를 동일하게 만들어 준다.
+
+SMLD와 DDPM에서와 같이 일반적으로 아래의 값을 선택한다.
+
+$$
+\lambda \propto \frac{1}{\mathbb{E} \left[
+\left\| \nabla_{\mathbf{x}(t)} \log p_{0t}(\mathbf{x}(t) \mid \mathbf{x}(0)) \right\|_2^2
+\right]}
+$$
+
+#### Examples: VE, VP SDEs and Beyond
+
+SMLD와 같은 NCSN 모델의 계열에서 사용하는 forward SDE 형태는 아래와 같다.
+
+$$
+d\mathbf x=\sqrt{\frac{d[\sigma^2(t)]}{dt}}d\mathbf w
+$$
+
+timestep $t$가 커질수록 분산이 점점 커진다. → Variance Exploding SDE (VE-SDE)
+
+DDPM에서 사용하는 forward SDE 형태는 아래와 같다.
+
+$$
+d\mathbf x=-\frac{1}{2}\beta(t)\mathbf xdt
++\sqrt{\beta(t)}d\mathbf w
+$$
+
+$\beta(t)$에 따라 분산이 일정하게 유지된다. → Variance Preserving SDE (VP-SDE)
 
 ### 2. Solving the Reverse SDE
+
+
 
 ## Experiments
