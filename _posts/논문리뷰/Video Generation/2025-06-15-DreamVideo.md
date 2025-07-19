@@ -19,7 +19,11 @@ toc_sticky: true
 <div markdown="1">
 <br>
 모델 최적화의 복잡도를 줄이고 커스터마이징의 유연성을 높이기 위해 subject 학습과 motion 학습을 분리하였다.
-- 
+- Subject의 외형을 학습하기 위해 identity adapter를 도입
+- Motion 패턴을 포착하기 위해 motion adapter를 도입
+- Motion adapter 학습 시, subject의 외형을 학습하지 않고 오직 motion만 학습하도록 하기 위해 appearance guidance를 주입
+
+사전학습된 디퓨전 모델은 고정시키고, identity adapter와 motion adapter만 학습하면 되므로 효율적이다.
 
 </div>
 </details>
@@ -58,7 +62,7 @@ Video diffusion model은 고정시켜 놓고, pseudo-word $S^*$의 텍스트 임
 
 하지만 textual identity만으로는 subject의 외형 디테일을 복원하기 어렵기 때문에 두 번째 stage가 필요하다.
 
-**첫 번째 stage**
+**두 번째 stage**
 
 앞서 학습된 textual identity를 결합해 lightweight identity adapter를 학습한다.
 
@@ -108,7 +112,7 @@ $e$는 이미지 임베딩을 의미하며, linear layer를 통과한 이미지 
 
 #### Where to put these two adapters
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-4.png" | relative_url}}' width="100%"></center>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-4.png" | relative_url}}' width="80%"></center>
 
 위의 그림은 파인튜닝동안 adapter의 삽입 위치에 따른 가중치 변화 $\Delta_l=\frac{\lVert\theta'_l\theta_l\rVert_2}{\lVert\theta_l\rVert_2}$를 비교한 결과이다.
 
@@ -148,22 +152,22 @@ Target motion을 잘 포착하면서도 주어진 프롬프트에 적합한 비�
 
 **Ablation studies**
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-8.png" | relative_url}}' width="100%"></center>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-8.png" | relative_url}}' width="90%"></center>
 
 ### Quantitative Results
 
 **Arbitrary combinations of subjects and motions**
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-9.png" | relative_url}}' width="40%"></center>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-9.png" | relative_url}}' width="60%"></center>
 
 **Subject customization**
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-10.png" | relative_url}}' width="40%"></center>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-10.png" | relative_url}}' width="60%"></center>
 
 **Motion customization**
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-11.png" | relative_url}}' width="40%"></center>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-11.png" | relative_url}}' width="60%"></center>
 
 **Ablation studies**
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-12.png" | relative_url}}' width="40%"></center>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-12.png" | relative_url}}' width="60%"></center>
