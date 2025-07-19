@@ -41,7 +41,7 @@ toc_sticky: true
 
 ## Methods
 
-<center><img src='{{"/assets/images/논문리뷰/Textual-Inversion-1.png" | relative_url}}' width="100%"></center>
+<center><img src='{{"/assets/images/논문리뷰/Textual Inversion-1.png" | relative_url}}' width="100%"></center>
 
 ### 1. Latent Diffusion Models
 
@@ -82,4 +82,25 @@ $$
 
 ### Qualitative Comparisons and Applications
 
+**Image variations**
+
+<center><img src='{{"/assets/images/논문리뷰/Textual Inversion-2.png" | relative_url}}' width="100%"></center>
+<br>
+제안한 방법을 2개의 baseline과 비교하였다.
+- LDM: 사람이 작성한 짧은 caption과 긴 caption을 조건으로 입력
+- DALLE-2: 이미지와 사람이 작성한 긴 caption을 조건으로 입력
+
+**Style transfer**
+
+<center><img src='{{"/assets/images/논문리뷰/Textual Inversion-3.png" | relative_url}}' width="100%"></center>
+<br>
+Textual-embedding space는 스타일과 같은 추상적인 개념도 표현할 수 있다.
+
+이때, 스타일이 공유된 몇 장의 이미지와 "A painting in the style of $S_*$" 형식의 프롬프트를 통해 학습을 진행한다.
+
 ### Quantitative Analysis
+
+<center><img src='{{"/assets/images/논문리뷰/Textual Inversion-4.png" | relative_url}}' width="100%"></center>
+<br>
+
+왼쪽은 CLIP-based 평가, 오른쪽은 user study이다.
