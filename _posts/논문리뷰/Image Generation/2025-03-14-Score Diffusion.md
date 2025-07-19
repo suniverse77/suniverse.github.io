@@ -3,7 +3,7 @@ layout: single
 title: "[논문리뷰] Score-Based Generative Modeling through Stochastic Differential Equations"
 last_modified_at: 2025-03-14
 categories: ["논문리뷰"]
-tags: ["Image Generation"]
+tags: ["Diffusion", "Image Generation"]
 excerpt: "ICLR 2021"
 use_math: true
 toc: true
@@ -38,9 +38,9 @@ Denoising Diffusion Probabilistic Models (DDPM)는 역분포의 함수적 형태
 <details>
 <summary><font color='purple'>SDE (Stochastic Differential Equation)</font></summary>
 <div markdown="1">
-<br>
-<center><img src='{{"/assets/images/논문리뷰/Score Diffusion-1.png" | relative_url}}' width="100%"></center>
 
+<center><img src='{{"/assets/images/논문리뷰/Score Diffusion-1.png" | relative_url}}' width="100%"></center>
+<br>
 미분방정식이란 미분을 포함하는 방정식으로, 어떤 값 $y$가 시간에 따라 어떻게 변하는지를 수식으로 표현한 것이다.
 
 $$
@@ -171,4 +171,4 @@ Score-based 모델 $\mathbf{x}_\theta$가 학습되었다면 이를 사용해 re
 
 ## Experiments
 
-<center><img src='{{"/assets/images/논문리뷰/Score Diffusion-3.png" | relative_url}}' width="90%"></center>
+<center><img src='{{"/assets/images/논문리뷰/Score Diffusion-3.png" | relative_url}}' width="100%"></center>

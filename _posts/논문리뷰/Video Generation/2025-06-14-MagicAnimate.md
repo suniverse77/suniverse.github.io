@@ -3,7 +3,7 @@ layout: single
 title: "[논문리뷰] MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model"
 last_modified_at: 2025-06-14
 categories: ["논문리뷰"]
-tags: ["Video Generation"]
+tags: ["Diffusion", "Video Generation"]
 excerpt: "CVPR 2024"
 use_math: true
 toc: true
@@ -15,7 +15,7 @@ toc_sticky: true
 [[GitHub]](https://github.com/magic-research/magic-animate)
 
 <details>
-<summary><font color='#FF8C00'>📝핵심 아이디어</font></summary>
+<summary><font color='#FF8C00'>📝 Summary</font></summary>
 <div markdown="1">
 <br>
 Reference 이미지의 정체성, 배경 등의 정보를 보존하기 위해 Appearance Encoder 설계
@@ -28,6 +28,7 @@ Reference 이미지의 정체성, 배경 등의 정보를 보존하기 위해 Ap
 ## Introduction
 
 기존 사람 이미지 애니메이션을 위한 기법들은 크게 2가지로 나눌 수 있다.
+
 - GAN 기반 프레임워크: warping 함수를 사용해 참조 이미지를 목표 포즈로 변형한 뒤, GAN 모델을 사용해 누락되거나 가려진 신체 부위를 보완
 - Diffusion 기반 프레임워크: 사전학습된 디퓨전 모델을 기반으로 외형과 포즈 조건을 활용해 이미지 생성
 
@@ -132,11 +133,23 @@ $$
 
 첫 번째 stage에서는 temporal attention layer를 제외하고, appearance encoder와 pose ControlNet을 함께 학습한다.
 
-<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-2.png" | relative_url}}' width="40%"></center>
-<br>
+$$
+\mathcal{L}_1 =
+\mathbb{E}_{\mathbf{z}_0,\, t,\, I_{\mathrm{ref}},\, \mathbf{p}_i,\, \boldsymbol{\epsilon} \sim \mathcal{N}(0,1)}
+\left[
+\left\| \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta \right\|_2^2
+\right]
+$$
+
 두 번째 stage에서는 temporal attention layer만 학습한다.
 
-<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-3.png" | relative_url}}' width="50%"></center>
+$$
+\mathcal{L}_2 =
+\mathbb{E}_{\mathbf{z}_0^{1:K},\, t,\, I_{\mathrm{ref}},\, \mathbf{p}^{1:K},\, \boldsymbol{\epsilon}^{1:K} \sim \mathcal{N}(0,1)}
+\left[
+\left\| \boldsymbol{\epsilon}^{1:K} - \boldsymbol{\epsilon}_\theta^{1:K} \right\|_2^2
+\right]
+$$
 
 #### Image-video joint training
 
@@ -151,7 +164,14 @@ $$
 
 - $r\leq\tau_1$이면, 이미지 데이터셋의 데이터를 이용해 학습한다.
 
-<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-4.png" | relative_url}}' width="60%"></center>
+$$
+\boldsymbol{\epsilon}_\theta^{1:K} =
+\begin{cases}
+\boldsymbol{\epsilon}_\theta^{1:K}\left( \mathbf{z}_t,\, t,\, I_{\mathrm{ref}},\, \mathbf{p}_i \right), & \text{with } i = \mathrm{ref}, \quad \text{if } r \leq \tau_1, \\
+\boldsymbol{\epsilon}_\theta^{1:K}\left( \mathbf{z}_t,\, t,\, I_{\mathrm{ref}},\, \mathbf{p}_i \right), & \text{with } i \neq \mathrm{ref}, \quad \text{if } \tau_1 \leq r \leq \tau_2, \\
+\boldsymbol{\epsilon}_\theta^{1:K}\left( \mathbf{z}_t^{1:K},\, t,\, I_{\mathrm{ref}},\, \mathbf{p}^{1:K} \right), & \text{if } r \geq \tau_2.
+\end{cases}
+$$
 
 ## Experiments
 
