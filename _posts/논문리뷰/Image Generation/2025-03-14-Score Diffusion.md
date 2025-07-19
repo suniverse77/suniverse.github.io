@@ -38,9 +38,9 @@ Denoising Diffusion Probabilistic Models (DDPM)는 역분포의 함수적 형태
 <details>
 <summary><font color='purple'>SDE (Stochastic Differential Equation)</font></summary>
 <div markdown="1">
-
-<center><img src='{{"/assets/images/논문리뷰/Score Diffusion-1.png" | relative_url}}' width="100%"></center>
 <br>
+<center><img src='{{"/assets/images/논문리뷰/Score Diffusion-1.png" | relative_url}}' width="100%"></center>
+
 미분방정식이란 미분을 포함하는 방정식으로, 어떤 값 $y$가 시간에 따라 어떻게 변하는지를 수식으로 표현한 것이다.
 
 $$
@@ -121,7 +121,7 @@ $$
 \right\}
 $$
 
-충분한 데이터와 모델 용량이 있다면, score matching은 모든 $\mathbf{x}_t$와 $t$에 대해서 optimal solution $\mathbf{s}\_{\boldsymbol{\theta}^*}(\mathbf{x}, t)$와 $\nabla_{\mathbf{x}(t)}\log p_t(\mathbf{x})$를 동일하게 만들어 준다.
+충분한 데이터와 모델 용량이 있다면, score matching은 모든 $\mathbf{x}\_t$와 $t$에 대해서 optimal solution $\mathbf{s}\_{\boldsymbol{\theta}^*}(\mathbf{x}, t)$와 $\nabla_{\mathbf{x}(t)}\log p_t(\mathbf{x})$를 동일하게 만들어 준다.
 
 SMLD와 DDPM에서와 같이 일반적으로 아래의 값을 선택한다.
 
@@ -152,6 +152,23 @@ $\beta(t)$에 따라 분산이 일정하게 유지된다. → Variance Preservin
 
 ### 2. Solving the Reverse SDE
 
+Score-based 모델 $\mathbf{x}_\theta$가 학습되었다면 이를 사용해 reverse-time SDE를 구할 수 있으며, 수치적인 접근을 통해 $p_0$로부터 샘플을 생성할 수 있다.
 
+아래는 reverse-time SDE를 구하기 위한 여러 가지 방법이다.
+
+- General-purpose Numerical SDE Solvers
+
+    Euler-Maruyama, stochastic Runge-Kutta와 같은 일반적인 수치적 SDE solver를 적용하여 역방향 SDE를 직접 시뮬레이션한다.
+- Predictor-Corrector (PC) Sampler
+
+    수치 해석으로 예측한 다음, Langevin dynamics와 같은 score 기반 MCMC를 사용해 분포를 보정함으로써 샘플 품질을 높인다.
+- Probability Flow ODE
+
+    Revser-time SDE와 동일한 주변 분포를 따르는 deterministic한 ODE를 정의하고, 이를 Neural ODE 방식으로 해결하여 샘플을 생성하고 likelihood 계산도 수행한다.
+- 아키텍처 개선
+
+    VE/VP/sub-VP SDE에 적합하도록 설계된 NCSN++, DDPM++ 등의 새로운 네트워크 아키텍처를 통해 샘플 품질 및 likelihood를 향상시킨다.
 
 ## Experiments
+
+<center><img src='{{"/assets/images/논문리뷰/Score Diffusion-3.png" | relative_url}}' width="90%"></center>
