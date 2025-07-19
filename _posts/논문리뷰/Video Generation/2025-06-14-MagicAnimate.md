@@ -195,8 +195,8 @@ $$
 
 ### Quantitative Comparisons
 
-<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-5.png" | relative_url}}' width="80%"></center>
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-2.png" | relative_url}}' width="80%"></center>
 
 ### Qualitative Comparisons
 
-<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-6.png" | relative_url}}' width="100%"></center>
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-3.png" | relative_url}}' width="100%"></center>
