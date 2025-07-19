@@ -50,7 +50,11 @@ Subject 학습과 motion 학습을 분리하여, 두 개의 어댑터를 통해 
 
 #### Subject Learning
 
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-2.png" | relative_url}}' width="60%"></center>
+
 #### Motion Learning
+
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-3.png" | relative_url}}' width="60%"></center>
 
 ### 2. Model Analysis, Training and Inference
 
