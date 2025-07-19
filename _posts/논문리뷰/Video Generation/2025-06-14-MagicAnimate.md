@@ -18,9 +18,15 @@ toc_sticky: true
 <summary><font color='#FF8C00'>📝 Summary</font></summary>
 <div markdown="1">
 <br>
-Reference 이미지의 정체성, 배경 등의 정보를 보존하기 위해 Appearance Encoder 설계
+새로운 appearance 인코더를 설계하여 reference 이미지의 정체성, 배경 등의 정보를 보존하였다.
+- Appearance 인코더는 base UNet 구조를 복제하여 학습
+- UNet의 중간 feature들을 base UNet에 단순히 더하지 않고, attention block의 key와 value에 합쳐 attention 연산을 수행
 
-프레임별 화질을 향상시키기 위해, image-video joint 학습 전략 사용
+Video frame fusion 기법을 통합하여 애니메이션 영상 전반에 걸친 자연스러운 전환을 가능하게 하였다.
+- 연산량의 문제 때문에 전체 프레임을 여러 개의 세그먼트로 나누어 학습하였으나, 각 세그먼트끼리 조금씩 겹치게 함
+
+Image-video joint 학습 전략을 사용해 프레임별 품질을 향상시켰다.
+- 랜덤 변수 $r$과 임계값을 설정하여, $r$의 값에 따라 비디오 데이터셋을 사용할건지 이미지 데이터셋을 사용할건지 설정
 
 </div>
 </details>
@@ -173,7 +179,8 @@ $$
 
 시간적 일관성도 향상시키는 동시에 개별 프레임별 품질도 향상시키기 위해 임계값에 따라 다른 조건에서 학습된다.
 
-- $r\leq\tau_1$이면, 이미지 데이터셋의 데이터를 이용해 학습한다.
+- $r\leq\tau_1$이면, 이미지 데이터셋을 이용해 학습한다.
+- 그 외는 비디오 데이터셋을 이용해 학습한다.
 
 $$
 \boldsymbol{\epsilon}_\theta^{1:K} =
