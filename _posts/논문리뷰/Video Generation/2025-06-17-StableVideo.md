@@ -12,6 +12,7 @@ toc_sticky: true
 
 **CoRR 2023** 
 [[Paper]](https://arxiv.org/abs/2311.15127)
+[[GitHub]](https://github.com/Stability-AI/generative-models)
 
 <details>
 <summary><font color='#FF8C00'>📝 Summary</font></summary>
@@ -21,6 +22,8 @@ toc_sticky: true
 
 </div>
 </details>
+
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-0.png" | relative_url}}' width="50%"></center>
 
 ## Introduction
 
@@ -58,7 +61,34 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 
 #### Data Processing and Annotation
 
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-1.png" | relative_url}}' width="80%"></center>
+하나의 비디오 내에서 장면 전환(cut)과 fade가 있는 것을 방지하기 위해 [cut-detection pipeline](https://github.com/Breakthrough/PySceneDetect)을 사용해서 장면 전환이 일어나는 부분을 잘랐다.
+
+파이프라인 적용 결과, 아래와 같이 비디오별 clip(하나의 비디오를 분할한 세그먼트) 개수가 약 4배 증가했으며, 이는 원본 데이터에는 장면 전환 정보가 부분적으로 있다는 것을 보여준다.
+
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-1.png" | relative_url}}' width="40%"></center>
+<br>
+이후 각 clip에 3가지 synthetic captioning 기법을 사용하였다.
+
+1. CoCa와 같은 image captioner를 사용해 clip의 중간 프레임에 대한 caption을 얻는다.
+2. V-BLIP을 사용해 비디오 기반의 caption을 얻는다.
+3. 생성된 두 caption을 LLM 기반으로 요약해서 clip에 대한 세 번째 설명을 얻는다.
+
+위의 방법으로 생성된 비디오를 Large Video Dataset (LVD)라고 명명하였다.
+
+하지만 추가적인 분석을 통해 이 데이터셋에서는 움직임이 거의 없는 clip, 텍스트가 과도하게 포함된 clip, 전반적으로 품질이 낮은 clip 등 비디오 모델의 성능을 저하시킬 수 있는 샘플들이 있다는 것을 확인하였다.
+
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-2.png" | relative_url}}' width="50%"></center>
+<br>
+위의 그림은 실제 비디오에 정적인 장면이 많다(optical flow score가 낮음)는 것을 보여준다.
+
+따라서 아래와 같은 추가 필터링 과정을 거친다.
+
+- Dense Optical Flow를 2FPS로 계산해서 평균 optical flow 크기가 임계값 이하인 정적인 clip은 제거한다.
+- OCR을 사용해 텍스트가 과도하게 포함된 clip을 필터링한다.
+- 각 클립의 첫 프레임, 중간 프레임, 마지막 프레임에 대해 CLIP 임베딩을 계산하고, 이를 기반으로 aesthetic score와 텍스트-이미지 유사도를 산출한다.
+
+생성된 데이터셋의 전체 크기와 clip의 평균 길이 등의 통계는 아래와 같다.
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-3.png" | relative_url}}' width="50%"></center>
 <br>
 
 #### Stage I: Image Pretraining
