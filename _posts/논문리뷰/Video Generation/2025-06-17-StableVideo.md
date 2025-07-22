@@ -18,12 +18,12 @@ toc_sticky: true
 <summary><font color='#FF8C00'>📝 Summary</font></summary>
 <div markdown="1">
 <br>
-
+비디오 모델링을 개선하기 위해 
 
 </div>
 </details>
-
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-0.png" | relative_url}}' width="50%"></center>
+<br>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-0.png" | relative_url}}' width="100%"></center>
 
 ## Introduction
 
@@ -65,7 +65,7 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 
 파이프라인 적용 결과, 아래와 같이 비디오별 clip(하나의 비디오를 분할한 세그먼트) 개수가 약 4배 증가했으며, 이는 원본 데이터에는 장면 전환 정보가 부분적으로 있다는 것을 보여준다.
 
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-1.png" | relative_url}}' width="40%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-1.png" | relative_url}}' width="20%"></center>
 <br>
 이후 각 clip에 3가지 synthetic captioning 기법을 사용하였다.
 
@@ -73,7 +73,7 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 2. V-BLIP을 사용해 비디오 기반의 caption을 얻는다.
 3. 생성된 두 caption을 LLM 기반으로 요약해서 clip에 대한 세 번째 설명을 얻는다.
 
-위의 방법으로 생성된 비디오를 Large Video Dataset (LVD)라고 명명하였다.
+위의 방법으로 생성된 비디오를 Large Video Dataset (LVD)라고 명명하였으며, 580M개의 annotated video clip pair로 구성되어 있다.
 
 하지만 추가적인 분석을 통해 이 데이터셋에서는 움직임이 거의 없는 clip, 텍스트가 과도하게 포함된 clip, 전반적으로 품질이 낮은 clip 등 비디오 모델의 성능을 저하시킬 수 있는 샘플들이 있다는 것을 확인하였다.
 
@@ -88,79 +88,68 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 - 각 클립의 첫 프레임, 중간 프레임, 마지막 프레임에 대해 CLIP 임베딩을 계산하고, 이를 기반으로 aesthetic score와 텍스트-이미지 유사도를 산출한다.
 
 생성된 데이터셋의 전체 크기와 clip의 평균 길이 등의 통계는 아래와 같다.
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-3.png" | relative_url}}' width="50%"></center>
-<br>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-3.png" | relative_url}}' width="70%"></center>
 
 #### Stage I: Image Pretraining
 
+이미지로 사전학습된 모델의 강력한 visual representation을 활용하기 위해, 학습 파이프라인의 첫 번째 단계로 image pretraining을 고려하였다.
 
+본 연구에서는 사전학습된 Stable Diffusion 2.1 모델을 초기 모델로 사용하였다.
+
+아래 그림은 이미지로 사전학습된 모델이 더 우수하다는 것을 보여준다.
+
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-4.png" | relative_url}}' width="60%"></center>
 
 #### Stage II: Curating a Video Pretraining Dataset
 
+비디오 도메인에는 이미지처럼 원치 않는 샘플을 자동으로 걸러낼 수 있는 off-the-shelf representation이 없기 때문에 아래의 방법을 사용해 LVD의 subset을 만든 후 사람의 선호도를 기반으로 평가하였다.
 
+- CLIP scores
+- aesthetic scores
+- OCR detection rates
+- synthetic captions
+- optical flow scores
+
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-5.png" | relative_url}}' width="60%"></center>
+<br>
+위의 그림에서 LDV-10M-F는 LVD-10M을 앞서 언급한 방법들을 사용해 필터링한 데이터셋으로, LVD-10M보다 데이터 양이 4배 더 적지만 user preference가 더 높았다.
+
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-6.png" | relative_url}}' width="80%"></center>
 
 #### Stage III: High-Quality Finetuning
 
+앞 절에서는 체계적인 data curaction이 성능 향상에 기여한다는 점을 입증하였다.
 
+그러나 최종 목표는 파인튜닝 이후의 성능을 향상시키는 것이기 때문에 Stage II에서의 차이가 Stage III의 최종 성능에 어떤 영향을 미치는지 분석한다.
 
-### 3. Training Video Models at Scale
+Video pretraining의 효과를 분석하기 위해, 동일한 구조를 갖지만 초기 가중치가 다른 3개의 모델을 250k개의 고품질 비디오 데이터셋을 이용해 파인튜닝하였다.
 
-#### Pretrained Base Model
+- 모델1: 이미지에 대해서만 사전학습된 모델
+- 모델2: 50M개의 curation 비디오 데이터로 사전학습된 모델
+- 모델3: 50M개의 non-curation 비디오 데이터로 사전학습된 모델
 
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-7.png" | relative_url}}' width="80%"></center>
+<br>
+- 모델1: 시간적 개념에 대해 학습하지 않았기 때문에 파인튜닝만으로 비디오의 특성을 학습해야 하므로 성능이 가장 낮다.
+- 모델2: 파인튜닝하기 전에 비디오의 특성에 대해 학습했기 때문에 파인튜닝을 통해 더 효율적으로 고해상도 비디오 생성 능력을 얻을 수 있다.
+- 모델3: curation된 데이터셋을 사용해 사전학습된 모델2보다 성능이 낮다.
 
-
-#### High-Resolution Text-to-Video Model
-
-
-
-#### High Resolution Image-to-Video Model
-
-
-
-#### Frame Interpolation
-
-#### Multi-View Generation
+Video pretraining과 video finetuning을 분리하여 진행하는 것이 성능 향상에 도움이 되며, video pretraining은 대규모의 curation 데이터셋으로 수행하는 것이 이상적이다.
 
 ## Experiments
 
 ### Qualitative Results
 
-**Arbitrary combinations of subjects and motions**
+**High-Resolution Text-to-Video Model**
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-5.png" | relative_url}}' width="80%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-8.png" | relative_url}}' width="100%"></center>
 <br>
-Subject와 motion이 주어졌을 때의 비디오 생성 결과이다.
+위 그림은 576x1024 해상도를 가진 비디오 데이터셋에 대해 파인튜닝을 진행한 결과이다.
 
-**Subject customization**
+**High Resolution Image-to-Video Model**
 
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-6.png" | relative_url}}' width="100%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-9.png" | relative_url}}' width="100%"></center>
 <br>
-Subject의 외형을 보존하면서도 주어진 프롬프트에 적합한 비디오를 생성할 수 있다.
+위 그림은 이미지를 conditioning으로 하여 비디오를 생성한 결과이다.
 
-**Motion customization**
-
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-7.png" | relative_url}}' width="100%"></center>
-<br>
-Target motion을 잘 포착하면서도 주어진 프롬프트에 적합한 비디오를 생성할 수 있다.
-
-**Ablation studies**
-
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-8.png" | relative_url}}' width="90%"></center>
-
-### Quantitative Results
-
-**Arbitrary combinations of subjects and motions**
-
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-9.png" | relative_url}}' width="60%"></center>
-
-**Subject customization**
-
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-10.png" | relative_url}}' width="60%"></center>
-
-**Motion customization**
-
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-11.png" | relative_url}}' width="60%"></center>
-
-**Ablation studies**
-
-<center><img src='{{"/assets/images/논문리뷰/DreamVideo-12.png" | relative_url}}' width="60%"></center>
+이를 위해 base 모델에 사용되던 텍스트 임베딩을 CLIP 이미지 임베딩으로 교체하였다.
