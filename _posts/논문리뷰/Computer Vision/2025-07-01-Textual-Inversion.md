@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[논문리뷰] An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion"
-last_modified_at: 2025-02-02
+last_modified_at: 2025-07-01
 categories: ["논문리뷰"]
 tags: ["Computer Vision"]
 excerpt: "ICLR 2023"
