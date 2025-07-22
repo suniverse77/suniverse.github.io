@@ -18,7 +18,9 @@ toc_sticky: true
 <summary><font color='#FF8C00'>📝 Summary</font></summary>
 <div markdown="1">
 <br>
-비디오 모델링을 개선하기 위해 
+비디오 모델링을 개선하기 위해 대규모의 잡음이 섞인 비디오 데이터셋을을 생성 비디오 모델에 적합한 데이터셋으로 변환하는 방법을 제안하였다.
+
+Curation된 대규모 비디오 데이터셋에 대해 사전학습된 비디오 모델은 후에 다양한 task에 대해 파인튜닝이 가능하다.
 
 </div>
 </details>
@@ -98,7 +100,7 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 
 아래 그림은 이미지로 사전학습된 모델이 더 우수하다는 것을 보여준다.
 
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-4.png" | relative_url}}' width="60%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-4.png" | relative_url}}' width="50%"></center>
 
 #### Stage II: Curating a Video Pretraining Dataset
 
@@ -110,11 +112,11 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 - synthetic captions
 - optical flow scores
 
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-5.png" | relative_url}}' width="60%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-5.png" | relative_url}}' width="50%"></center>
 <br>
 위의 그림에서 LDV-10M-F는 LVD-10M을 앞서 언급한 방법들을 사용해 필터링한 데이터셋으로, LVD-10M보다 데이터 양이 4배 더 적지만 user preference가 더 높았다.
 
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-6.png" | relative_url}}' width="80%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-6.png" | relative_url}}' width="90%"></center>
 
 #### Stage III: High-Quality Finetuning
 
@@ -128,7 +130,7 @@ Video pretraining의 효과를 분석하기 위해, 동일한 구조를 갖지�
 - 모델2: 50M개의 curation 비디오 데이터로 사전학습된 모델
 - 모델3: 50M개의 non-curation 비디오 데이터로 사전학습된 모델
 
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-7.png" | relative_url}}' width="80%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-7.png" | relative_url}}' width="60%"></center>
 <br>
 - 모델1: 시간적 개념에 대해 학습하지 않았기 때문에 파인튜닝만으로 비디오의 특성을 학습해야 하므로 성능이 가장 낮다.
 - 모델2: 파인튜닝하기 전에 비디오의 특성에 대해 학습했기 때문에 파인튜닝을 통해 더 효율적으로 고해상도 비디오 생성 능력을 얻을 수 있다.
