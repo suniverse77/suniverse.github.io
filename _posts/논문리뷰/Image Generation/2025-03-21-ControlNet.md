@@ -10,9 +10,9 @@ toc: true
 toc_sticky: true
 ---
 
-> [[Paper]](https://arxiv.org/abs/2302.05543)
->
-> CVPR 2023
+**CVPR 2023** 
+[[Paper]](https://arxiv.org/abs/2302.05543)
+[[GitHub]](https://github.com/lllyasviel/ControlNet)
 
 ## Introduction
 

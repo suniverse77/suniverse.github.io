@@ -12,6 +12,7 @@ toc_sticky: true
 
 **ICLR 2023** 
 [[Paper]](https://arxiv.org/abs/2208.01618)
+[[GitHub]](https://github.com/rinongal/textual_inversion)
 
 <details>
 <summary><font color='#FF8C00'>📝 Summary</font></summary>
@@ -23,6 +24,8 @@ toc_sticky: true
 
 </div>
 </details>
+<br>
+<center><img src='{{"/assets/images/논문리뷰/Textual Inversion-0.png" | relative_url}}' width="100%"></center>
 
 ## Introduction
 

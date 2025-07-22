@@ -14,6 +14,17 @@ toc_sticky: true
 [[Paper]](https://arxiv.org/abs/2304.08818)
 [[GitHub]](https://github.com/guoyww/AnimateDiff)
 
+<details>
+<summary><font color='#FF8C00'>📝 Summary</font></summary>
+<div markdown="1">
+<br>
+
+
+</div>
+</details>
+<br>
+<center><img src='{{"/assets/images/논문리뷰/AnimateDiff-0.png" | relative_url}}' width="100%"></center>
+
 ## Introduction
 
 **기존 연구들의 한계점**

@@ -30,6 +30,8 @@ Image-video joint 학습 전략을 사용해 프레임별 품질을 향상시켰
 
 </div>
 </details>
+<br>
+<center><img src='{{"/assets/images/논문리뷰/MagicAnimate-0.png" | relative_url}}' width="100%"></center>
 
 ## Introduction
 

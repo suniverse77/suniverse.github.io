@@ -10,11 +10,8 @@ toc: true
 toc_sticky: true
 ---
 
-> [[Paper]](https://arxiv.org/abs/2208.11970)
->
-> **2022**
-
-논문을 읽고 제가 이해한 방식으로 정리하였습니다.
+**2022** 
+[[Paper]](https://arxiv.org/abs/2208.11970)
 
 ## Bayes' Rule
 
