@@ -46,13 +46,9 @@ Curation된 대규모 비디오 데이터셋에 대해 사전학습된 비디오
 
 ## Methods
 
-### 1. Data Curation
-
 공개적으로 접근 가능한 비디오 데이터셋 중에서는 WebVid-10M이 널리 사용되고 있다.
 
 Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이터와 결합되어 사용되지만, 이로 인해 이미지 데이터와 비디오 데이터가 최종 모델에 미치는 영향을 구분하기가 어려워진다.
-
-### 2. Curating Data for HQ Video Synthesis
 
 대규모 비디오 데이터셋에서 SOTA video diffusion 모델을 학습시키기 위해 데이터 가공 및 curation 기법과 3단계의 학습 전략을 도입한다.
 
@@ -61,7 +57,7 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 - Stage II: video pretraining (대규모 비디오 데이터셋에 대해 학습)
 - Stage III: video finetuning (고품질의 소규모 비디오 데이터셋에 대해 파인튜닝)
 
-#### Data Processing and Annotation
+### 1. Data Processing and Annotation
 
 하나의 비디오 내에서 장면 전환(cut)과 fade가 있는 것을 방지하기 위해 [cut-detection pipeline](https://github.com/Breakthrough/PySceneDetect)을 사용해서 장면 전환이 일어나는 부분을 잘랐다.
 
@@ -92,7 +88,7 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 생성된 데이터셋의 전체 크기와 clip의 평균 길이 등의 통계는 아래와 같다.
 <center><img src='{{"/assets/images/논문리뷰/StableVideo-3.png" | relative_url}}' width="70%"></center>
 
-#### Stage I: Image Pretraining
+### 2. Stage I: Image Pretraining
 
 이미지로 사전학습된 모델의 강력한 visual representation을 활용하기 위해, 학습 파이프라인의 첫 번째 단계로 image pretraining을 고려하였다.
 
@@ -102,7 +98,7 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 
 <center><img src='{{"/assets/images/논문리뷰/StableVideo-4.png" | relative_url}}' width="50%"></center>
 
-#### Stage II: Curating a Video Pretraining Dataset
+### 3. Stage II: Curating a Video Pretraining Dataset
 
 비디오 도메인에는 이미지처럼 원치 않는 샘플을 자동으로 걸러낼 수 있는 off-the-shelf representation이 없기 때문에 아래의 방법을 사용해 LVD의 subset을 만든 후 사람의 선호도를 기반으로 평가하였다.
 
@@ -116,9 +112,9 @@ Joint image-video 학습 전략에서는 WebVid-10M은 종종 이미지 데이�
 <br>
 위의 그림에서 LDV-10M-F는 LVD-10M을 앞서 언급한 방법들을 사용해 필터링한 데이터셋으로, LVD-10M보다 데이터 양이 4배 더 적지만 user preference가 더 높았다.
 
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-6.png" | relative_url}}' width="90%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-6.png" | relative_url}}' width="100%"></center>
 
-#### Stage III: High-Quality Finetuning
+### 4. Stage III: High-Quality Finetuning
 
 앞 절에서는 체계적인 data curaction이 성능 향상에 기여한다는 점을 입증하였다.
 
@@ -130,7 +126,7 @@ Video pretraining의 효과를 분석하기 위해, 동일한 구조를 갖지�
 - 모델2: 50M개의 curation 비디오 데이터로 사전학습된 모델
 - 모델3: 50M개의 non-curation 비디오 데이터로 사전학습된 모델
 
-<center><img src='{{"/assets/images/논문리뷰/StableVideo-7.png" | relative_url}}' width="60%"></center>
+<center><img src='{{"/assets/images/논문리뷰/StableVideo-7.png" | relative_url}}' width="50%"></center>
 <br>
 - 모델1: 시간적 개념에 대해 학습하지 않았기 때문에 파인튜닝만으로 비디오의 특성을 학습해야 하므로 성능이 가장 낮다.
 - 모델2: 파인튜닝하기 전에 비디오의 특성에 대해 학습했기 때문에 파인튜닝을 통해 더 효율적으로 고해상도 비디오 생성 능력을 얻을 수 있다.

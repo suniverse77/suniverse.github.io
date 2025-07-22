@@ -27,6 +27,8 @@ toc_sticky: true
 
 </div>
 </details>
+<br>
+<center><img src='{{"/assets/images/논문리뷰/DreamVideo-0.png" | relative_url}}' width="100%"></center>
 
 ## Introduction
 
