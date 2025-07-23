@@ -122,7 +122,7 @@ CFG guidance의 세기를 조절하기 위해 CFG Resolution Weighting 기법을
 아래 그림은 프롬프트가 없는 상황 같은 복잡한 경우에서의 결과를 나타낸다.
 
 <center><img src='{{"/assets/images/논문리뷰/ControlNet-4.png" | relative_url}}' width="100%"></center>
-<br>
+
 - (b): 조건을 $\epsilon_{\text{uc}}$와 $\epsilon_{\text{c}}$에 모두 추가하면 CFG guidance가 사라진다.
 - (c): 조건을 $\epsilon_{\text{c}}$에만 추가하면 guidance가 매우 강해진다.
 - (d): CFG-RW을 사용한 경우의 이미지 품질이 가장 뛰어나다.
@@ -147,4 +147,4 @@ CFG guidance의 세기를 조절하기 위해 CFG Resolution Weighting 기법을
 
 ### Quantitative Evaluation
 
-<center><img src='{{"/assets/images/논문리뷰/ControlNet-8.png" | relative_url}}' width="100%"></center>
+<center><img src='{{"/assets/images/논문리뷰/ControlNet-8.png" | relative_url}}' width="80%"></center>
