@@ -107,9 +107,25 @@ $$
 
 #### Classifier-free guidance resolution weighting
 
+Stable Diffusion은 고품질 이미지를 생성하기 위해 [Classifier-Free Guidance](https://suniverse77.github.io/논문리뷰/CFG/)라는 기법에 의존한다.
 
+$$
+\epsilon_{\text{prd}}=\epsilon_{\text{uc}}+\beta_{\text{cfg}}(\epsilon_{\text{c}}-\epsilon_{\text{uc}})
+$$
+
+CFG는 위와 같이 정의되며, $\epsilon_{\text{uc}}$는 unconditional 출력, $\epsilon_{\text{c}}$는 conditional 출력을 의미한다.
+
+ControlNet을 통해 조건 이미지가 추가될 경우, 이 이미지는 $\epsilon_{\text{uc}}$와 $\epsilon_{\text{c}}$에 모두 추가하거나 오직 $\epsilon_{\text{c}}$에만 추가될 수 있다.
+
+CFG guidance의 세기를 조절하기 위해 CFG Resolution Weighting 기법을 도입하였다. 이는 조건을 먼저 $\epsilon_{\text{c}}$에만 추가하고, ControlNet과 Stable Diffusion 사이의 연결에 해상도 기반의 가중치 $w_i=\frac{64}{h_i}$를 곱하는 방식을 사용한다.
+
+아래 그림은 프롬프트가 없는 상황 같은 복잡한 경우에서의 결과를 나타낸다.
 
 <center><img src='{{"/assets/images/논문리뷰/ControlNet-4.png" | relative_url}}' width="100%"></center>
+<br>
+- (b): 조건을 $\epsilon_{\text{uc}}$와 $\epsilon_{\text{c}}$에 모두 추가하면 CFG guidance가 사라진다.
+- (c): 조건을 $\epsilon_{\text{c}}$에만 추가하면 guidance가 매우 강해진다.
+- (d): CFG-RW을 사용한 경우의 이미지 품질이 가장 뛰어나다.
 
 #### Composing multiple ControlNets
 
