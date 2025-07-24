@@ -8,6 +8,7 @@ excerpt: "ICLR 2024"
 use_math: true
 toc: false
 toc_sticky: false
+classes: wide
 ---
 
 **ICLR 2024** 
@@ -18,12 +19,12 @@ toc_sticky: false
 <summary><font color='#FF8C00'>📝 Summary</font></summary>
 <div markdown="1">
 <br>
-
+---
 
 </div>
 </details>
 <br>
-===
+---
 
 [Introduction](#introduction)  
 [Methods](#methods)  
