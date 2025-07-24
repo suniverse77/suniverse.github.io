@@ -23,6 +23,9 @@ toc_sticky: true
 </div>
 </details>
 <br>
+[Introduction](#Introduction)
+[Methods](#Methods)
+[1. Alleviate Negative Effects from Training Data with Domain Adapter](#alleviate-negative-effects-from-training-data-with-domain-adapter)
 <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-0.png" | relative_url}}' width="100%"></center>
 
 ## Introduction
