@@ -6,8 +6,9 @@ categories: ["논문리뷰"]
 tags: ["Video Generation"]
 excerpt: "ICLR 2024"
 use_math: true
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
+classes: wide
 ---
 
 **ICLR 2024** 
@@ -18,11 +19,18 @@ toc_sticky: true
 <summary><font color='#FF8C00'>📝 Summary</font></summary>
 <div markdown="1">
 <br>
-
+---
 
 </div>
 </details>
 <br>
+---
+
+[Introduction](#introduction)  
+[Methods](#methods)  
+[1. Alleviate Negative Effects from Training Data with Domain Adapter](#1.-alleviate-negative-effects-from-training-data-with-domain-adapter)
+
+===
 <center><img src='{{"/assets/images/논문리뷰/AnimateDiff-0.png" | relative_url}}' width="100%"></center>
 
 ## Introduction
