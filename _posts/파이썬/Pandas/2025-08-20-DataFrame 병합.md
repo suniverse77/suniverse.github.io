@@ -10,8 +10,6 @@ toc: true
 toc_sticky: true
 ---
 
-## DataFrame 생성
-
 ### 1. 딕셔너리를 이용해 생성
 
 ```
