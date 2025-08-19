@@ -38,9 +38,14 @@ df.tail(n)  # 뒤에서부터 n개 행 출력 (default: n=5)
 ### 2. 요약 및 통계
 
 ```
-df.info()
+df.info()   # 데이터
+```
 
----
+<details>
+<summary><font color='blue'>실행 결과</font></summary>
+<div markdown="1">
+
+```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 8228 entries, 0 to 8227
 Data columns (total 11 columns):
@@ -60,3 +65,11 @@ Data columns (total 11 columns):
 dtypes: float64(4), int64(2), object(5)
 memory usage: 707.2+ KB
 ```
+
+RangeIndex    : Index의 개수와 범위
+Non-Null Count: 각 column에서 결측치가 아닌 값의 개수
+Dtype         : 각 column의 데이터 타입
+
+</div>
+</details>
+
