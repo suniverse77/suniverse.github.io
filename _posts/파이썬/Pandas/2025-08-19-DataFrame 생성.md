@@ -21,3 +21,15 @@ df = pd.DataFrame(d)
 ```
 
 ### 2. 파일을 불러와 생성
+
+```
+df = pd.read_csv('파일 경로')
+```
+
+## DataFrame 확인
+
+```
+df.head(n)  # 앞에서부터 n개 행 출력 (default: n=5)
+df.tail(n)  # 뒤에서부터 n개 행 출력 (default: n=5)
+```
+
