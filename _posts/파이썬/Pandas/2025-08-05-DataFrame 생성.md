@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[Pandas] DataFrame 생성"
-last_modified_at: 2025-08-16
+last_modified_at: 2025-08-05
 categories: ["파이썬"]
 tags: ["Pandas"]
 excerpt: ""

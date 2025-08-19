@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[Pandas] DataFrame 병합"
-last_modified_at: 2025-08-20
+last_modified_at: 2025-08-09
 categories: ["파이썬"]
 tags: ["Pandas"]
 excerpt: "concat / merge"
