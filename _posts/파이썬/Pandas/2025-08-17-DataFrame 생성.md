@@ -43,7 +43,7 @@ df.column   # column name 출력
 <summary><font color='blue'>실행 결과</font></summary>
 <div markdown="1">
 
-```python
+```
 Index(['date', 'city', 'avg_temp_c', 'rainfall_mm', 'humidity', 'weather_category'],
       dtype='object')
 ```
@@ -66,20 +66,20 @@ df.info()       # DataFrame 정보 출력
 <summary><font color='blue'>실행 결과</font></summary>
 <div markdown="1">
 
-```python
+```
 <class 'pandas.core.frame.DataFrame'>
-RangeIndex: 21 entries, 0 to 20
+RangeIndex: 27 entries, 0 to 26
 Data columns (total 6 columns):
  #   Column            Non-Null Count  Dtype  
 ---  ------            --------------  -----  
- 0   date              21 non-null     object 
- 1   city              21 non-null     object 
- 2   avg_temp_c        21 non-null     float64
- 3   rainfall_mm       21 non-null     float64
- 4   humidity          21 non-null     int64  
- 5   weather_category  21 non-null     object 
-dtypes: float64(2), int64(1), object(3)
-memory usage: 1.1+ KB
+ 0   date              27 non-null     object 
+ 1   city              26 non-null     object 
+ 2   avg_temp_c        25 non-null     float64
+ 3   rainfall_mm       26 non-null     float64
+ 4   humidity          26 non-null     float64
+ 5   weather_category  26 non-null     object 
+dtypes: float64(3), object(3)
+memory usage: 1.4+ KB
 ```
 
 - RangeIndex    : Index의 개수와 범위
@@ -98,15 +98,15 @@ df.describe()   # 숫자형 변수의 column에 대한 통계 출력
 <summary><font color='blue'>실행 결과</font></summary>
 <div markdown="1">
 
-```python
+```
        avg_temp_c  rainfall_mm   humidity
-count   21.000000    21.000000  21.000000
-mean    27.842857     7.395238  78.571429
-std      1.067039     8.138579   6.910654
-min     26.100000     0.000000  68.000000
-25%     26.900000     0.800000  73.000000
-50%     27.900000     4.100000  78.000000
-75%     28.800000    12.500000  85.000000
+count   25.000000    26.000000  26.000000
+mean    27.728000     6.780769  78.307692
+std      1.071805     7.692231   6.442169
+min     25.800000     0.000000  68.000000
+25%     26.900000     0.575000  73.250000
+50%     27.800000     3.800000  77.500000
+75%     28.500000    11.625000  82.750000
 max     29.500000    25.400000  90.000000
 ```
 
@@ -114,3 +114,88 @@ max     29.500000    25.400000  90.000000
 </details>
 <br>
 
+```python
+df.isnull()       # 숫자형 변수의 column에 대한 통계 출력
+```
+
+<details>
+<summary><font color='blue'>실행 결과</font></summary>
+<div markdown="1">
+
+```
+     date   city  avg_temp_c  rainfall_mm  humidity  weather_category
+0   False  False       False        False     False             False
+1   False  False       False        False     False             False
+2   False  False       False        False     False             False
+3   False  False       False        False     False             False
+4   False  False       False        False     False             False
+5   False  False       False        False     False             False
+6   False  False       False        False     False             False
+7   False  False       False        False     False             False
+8   False  False       False        False     False             False
+9   False  False       False        False     False             False
+10  False  False       False        False     False             False
+11  False  False       False        False     False             False
+12  False  False       False        False     False             False
+13  False  False       False        False     False             False
+14  False  False       False        False     False             False
+15  False  False       False        False     False             False
+16  False  False       False        False     False             False
+17  False  False       False        False     False             False
+18  False  False       False        False     False             False
+19  False  False       False        False     False             False
+20  False  False       False        False     False             False
+21  False  False        True        False     False             False
+22  False  False       False         True     False             False
+23  False  False       False        False      True             False
+24  False  False       False        False     False              True
+25  False   True       False        False     False             False
+26  False  False        True        False     False             False
+```
+
+</div>
+</details>
+<br>
+
+```python
+df.isnull().sum()
+```
+
+<details>
+<summary><font color='blue'>실행 결과</font></summary>
+<div markdown="1">
+
+```
+date                0
+city                1
+avg_temp_c          2
+rainfall_mm         1
+humidity            1
+weather_category    1
+dtype: int64
+```
+
+</div>
+</details>
+<br>
+
+```python
+# 범주형 column에서 각 범주별 빈도수 출력
+df['열 이름'].value_counts()
+```
+
+<details>
+<summary><font color='blue'>실행 결과</font></summary>
+<div markdown="1">
+
+```
+city
+Seoul    10
+Busan     9
+Jeju      7
+Name: count, dtype: int64
+```
+
+</div>
+</details>
+<br>
