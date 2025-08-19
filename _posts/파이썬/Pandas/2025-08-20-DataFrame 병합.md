@@ -1,10 +1,10 @@
 ---
 layout: single
-title: "[Pandas] 데이터 전처리"
-last_modified_at: 2025-08-19
+title: "[Pandas] DataFrame 병합"
+last_modified_at: 2025-08-20
 categories: ["파이썬"]
 tags: ["Pandas"]
-excerpt: "ICLR 2023"
+excerpt: "concat / merge"
 use_math: true
 toc: true
 toc_sticky: true
