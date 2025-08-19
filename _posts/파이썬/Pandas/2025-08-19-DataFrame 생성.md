@@ -35,6 +35,23 @@ df.head(n)  # 앞에서부터 n개 행 출력 (default: n=5)
 df.tail(n)  # 뒤에서부터 n개 행 출력 (default: n=5)
 ```
 
+```
+df.column   # column name 출력
+```
+
+<details>
+<summary><font color='blue'>실행 결과</font></summary>
+<div markdown="1">
+
+```
+Index(['date', 'city', 'avg_temp_c', 'rainfall_mm', 'humidity', 'weather_category'],
+      dtype='object')
+```
+
+</div>
+</details>
+<br>
+
 ### 2. 요약 및 통계
 
 ```
@@ -47,23 +64,18 @@ df.info()   # 데이터 출력
 
 ```
 <class 'pandas.core.frame.DataFrame'>
-RangeIndex: 8228 entries, 0 to 8227
-Data columns (total 11 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   Unnamed: 0   8228 non-null   int64  
- 1   class        8228 non-null   object 
- 2   sex          8228 non-null   object 
- 3   age          8228 non-null   float64
- 4   service      8228 non-null   int64  
- 5   stop         8228 non-null   object 
- 6   npay         8228 non-null   object 
- 7   avg_bill     8228 non-null   float64
- 8   A_bill       8228 non-null   float64
- 9   B_bill       8228 non-null   float64
- 10  termination  8228 non-null   object 
-dtypes: float64(4), int64(2), object(5)
-memory usage: 707.2+ KB
+RangeIndex: 21 entries, 0 to 20
+Data columns (total 6 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   date              21 non-null     object 
+ 1   city              21 non-null     object 
+ 2   avg_temp_c        21 non-null     float64
+ 3   rainfall_mm       21 non-null     float64
+ 4   humidity          21 non-null     int64  
+ 5   weather_category  21 non-null     object 
+dtypes: float64(2), int64(1), object(3)
+memory usage: 1.1+ KB
 ```
 
 - RangeIndex    : Index의 개수와 범위
@@ -72,6 +84,7 @@ memory usage: 707.2+ KB
 
 </div>
 </details>
+<br>
 
 ```
 df.describe()   # 숫자형 변수에 대한 통계 출력
@@ -82,40 +95,18 @@ df.describe()   # 숫자형 변수에 대한 통계 출력
 <div markdown="1">
 
 ```
-Unnamed: 0	age	service	avg_bill	A_bill	B_bill
-count	8228.000000	8228.000000	8228.000000	8228.000000	8228.000000	8228.000000
-mean	4114.500000	47.879801	1.226544	10356.605452	1764.512253	5630.461347
-std	2375.363341	19.255090	0.800793	8394.568408	2599.854946	4380.126308
-min	1.000000	4.000000	0.000000	299.900100	0.000000	0.000000
-25%	2057.750000	32.000000	1.000000	4725.601635	386.149950	2385.362475
-50%	4114.500000	49.000000	1.000000	9396.623330	1665.000000	5404.765400
-75%	6171.250000	61.000000	1.000000	14322.583350	2325.562500	8434.983300
-max	8228.000000	104.000000	14.000000	144739.686600	131581.533300	65836.558700
-
-        Unnamed: 0          age      service       avg_bill         A_bill  \
-count  8228.000000  8228.000000  8228.000000    8228.000000    8228.000000   
-mean   4114.500000    47.879801     1.226544   10356.605452    1764.512253   
-std    2375.363341    19.255090     0.800793    8394.568408    2599.854946   
-min       1.000000     4.000000     0.000000     299.900100       0.000000   
-25%    2057.750000    32.000000     1.000000    4725.601635     386.149950   
-50%    4114.500000    49.000000     1.000000    9396.623330    1665.000000   
-75%    6171.250000    61.000000     1.000000   14322.583350    2325.562500   
-max    8228.000000   104.000000    14.000000  144739.686600  131581.533300   
-
-             B_bill  
-count   8228.000000  
-mean    5630.461347  
-std     4380.126308  
-min        0.000000  
-25%     2385.362475  
-50%     5404.765400  
-75%     8434.983300  
-max    65836.558700  
+       avg_temp_c  rainfall_mm   humidity
+count   21.000000    21.000000  21.000000
+mean    27.842857     7.395238  78.571429
+std      1.067039     8.138579   6.910654
+min     26.100000     0.000000  68.000000
+25%     26.900000     0.800000  73.000000
+50%     27.900000     4.100000  78.000000
+75%     28.800000    12.500000  85.000000
+max     29.500000    25.400000  90.000000
 ```
-
-- RangeIndex    : Index의 개수와 범위
-- Non-Null Count: 각 column에서 결측치가 아닌 값의 개수
-- Dtype         : 각 column의 데이터 타입
 
 </div>
 </details>
+<br>
+
