@@ -22,9 +22,9 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "suniverse77"
 description              : "Study"
-url                      : "https://suniverse77.github.io"
+url                      : "https://suniverse.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "suniverse/suniverse77.github.io"
+repository               : "suniverse/suniverse.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/metamong.ico"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
